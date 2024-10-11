@@ -1,3 +1,4 @@
+// Portfolio project data configuration
 import Work3 from '../../src/assets/Work3.png';
 import Work4 from '../../src/assets/Work4.png';
 import Work5 from '../../src/assets/Work5.png';
