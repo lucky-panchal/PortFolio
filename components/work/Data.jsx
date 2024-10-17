@@ -1,8 +1,8 @@
 // Portfolio project data configuration
 import Work3 from '../../src/assets/Work3.png';
 import Work4 from '../../src/assets/Work4.png';
-import Work5 from '../../src/assets/Work5.png';
-import Work6 from '../../src/assets/Work6.jpg'
+import Work5 from '../../src/assets/Work5.jpg';
+import Work6 from '../../src/assets/Work6.png';
 
 export const projectsData = [
 	{
@@ -12,6 +12,7 @@ export const projectsData = [
 			en: 'Portfolio',
 			hi: 'पोर्टफोलियो'
 		},
+		
 		description: {
 			en: 'Modern portfolio with advanced animations and 3D effects',
 			hi: 'उन्नत एनिमेशन और 3D प्रभावों के साथ आधुनिक पोर्टफोलियो'
@@ -32,20 +33,20 @@ export const projectsData = [
 		id: 2,
 		image: Work5,
 		title: {
-			en: 'Manorath- "The Future"',
-			hi: 'मनोरथ- "भविष्य"'
+			en: 'Figma-Project',
+			hi: 'फिग्मा-प्रोजेक्ट'
 		},
 		description: {
-			en: 'AI-powered future prediction mobile application',
-			hi: 'AI-संचालित भविष्य भविष्यवाणी मोबाइल एप्लिकेशन'
+			en: 'Design system and UI component library',
+			hi: 'डिज़ाइन सिस्टम और UI कंपोनेंट लाइब्रेरी'
 		},
 
 		category: 'app',
-		status: 'development',
+		status: 'coming_soon',
 		size: 'large',
 		gradient: ['#A8E6CF', '#FFD93D'],
 		techStack: ['React Native', 'AI/ML', 'Firebase'],
-		progress: 75,
+		progress: 30,
 		features: ['AI Integration', 'Real-time Data', 'Push Notifications'],
 		particleColor: '#FFD93D'
 	},
@@ -77,19 +78,20 @@ export const projectsData = [
 		id: 4,
 		image: Work6,
 		title: {
-			en: 'Figma-Project',
-			hi: 'फिग्मा-प्रोजेक्ट'
+			en: 'KaushalX - Future Proof Your Career',
+			hi: 'कौशलX - अपने करियर को भविष्य के लिए तैयार करें'
 		},
 		description: {
-			en: 'Design system and UI component library',
-			hi: 'डिज़ाइन सिस्टम और UI कंपोनेंट लाइब्रेरी'
+			en: 'AI-powered future prediction mobile application',
+			hi: 'AI-संचालित भविष्य भविष्यवाणी मोबाइल एप्लिकेशन'
 		},
 		category: 'web',
-		status: 'coming_soon',
+		sourceUrl: 'https://github.com/lucky-panchal/Secret.git',
+		status: 'development',
 		size: 'featured',
 		gradient: ['#81C784', '#64B5F6'],
 		techStack: ['Figma', 'React', 'Storybook'],
-		progress: 25,
+		progress: 80,
 		features: ['Component Library', 'Design Tokens', 'Documentation'],
 		particleColor: '#64B5F6'
 	}
