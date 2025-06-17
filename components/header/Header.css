@@ -1,0 +1,315 @@
+.header {
+    width: 100%;
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--z-fixed);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    width: fit-content;
+    padding: 0.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    max-width: 95vw;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    min-height: 3rem;
+    width: 100%;
+}
+
+.nav__logo {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.nav__toggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--title-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    min-width: 24px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(230, 151, 4, 0.3) transparent;
+    scroll-behavior: smooth;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Webkit scrollbar styling */
+.nav__menu::-webkit-scrollbar {
+    height: 3px;
+    background: transparent;
+}
+
+.nav__menu::-webkit-scrollbar-thumb {
+    background: rgba(230, 151, 4, 0.3);
+    border-radius: 10px;
+}
+
+.nav__menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(230, 151, 4, 0.5);
+}
+
+.nav__list {
+    display: flex;
+    align-items: center; 
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+    margin: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    min-width: min-content;
+    transition: transform 0.3s ease;
+}
+
+.nav__item {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+    flex: 0 0 auto;
+    min-width: fit-content;
+}
+
+.nav__item:hover {
+    transform: scale(1.1);
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: .3s;
+    padding: 0.25rem;
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 5px;
+    height: 5px;
+    background-color: #e69704;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, 8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 4px rgba(230, 151, 4, 0.4);
+}
+
+.active-link::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.active-link,
+.nav__link:hover {
+    color: #e69704;
+}
+
+.nav__link:hover::after {
+    opacity: 0.7;
+    transform: translate(-50%, 0);
+}
+
+/* Add dark mode specific styles */
+[data-theme='dark'] .nav__toggle {
+    color: var(--title-color);
+}
+
+.scroll-header {
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        top: initial;
+        bottom: 1rem;
+        padding: 0.35rem;
+    }
+
+    .nav {
+        gap: 0.25rem;
+        min-height: 2.5rem;
+    }
+
+    .nav__logo {
+        font-size: var(--smaller-font-size);
+        max-width: 120px;
+    }
+
+    .nav__menu {
+        gap: 0.25rem;
+    }
+
+    .nav__list {
+        gap: 0.75rem;
+    }
+
+    .nav__link {
+        font-size: var(--smaller-font-size);
+        padding: 0.15rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .nav__toggle {
+        font-size: 0.95rem;
+        padding: 0.15rem;
+        min-width: 20px;
+    }
+
+    .nav__link::after {
+        width: 4px;
+        height: 4px;
+        bottom: 2px;
+        box-shadow: 0 0 3px rgba(230, 151, 4, 0.4);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 0.25rem;
+        bottom: 1rem;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .nav {
+        gap: 0.25rem;
+        min-height: 2.25rem;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav__logo {
+        display: none;
+    }
+
+    .nav__menu {
+        padding: 0.1rem 0;
+        margin: 0 -0.25rem;
+        width: calc(100% + 0.5rem);
+    }
+
+    .nav__list {
+        gap: 1.2rem;
+        padding: 0 0.75rem;
+    }
+
+    .nav__link {
+        font-size: calc(var(--smaller-font-size) - 1px);
+        padding: 0.25rem;
+        padding-bottom: 0.35rem;
+        white-space: nowrap;
+    }
+
+    /* Hide text, show only icons for nav items */
+    .nav__link span {
+        display: none;
+    }
+
+    .nav__link i {
+        font-size: 1.1rem;
+        margin: 0;
+        transition: transform 0.2s ease;
+    }
+
+    .nav__link:active i {
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .header {
+        padding: 0.25rem;
+        bottom: 0.5rem;
+        width: 85%;
+    }
+
+    .nav__menu {
+        padding: 0.1rem 0;
+    }
+
+    .nav__list {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .nav__link i {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .header {
+        padding: 0.2rem;
+        width: 80%;
+    }
+
+    .nav__list {
+        gap: 0.8rem;
+    }
+
+    .nav__link i {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 200px) {
+    .header {
+        padding: 0.15rem;
+        width: 75%;
+    }
+
+    .nav__list {
+        gap: 0.7rem;
+    }
+
+    .nav__link i {
+        font-size: 0.9rem;
+    }
+}

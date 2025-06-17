@@ -1,0 +1,50 @@
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #e69704, #ffb700);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  box-shadow: 
+    0 0 10px rgba(230, 151, 4, 0.6),
+    0 0 20px rgba(230, 151, 4, 0.4),
+    0 0 30px rgba(230, 151, 4, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 10px rgba(230, 151, 4, 0.6),
+      0 0 20px rgba(230, 151, 4, 0.4),
+      0 0 30px rgba(230, 151, 4, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 15px rgba(230, 151, 4, 0.7),
+      0 0 25px rgba(230, 151, 4, 0.5),
+      0 0 35px rgba(230, 151, 4, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 10px rgba(230, 151, 4, 0.6),
+      0 0 20px rgba(230, 151, 4, 0.4),
+      0 0 30px rgba(230, 151, 4, 0.2);
+  }
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot {
+    display: none;
+  }
+  
+  body, html {
+    cursor: auto;
+  }
+} 
