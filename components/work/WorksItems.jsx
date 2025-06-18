@@ -27,9 +27,9 @@ const WorksItems = ({ item }) => {
 		};
 	}, []);
 
-	const handleDemoClick = (e) => {
+const handleDemoClick = (e) => {
 		e.preventDefault();
-		if (item.status === 'development') {
+		if (item.status === 'development' || item.status === 'coming_soon') {
 			setShowTooltip(true);
 		} else if (item.demoUrl && item.demoUrl !== '#') {
 			window.open(item.demoUrl, '_blank');
@@ -38,13 +38,17 @@ const WorksItems = ({ item }) => {
 
 	const handleSourceClick = (e) => {
 		e.preventDefault();
+		if (item.status === 'coming_soon') {
+			setShowTooltip(true);
+			return;
+		}
 		if (item.sourceUrl && item.sourceUrl !== '#') {
 			window.open(item.sourceUrl, '_blank');
 		}
 	};
 
 	const handleMouseEnter = () => {
-		if (item.status === 'development') {
+		if (item.status === 'development' || item.status === 'coming_soon') {
 			setShowTooltip(true);
 			return;
 		}
@@ -100,14 +104,16 @@ const WorksItems = ({ item }) => {
 					className='work__button'
 					onClick={handleDemoClick}
 					onMouseEnter={() =>
-						item.status === 'development' && setShowTooltip(true)
+						(item.status === 'development' || item.status === 'coming_soon') && setShowTooltip(true)
 					}
 					onMouseLeave={() => setShowTooltip(false)}
 				>
 					<i className='bx bx-globe work__button-icon' /> Website
 				</a>
-				{showTooltip && item.status === 'development' && (
-					<div className='work__tooltip'>Under Development</div>
+				{showTooltip && (item.status === 'development' || item.status === 'coming_soon') && (
+					<div className='work__tooltip'>
+						{item.status === 'coming_soon' ? 'Coming Soon' : 'Under Development'}
+					</div>
 				)}
 				<a
 					href='#'
