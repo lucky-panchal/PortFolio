@@ -88,7 +88,7 @@ const Qualification = () => {
                 <h3 className="qualification__title">Bachelor of Technology🎓</h3>
                 <span className="qualification__subtitle">Rai University - Ahmedabad, Gujarat</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2024 - Present
+                  <i className="uil uil-calendar-alt"></i> 2024 - Present 
                 </div>
               </div>
             </motion.div>
