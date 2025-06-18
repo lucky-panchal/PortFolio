@@ -8,7 +8,7 @@ export const projectsData = [
 	{
 		id: 1,
 		image: Work4,
-		title: 'PortFolio',
+		title: 'PortFolio-React-Based',
 		category: 'web',
 		demoUrl: 'https://lackilohar.netlify.app/',
 		status: 'completed',
@@ -16,7 +16,7 @@ export const projectsData = [
 	{
 		id: 2,
 		image: Work6,
-		title: 'Manorath',
+		title: 'Manorath- "The Future"',
 		category: 'app',
 		status: 'development',
 	},
@@ -25,7 +25,14 @@ export const projectsData = [
 		image: Work6,
 		title: 'AI-ML Based Project',
 		category: 'web',		
-		status: 'development',
+		status: 'coming_soon',
+	},
+	{
+		id: 4,
+		image: Work6,
+		title: 'Figma-Project',
+		category: 'web',		
+		status: 'coming_soon',
 	}
 ];
 
