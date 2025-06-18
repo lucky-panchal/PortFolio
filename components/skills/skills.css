@@ -35,10 +35,30 @@
     column-gap: 0.5rem;
 }
 
-.skills .bxl-html5 .bxl-css3 .bxl-javascript .bxs-data .bxl-bootstrap .bxl-git .bxl-react .bxl-nodejs .bxl-python .bxl-c-plus-plus .bxl-java .bxl-gitlab .bxl-visual-studio .bxl-github {
+.skills 
+.bxl-html5, 
+.bxl-css3, 
+.bxl-javascript, 
+.bxs-data, 
+.bxl-bootstrap, 
+.bxl-git, 
+.bxl-react, 
+.bxl-nodejs, 
+.bxl-python, 
+.bxs-cog, 
+.bx-bug, 
+.bxl-c-plus-plus, 
+.bxl-java, 
+.bxl-gitlab, 
+.bxl-visual-studio, 
+.bxl-github, 
+.bx-data, 
+.bx-layer, 
+.bxl-linux {
     font-size: 1rem;
     color: var(--title-color);
 }
+
 
 .skills__name {
     font-size: var(--normal-font-size);
