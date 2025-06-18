@@ -17,9 +17,10 @@ const About = () => {
           <div className="about__data">
             <Info />
 
-            <p className="about__description">
-I’m a passionate Frontend Developer with a strong focus on crafting responsive, user-centric web applications. Proficient in HTML, CSS, JavaScript, and React, I specialize in building seamless UI/UX experiences that are both functional and visually engaging. I also work with the MERN stack (MongoDB, Express.js, React, Node.js), giving me the tools to contribute across the full development lifecycle. With a growing interest in AI and Machine Learning, I’m continuously expanding my skill set to stay ahead in the tech space. I'm always eager to learn, explore new technologies, and open to internship opportunities where I can contribute and grow.
+           <p className="about__description">
+  I'm a Frontend Developer skilled in HTML, CSS, JavaScript, React, and the MERN stack. I focus on creating clean UI/UX designs and have a growing interest in AI/ML. Always eager to learn and open to internship opportunities to grow and contribute.
 </p>
+
 
              <a download="" href={CV} className="button button--flex">Download My CV 
               <svg
