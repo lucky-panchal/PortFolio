@@ -65,7 +65,7 @@ const Experience = () => {
                 <div className="exp__content">
                     <div>
                         <i className="uil uil-arrow exp__icon"></i>
-                        <h3 className="exp__title">Virtual <br/>Internship</h3>
+                        <h3 className="exp__title">Virtual <br />Internship</h3>
                     </div>
 
                     <div>
@@ -92,8 +92,6 @@ const Experience = () => {
                                     <li className="uil uil-check-circle exp__modal-icon"></li>
                                     <p className="exp__modal-info">Understanding the importance of data preprocessing and model evaluation in building effective machine learning solutions.</p>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
