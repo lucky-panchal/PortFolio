@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import './CustomCursor.css';
-
 const CustomCursor = () => {
   const cursorRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0 });
