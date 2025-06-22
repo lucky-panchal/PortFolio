@@ -19,7 +19,7 @@ const CustomCursor = () => {
       const currentX = parseFloat(cursorRef.current.style.transform.split('(')[1]) || 0;
       const currentY = parseFloat(cursorRef.current.style.transform.split(',')[1]) || 0;
       
-      const targetX = mouseRef.current.x - 3; // Half of cursor-dot width
+      const targetX = mouseRef.current.x - 3; 
       const targetY = mouseRef.current.y - 3;
 
       const newX = lerp(currentX, targetX, 0.4);
