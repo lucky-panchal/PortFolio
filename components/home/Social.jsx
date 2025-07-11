@@ -9,12 +9,16 @@ const Social = () => {
         </a>
 
 
-        <a href="www.linkedin.com/in/lacki-lohar-463a23321" className="home__social-icon" target="_blank">
+        {/* <a href="www.linkedin.com/in/lacki-lohar-463a23321" className="home__social-icon" target="_blank">
             <i className="uil uil-linkedin"></i>
-        </a>
+        </a> */}
 
         <a href="https://github.com/lucky-panchal" className="home__social-icon" target="_blank">
             <i className="uil uil-github-alt"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/lacki-lohar-463a23321" className="home__social-icon" target="_blank">
+            <i className="uil uil-linkedin"></i>
         </a>
     </div>
   )
