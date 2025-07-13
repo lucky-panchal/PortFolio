@@ -5,25 +5,28 @@ const Info = () => {
 	return (
 		<div className='about__info grid'>
 			<div className='about__box'>
-				<i className='bx bx-award about__icon'></i>
+				<i className='bx bx-bar-chart-alt about__icon'></i>
 
-				<h3 className='about__title'>Experience</h3>
-				<span className='about__subtitle'>Currently Gaining..</span>
+				<h3 className='about__title'>Leadership</h3>
+				<span className='about__subtitle'>Strategic Impact</span>
 			</div>
+
+
 
 			<div className='about__box'>
-				<i className='bx bx-briefcase-alt about__icon'></i>
+  <i className='bx bx-conversation about__icon'></i>
 
-				<h3 className='about__title'>Intrested </h3>
-				<span className='about__subtitle'>For Collabration</span>
-			</div>
+  <h3 className='about__title'>Collaboration</h3>
+  <span className='about__subtitle'>Open Ideas</span>
+</div>
 
-			<div className='about__box'>
-				<i className='bx bx-support about__icon'></i>
+<div className='about__box'>
+  <i className='bx bx-support about__icon'></i>
 
-				<h3 className='about__title'>Support</h3>
-				<span className='about__subtitle'>Online 24/7</span>
-			</div>
+  <h3 className='about__title'>Support</h3>
+  <span className='about__subtitle'>Always Available</span>
+</div>
+
 		</div>
 	);
 };
