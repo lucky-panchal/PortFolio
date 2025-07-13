@@ -1,6 +1,6 @@
 
 import Work4 from '../../src/assets/Work4.png';
-// import Work5 from '../../src/assets/Work5.png';
+import Work5 from '../../src/assets/Work5.png';
 import Work6 from '../../src/assets/Work6.jpg'
 
 export const projectsData = [
@@ -15,7 +15,7 @@ export const projectsData = [
 	},
 	{
 		id: 2,
-		image: Work6,
+		image: Work5,
 		title: 'Manorath- "The Future"',
 		category: 'app',
 		status: 'development',
