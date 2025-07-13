@@ -26,10 +26,6 @@ const Footer = () => {
                 <a href="https://www.instagram.com/luckyp4nch4l/" className="footer__social-link" target="_blank">
                     <i className="bx bxl-instagram"></i>
                 </a>
-
-                <a href="https://github.com/lucky-panchal" className="footer__social-link" target="_blank">
-                    <i className="bx bxl-github"></i>
-                </a>
             </div>
 
             <span className="footer__copy">&#169; Lacki Lohar. All rigths reserved</span>
