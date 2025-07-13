@@ -22,8 +22,8 @@ const CustomCursor = () => {
       const targetX = mouseRef.current.x - 3;
       const targetY = mouseRef.current.y - 3;
 
-      const newX = lerp(currentX, targetX, 0.4);
-      const newY = lerp(currentY, targetY, 0.4);
+      const newX = lerp(currentX, targetX, 0.8);
+      const newY = lerp(currentY, targetY, 0.8);
 
       cursorRef.current.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
 
