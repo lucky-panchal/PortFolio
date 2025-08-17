@@ -13,6 +13,7 @@ import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
 import ScrollUp from '../components/scrollup/ScrollUp';
 import CustomCursor from './components/cursor/CustomCursor';
+import Social from '../components/social/Social';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Qualification />
         <About />
         <Testimonials />
+        <Social />
         <Contact />
       </main>
       <Footer />
