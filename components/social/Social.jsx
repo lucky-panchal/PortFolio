@@ -103,7 +103,7 @@ const Social = () => {
             icon: "bx bxl-github",
             url: "https://github.com/lucky-panchal",
             color: "#333",
-            stats: `${githubStats.repos} Repositories`,
+            stats: '',
             extra: (
                 <div className="github-stats-images" style={{ marginTop: '1rem' }}>
                     <img src={`https://github-readme-stats.vercel.app/api?username=lucky-panchal&theme=${githubStatsTheme}&hide_border=true&show_icons=true&title_color=00BFAE&icon_color=FFD600&count_private=true`} width="320" alt="GitHub Stats" style={{ maxWidth: '100%', borderRadius: 8 }} />
