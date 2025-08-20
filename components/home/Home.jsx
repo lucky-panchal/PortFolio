@@ -5,6 +5,7 @@ import Social from './Social';
 import Data from './Data';
 import ScrollDown from './ScrollDown';
 
+
 const Home = () => {
   const parallaxRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -52,8 +53,7 @@ const Home = () => {
                 <Social />
 
                 <div className="home__img-wrapper">
-                    <div className="home__img"></div>
-                    <div className="home__img-glow"></div>
+                  <img src="/src/assets/profile-pic.png" alt="Profile" className="home__img" />
                 </div>
 
                 <Data />
