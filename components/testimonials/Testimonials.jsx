@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './testimonial.css';
+import './testimonial-3d.css';
 import { Data } from './Data';
 
 const Testimonials = () => {
@@ -11,7 +12,7 @@ const Testimonials = () => {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % Data.length);
-    }, 5000);
+    }, 6500);
 
     return () => clearInterval(interval);
   }, []);
@@ -28,43 +29,63 @@ const Testimonials = () => {
 
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
+      rotateY: direction > 0 ? -90 : 90,
+      rotateX: 45,
+      opacity: 0,
+      scale: 0.3,
+      z: -200
     }),
     center: {
-      x: 0,
-      opacity: 1
+      rotateY: 0,
+      rotateX: 0,
+      opacity: 1,
+      scale: 1,
+      z: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.1
+      }
     },
     exit: (direction) => ({
-      x: direction > 0 ? -1000 : 1000,
-      opacity: 0
+      rotateY: direction > 0 ? 90 : -90,
+      rotateX: -45,
+      opacity: 0,
+      scale: 0.3,
+      z: -200,
+      transition: {
+        duration: 0.6,
+        ease: "easeIn"
+      }
     })
   };
 
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  const childVariants = {
+    enter: {
+      y: 50,
+      opacity: 0,
+      rotateX: 90
+    },
+    center: {
+      y: 0,
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.6,
+        ease: "backOut"
+      }
+    },
+    exit: {
+      y: -50,
+      opacity: 0,
+      rotateX: -90
+    }
   };
 
   return (
     <section className="testimonial container section" id="testimonials">
-      <motion.h2 
-        className="section__title"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-       People Often Say
-      </motion.h2>
-      
-      <motion.span 
-        className="section__subtitle"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Testimonials
-      </motion.span>
+      <h2 className="section__title">People Often Say</h2>
+      <span className="section__subtitle">Testimonials</span>
 
       <div className="testimonial__container">
         <button className="carousel__button carousel__button--prev" onClick={prevTestimonial}>
@@ -80,15 +101,25 @@ const Testimonials = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.5 }}
+              transition={{ 
+                duration: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              style={{
+                transformStyle: "preserve-3d",
+                perspective: 1000
+              }}
               className="testimonial__card"
             >
               <div className="testimonial__flex">
                 <motion.div 
                   className="testimonial__image-container"
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
+                  variants={childVariants}
+                  whileHover={{
+                    scale: 1.1,
+                    rotateY: 15,
+                    transition: { duration: 0.3 }
+                  }}
                 >
                   <img 
                     src={Data[currentIndex].image} 
@@ -99,13 +130,37 @@ const Testimonials = () => {
 
                 <motion.div 
                   className="testimonial__text-content"
-                  variants={contentVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  variants={childVariants}
                 >
-                  <h3 className="testimonial__name">{Data[currentIndex].title}</h3>
-                  <p className="testimonial__description">{Data[currentIndex].description}</p>
+                  <motion.h3 
+                    className="testimonial__name"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6, ease: "backOut" }}
+                  >
+                    {Data[currentIndex].title}
+                  </motion.h3>
+                  <motion.p 
+                    className="testimonial__description"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                  >
+                    {Data[currentIndex].description.split(' ').map((word, index) => (
+                      <motion.span
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ 
+                          delay: 0.7 + index * 0.03,
+                          duration: 0.4
+                        }}
+                        style={{ display: 'inline-block', marginRight: '4px' }}
+                      >
+                        {word}
+                      </motion.span>
+                    ))}
+                  </motion.p>
                 </motion.div>
               </div>
             </motion.div>
