@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './testimonial.css';
-import './testimonial-3d.css';
 import { Data } from './Data';
 
 const Testimonials = () => {
