@@ -1,14 +1,18 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Header = () => {
-	window.addEventListener('scroll', function () {
-		const header = this.document.querySelector('.header');
-		if (this.scrollY >= 80) header.classList.add('scroll-header');
-		else header.classList.remove('scroll-header');
-	});
+	useEffect(() => {
+		const handleScroll = () => {
+			const header = document.querySelector('.header');
+			if (window.scrollY >= 80) header?.classList.add('scroll-header');
+			else header?.classList.remove('scroll-header');
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	const [Toggle, showMenu] = useState(false);
 	const [activeNav, setActiveNav] = useState('#home');
