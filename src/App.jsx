@@ -14,6 +14,7 @@ import Footer from '../components/footer/Footer';
 import ScrollUp from '../components/scrollup/ScrollUp';
 import CustomCursor from './components/cursor/CustomCursor';
 import Social from '../components/social/Social';
+import Scroll3D from './components/scroll3d/Scroll3D';
 
 function App() {
   return (
@@ -21,15 +22,33 @@ function App() {
       <CustomCursor />
       <Header />
       <main className='main'>
-        <Home />
-        <Work />
-        <Skills />
-        <Experience />
-        <Qualification />
-        <About />
-        <Testimonials />
-        <Social />
-        <Contact />
+        <Scroll3D variant="parallaxDepth">
+          <Home />
+        </Scroll3D>
+        <Scroll3D variant="rotationTransition">
+          <Work />
+        </Scroll3D>
+        <Scroll3D variant="rotationTransition">
+          <Skills />
+        </Scroll3D>
+        <Scroll3D variant="slideCube">
+          <Experience />
+        </Scroll3D>
+        <Scroll3D variant="parallaxDepth">
+          <Qualification />
+        </Scroll3D>
+        <Scroll3D variant="rotationTransition">
+          <About />
+        </Scroll3D>
+        <Scroll3D variant="scaleFade">
+          <Testimonials />
+        </Scroll3D>
+        <Scroll3D variant="slideCube">
+          <Social />
+        </Scroll3D>
+        <Scroll3D variant="parallaxDepth">
+          <Contact />
+        </Scroll3D>
       </main>
       <Footer />
       <ScrollUp />

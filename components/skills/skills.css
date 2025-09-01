@@ -96,3 +96,17 @@
         font-size: var(--small-font-size);
     }
 }
+
+/* Mobile 3D animation fixes */
+@media screen and (max-width: 768px) {
+    .skills.section {
+        overflow: visible !important;
+        transform-style: flat !important;
+        perspective: none !important;
+    }
+    
+    .skills__container {
+        transform: none !important;
+        will-change: auto !important;
+    }
+}

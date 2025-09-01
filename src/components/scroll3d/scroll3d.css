@@ -1,0 +1,17 @@
+/* 3D Scroll Animation Styles */
+.scroll-3d-container {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  will-change: transform;
+}
+
+/* Smooth transitions for better performance */
+.scroll-3d-container * {
+  will-change: transform;
+}
+
+/* Ensure no layout shifts */
+.scroll-3d-container > * {
+  width: 100%;
+  position: relative;
+}
