@@ -6,7 +6,32 @@ const Header = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			const header = document.querySelector('.header');
-			if (window.scrollY >= 80) header?.classList.add('scroll-header');
+			const homeSection = document.querySelector('#home');
+			const projectsSection = document.querySelector('#projects');
+			const scrollY = window.scrollY;
+			const windowHeight = window.innerHeight;
+			
+			// Only minimize between home and projects sections
+			let shouldMinimize = false;
+			
+			if (homeSection && projectsSection) {
+				const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+				const projectsTop = projectsSection.offsetTop;
+				
+				// Check if we're between home and projects sections
+				if (scrollY > homeBottom - windowHeight * 0.3 && 
+					scrollY < projectsTop + windowHeight * 0.2) {
+					shouldMinimize = true;
+				}
+			}
+			
+			if (shouldMinimize) {
+				header?.classList.add('minimized');
+			} else {
+				header?.classList.remove('minimized');
+			}
+			
+			if (scrollY >= 80) header?.classList.add('scroll-header');
 			else header?.classList.remove('scroll-header');
 		};
 

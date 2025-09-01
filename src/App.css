@@ -116,6 +116,23 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  touch-action: pan-x pan-y;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1,

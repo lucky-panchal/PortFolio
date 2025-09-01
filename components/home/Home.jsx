@@ -44,7 +44,8 @@ const Home = () => {
     };
 
     const drawMatrix = () => {
-      ctx.fillStyle = 'rgba(13, 17, 23, 0.3)';
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      ctx.fillStyle = isDark ? 'rgba(13, 17, 23, 0.3)' : 'rgba(255, 255, 255, 0.3)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       const isMobile = window.innerWidth <= 768;
@@ -86,7 +87,8 @@ const Home = () => {
         
         // Only draw if not in content area
         if (!inContentArea) {
-          ctx.fillStyle = `rgba(0, 255, 65, ${particle.opacity + 0.3})`;
+          const particleColor = isDark ? `rgba(0, 255, 65, ${particle.opacity + 0.3})` : `rgba(55, 65, 81, ${particle.opacity + 0.4})`;
+          ctx.fillStyle = particleColor;
           ctx.fillText(particle.text, particle.x, particle.y);
         }
       });
