@@ -14,50 +14,86 @@ const Scroll3D = ({ children, className, variant = 'parallaxDepth' }) => {
     offset: ["start end", "end start"]
   });
 
+  // All transforms defined upfront to maintain hook order
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [200, -200]);
+  const parallaxZ = useTransform(scrollYProgress, [0, 0.5, 1], [-300, 0, -300]);
+  const parallaxOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  
+  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [45, 0, -45]);
+  const rotateY = useTransform(scrollYProgress, [0, 1], [0, 360]);
+  const rotateScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.7, 1, 0.7]);
+  
+  const scaleTransform = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.5, 1.1, 1.1, 0.5]);
+  const scaleOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scaleY = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  
+  const slideX = useTransform(scrollYProgress, [0, 0.5, 1], [-100, 0, 100]);
+  const slideRotateY = useTransform(scrollYProgress, [0, 0.5, 1], [-90, 0, 90]);
+  const slideZ = useTransform(scrollYProgress, [0, 0.5, 1], [-200, 0, -200]);
+  
+  const contentRotateY = useTransform(scrollYProgress, [0, 1], [0, -360]);
+  const contentRotateX = useTransform(scrollYProgress, [0, 0.5, 1], [-45, 0, 45]);
+  const cubeContentRotateY = useTransform(scrollYProgress, [0, 0.5, 1], [90, 0, -90]);
+  
+  const mobileY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+  const mobileOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
+
+  // Mobile version with simple animations
+  if (isMobile) {
+    return (
+      <motion.div
+        ref={ref}
+        className={className}
+        style={{
+          y: mobileY,
+          opacity: mobileOpacity
+        }}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+
+  // Desktop version with full 3D animations
   const variants = {
     parallaxDepth: {
-      y: useTransform(scrollYProgress, [0, 1], [200, -200]),
-      z: useTransform(scrollYProgress, [0, 0.5, 1], [-300, 0, -300]),
-      opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
+      y: parallaxY,
+      z: parallaxZ,
+      opacity: parallaxOpacity
     },
     rotationTransition: {
-      rotateX: useTransform(scrollYProgress, [0, 0.5, 1], [45, 0, -45]),
-      rotateY: useTransform(scrollYProgress, [0, 1], [0, 360]),
-      scale: useTransform(scrollYProgress, [0, 0.5, 1], [0.7, 1, 0.7])
+      rotateX: rotateX,
+      rotateY: rotateY,
+      scale: rotateScale
     },
     scaleFade: {
-      scale: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.5, 1.1, 1.1, 0.5]),
-      opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]),
-      y: useTransform(scrollYProgress, [0, 1], [100, -100])
+      scale: scaleTransform,
+      opacity: scaleOpacity,
+      y: scaleY
     },
     slideCube: {
-      x: useTransform(scrollYProgress, [0, 0.5, 1], [-100, 0, 100]),
-      rotateY: useTransform(scrollYProgress, [0, 0.5, 1], [-90, 0, 90]),
-      z: useTransform(scrollYProgress, [0, 0.5, 1], [-200, 0, -200])
+      x: slideX,
+      rotateY: slideRotateY,
+      z: slideZ
     }
   };
 
-  const currentVariant = variants[variant];
-
-  // Counter-rotate content to keep it readable during flips
-  const contentRotateY = variant === 'rotationTransition' 
-    ? useTransform(scrollYProgress, [0, 1], [0, -360])
-    : variant === 'slideCube'
-    ? useTransform(scrollYProgress, [0, 0.5, 1], [90, 0, -90])
-    : useTransform(scrollYProgress, [0, 1], [0, 0]);
-
-  const contentRotateX = variant === 'rotationTransition'
-    ? useTransform(scrollYProgress, [0, 0.5, 1], [-45, 0, 45])
-    : useTransform(scrollYProgress, [0, 1], [0, 0]);
-
-  // Disable 3D on mobile
-  if (isMobile) {
-    return (
-      <div ref={ref} className={className}>
-        {children}
-      </div>
-    );
-  }
+  const currentVariant = variants[variant] || variants.parallaxDepth;
+  
+  const getContentRotation = () => {
+    if (variant === 'rotationTransition') {
+      return {
+        rotateY: contentRotateY,
+        rotateX: contentRotateX
+      };
+    }
+    if (variant === 'slideCube') {
+      return {
+        rotateY: cubeContentRotateY
+      };
+    }
+    return {};
+  };
 
   return (
     <motion.div
@@ -71,8 +107,7 @@ const Scroll3D = ({ children, className, variant = 'parallaxDepth' }) => {
     >
       <motion.div
         style={{
-          rotateY: contentRotateY,
-          rotateX: contentRotateX,
+          ...getContentRotation(),
           transformStyle: 'preserve-3d',
           width: '100%',
           height: '100%'

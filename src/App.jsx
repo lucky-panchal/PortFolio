@@ -15,6 +15,7 @@ import ScrollUp from '../components/scrollup/ScrollUp';
 import CustomCursor from './components/cursor/CustomCursor';
 import Social from '../components/social/Social';
 import Scroll3D from './components/scroll3d/Scroll3D';
+import ScrollReveal from './components/ScrollReveal/ScrollReveal';
 
 function App() {
   return (
@@ -25,30 +26,46 @@ function App() {
         <Scroll3D variant="parallaxDepth">
           <Home />
         </Scroll3D>
-        <Scroll3D variant="rotationTransition">
-          <Work />
-        </Scroll3D>
-        <Scroll3D variant="rotationTransition">
-          <Skills />
-        </Scroll3D>
-        <Scroll3D variant="slideCube">
-          <Experience />
-        </Scroll3D>
-        <Scroll3D variant="parallaxDepth">
-          <Qualification />
-        </Scroll3D>
-        <Scroll3D variant="rotationTransition">
-          <About />
-        </Scroll3D>
-        <Scroll3D variant="scaleFade">
-          <Testimonials />
-        </Scroll3D>
-        <Scroll3D variant="slideCube">
-          <Social />
-        </Scroll3D>
-        <Scroll3D variant="parallaxDepth">
-          <Contact />
-        </Scroll3D>
+        <ScrollReveal>
+          <Scroll3D variant="rotationTransition">
+            <Work />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <Scroll3D variant="rotationTransition">
+            <Skills />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <Scroll3D variant="slideCube">
+            <Experience />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <Scroll3D variant="parallaxDepth">
+            <Qualification />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <Scroll3D variant="rotationTransition">
+            <About />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <Scroll3D variant="rotationTransition">
+            <Testimonials />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <Scroll3D variant="slideCube">
+            <Social />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <Scroll3D variant="parallaxDepth">
+            <Contact />
+          </Scroll3D>
+        </ScrollReveal>
       </main>
       <Footer />
       <ScrollUp />
