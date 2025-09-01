@@ -28,7 +28,7 @@ const Home = () => {
 
     const createMatrix = () => {
       const isMobile = window.innerWidth <= 768;
-      const particleCount = isMobile ? 60 : 120;
+      const particleCount = isMobile ? 100 : 120;
       const speed = isMobile ? 1.5 : 2;
       
       for (let i = 0; i < particleCount; i++) {
