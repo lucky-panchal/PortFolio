@@ -22,15 +22,9 @@ const Social = () => {
     }, []);
 
     useEffect(() => {
-        // Fetch GitHub stats (repos)
-        fetch(`https://api.github.com/users/${GITHUB_USERNAME}`)
-            .then(res => res.json())
-            .then(data => {
-                setGithubStats(prev => ({ ...prev, repos: data.public_repos || 0 }));
-            })
-            .catch(() => {});
+        // Set GitHub stats (manual due to API rate limits)
+        setGithubStats(prev => ({ ...prev, repos: 25 }));
 
-        // Set commit count (manual due to API rate limits)
         setGithubStats(prev => ({ ...prev, commits: 150 }));
 
         // Set Instagram followers (manual count due to CORS restrictions)

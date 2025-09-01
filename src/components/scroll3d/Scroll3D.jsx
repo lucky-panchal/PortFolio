@@ -48,23 +48,69 @@ const Scroll3D = ({ children, className, variant = 'parallaxDepth' }) => {
   const contentRotateX = useTransform(scrollYProgress, [0, 0.5, 1], [-45, 0, 45]);
   const cubeContentRotateY = useTransform(scrollYProgress, [0, 0.5, 1], [90, 0, -90]);
   
-  const mobileY = useTransform(scrollYProgress, [0, 1], [20, -20]);
-  const mobileOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
-
-  // Mobile version with visible animations
+  // Mobile gets EXACT same animations as desktop
   if (isMobile) {
+    const variants = {
+      parallaxDepth: {
+        y: parallaxY,
+        z: parallaxZ,
+        opacity: parallaxOpacity
+      },
+      rotationTransition: {
+        rotateX: rotateX,
+        rotateY: rotateY,
+        scale: rotateScale
+      },
+      scaleFade: {
+        scale: scaleTransform,
+        opacity: scaleOpacity,
+        y: scaleY
+      },
+      slideCube: {
+        x: slideX,
+        rotateY: slideRotateY,
+        z: slideZ
+      }
+    };
+
+    const currentVariant = variants[variant] || variants.parallaxDepth;
+    
+    const getContentRotation = () => {
+      if (variant === 'rotationTransition') {
+        return {
+          rotateY: contentRotateY,
+          rotateX: contentRotateX
+        };
+      }
+      if (variant === 'slideCube') {
+        return {
+          rotateY: cubeContentRotateY
+        };
+      }
+      return {};
+    };
+
     return (
       <motion.div
         ref={ref}
         className={className}
         style={{
-          y: useTransform(scrollYProgress, [0, 1], [50, -50]),
-          scale: useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]),
-          opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.7, 1, 1, 0.7]),
-          position: 'relative'
+          transformStyle: 'preserve-3d',
+          perspective: '1200px',
+          position: 'relative',
+          ...currentVariant
         }}
       >
-        {children}
+        <motion.div
+          style={{
+            ...getContentRotation(),
+            transformStyle: 'preserve-3d',
+            width: '100%',
+            height: '100%'
+          }}
+        >
+          {children}
+        </motion.div>
       </motion.div>
     );
   }
