@@ -40,23 +40,23 @@ const Experience = () => {
 
                             <ul className="exp__modal-experiences grid">
                                 <li className="exp__modal-experience">
-                                    <li className="uil uil-check-circle exp__modal-icon"></li>
+                                    <i className="uil uil-check-circle exp__modal-icon"></i>
                                     <p className="exp__modal-info">MERN-STACK.</p>
                                 </li>
 
                                 <li className="exp__modal-experience">
-                                    <li className="uil uil-check-circle exp__modal-icon"></li>
+                                    <i className="uil uil-check-circle exp__modal-icon"></i>
                                     <p className="exp__modal-info">I create UI Interfaces.</p>
                                 </li>
 
                                 <li className="exp__modal-experience">
-                                    <li className="uil uil-check-circle exp__modal-icon"></li>
+                                    <i className="uil uil-check-circle exp__modal-icon"></i>
                                     <p className="exp__modal-info">I create UX Element Interactions.</p>
                                 </li>
 
 
                                 <li className="exp__modal-experience">
-                                    <li className="uil uil-check-circle exp__modal-icon"></li>
+                                    <i className="uil uil-check-circle exp__modal-icon"></i>
                                     <p className="exp__modal-info">VCS Specialist.</p>
                                 </li>
 
@@ -87,12 +87,12 @@ const Experience = () => {
 
                             <ul className="exp__modal-experiences grid">
                                 <li className="exp__modal-experience">
-                                    <li className="uil uil-check-circle exp__modal-icon"></li>
+                                    <i className="uil uil-check-circle exp__modal-icon"></i>
                                     <p className="exp__modal-info">Got <b>Google for developers</b> Verified Certificate</p>
                                 </li>
 
                                 <li className="exp__modal-experience">
-                                    <li className="uil uil-check-circle exp__modal-icon"></li>
+                                    <i className="uil uil-check-circle exp__modal-icon"></i>
                                     <p className="exp__modal-info">Understanding the importance of data preprocessing and model evaluation in building effective machine learning solutions.</p>
                                 </li>
                             </ul>

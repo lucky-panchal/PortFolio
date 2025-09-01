@@ -6,7 +6,20 @@ const Scroll3D = ({ children, className, variant = 'parallaxDepth' }) => {
   const [isMobile, setIsMobile] = useState(false);
   
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isMobileWidth = window.innerWidth <= 768;
+      setIsMobile(isMobileDevice || isMobileWidth);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    window.addEventListener('orientationchange', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('orientationchange', checkMobile);
+    };
   }, []);
   
   const { scrollYProgress } = useScroll({
@@ -38,15 +51,17 @@ const Scroll3D = ({ children, className, variant = 'parallaxDepth' }) => {
   const mobileY = useTransform(scrollYProgress, [0, 1], [20, -20]);
   const mobileOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
 
-  // Mobile version with simple animations
+  // Mobile version with visible animations
   if (isMobile) {
     return (
       <motion.div
         ref={ref}
         className={className}
         style={{
-          y: mobileY,
-          opacity: mobileOpacity
+          y: useTransform(scrollYProgress, [0, 1], [50, -50]),
+          scale: useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]),
+          opacity: useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.7, 1, 1, 0.7]),
+          position: 'relative'
         }}
       >
         {children}
@@ -102,6 +117,7 @@ const Scroll3D = ({ children, className, variant = 'parallaxDepth' }) => {
       style={{
         transformStyle: 'preserve-3d',
         perspective: '1200px',
+        position: 'relative',
         ...currentVariant
       }}
     >

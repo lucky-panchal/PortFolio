@@ -30,58 +30,11 @@ const Social = () => {
             })
             .catch(() => {});
 
-        // Fetch GitHub commit count for the year (public events)
-        const fetchCommits = async () => {
-            const year = new Date().getFullYear();
-            let page = 1;
-            let totalCommits = 0;
-            let keepFetching = true;
+        // Set commit count (manual due to API rate limits)
+        setGithubStats(prev => ({ ...prev, commits: 150 }));
 
-            while (keepFetching) {
-                const response = await fetch(
-                    `https://api.github.com/users/${GITHUB_USERNAME}/events/public?page=${page}`
-                );
-                const events = await response.json();
-                if (!Array.isArray(events) || events.length === 0) break;
-
-                const yearCommits = events.filter(
-                    (event) =>
-                        event.type === 'PushEvent' &&
-                        new Date(event.created_at).getFullYear() === year
-                );
-
-                totalCommits += yearCommits.reduce(
-                    (sum, event) => sum + (event.payload.commits ? event.payload.commits.length : 0),
-                    0
-                );
-
-                // Stop if events are not from this year
-                if (
-                    events.some(
-                        (event) => new Date(event.created_at).getFullYear() !== year
-                    )
-                ) {
-                    keepFetching = false;
-                } else {
-                    page += 1;
-                }
-            }
-            setGithubStats(prev => ({ ...prev, commits: totalCommits }));
-        };
-        fetchCommits();
-
-        // Fetch Instagram followers using web scraping approach
-        fetch(`https://www.instagram.com/luckyp4nch4l/`)
-            .then(res => res.text())
-            .then(html => {
-                                                const match = html.match(/"edge_followed_by":\{"count":(\d+)\}/)
-                if (match) {
-                    setInstagramFollowers(parseInt(match[1]));
-                } else {
-                    setInstagramFollowers(600); // fallback
-                }
-            })
-            .catch(() => setInstagramFollowers(600));
+        // Set Instagram followers (manual count due to CORS restrictions)
+        setInstagramFollowers(600);
 
         // Set LinkedIn followers (manual - no public API)
         setLinkedinFollowers(3000);
