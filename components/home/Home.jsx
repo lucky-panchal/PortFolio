@@ -4,6 +4,7 @@ import "./home.css";
 import Social from './Social';
 import Data from './Data';
 import ScrollDown from './ScrollDown';
+import ProfilePic from '../../src/assets/profile-pic.png';
 
 
 const Home = () => {
@@ -53,7 +54,7 @@ const Home = () => {
                 <Social />
 
                 <div className="home__img-wrapper">
-                  <img src="/src/assets/profile-pic.png" alt="Profile" className="home__img" />
+                  <img src={ProfilePic} alt="Profile" className="home__img" />
                 </div>
 
                 <Data />
