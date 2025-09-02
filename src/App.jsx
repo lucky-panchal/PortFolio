@@ -14,6 +14,7 @@ import Footer from '../components/footer/Footer';
 import ScrollUp from '../components/scrollup/ScrollUp';
 import CustomCursor from './components/cursor/CustomCursor';
 import Social from '../components/social/Social';
+import GitHubStats from '../components/githubstats/GitHubStats';
 import Scroll3D from './components/scroll3d/Scroll3D';
 import ScrollReveal from './components/ScrollReveal/ScrollReveal';
 
@@ -23,51 +24,60 @@ function App() {
       <CustomCursor />
       <Header />
       <main className='main'>
-        <Scroll3D variant="parallaxDepth">
+        <Scroll3D variant="fadeUp">
           <Home />
         </Scroll3D>
         <ScrollReveal>
-          <Scroll3D variant="rotationTransition">
+          <Scroll3D variant="slideDown">
             <Work />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <Scroll3D variant="rotationTransition">
+          <Scroll3D variant="slideLeft">
             <Skills />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
-          <Scroll3D variant="slideCube">
+          <Scroll3D variant="slideRight">
             <Experience />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <Scroll3D variant="parallaxDepth">
+          <Scroll3D variant="zoomIn">
             <Qualification />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
-          <Scroll3D variant="rotationTransition">
+          <Scroll3D variant="zoomOut">
             <About />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <Scroll3D variant="rotationTransition">
+          <Scroll3D variant="flip">
             <Testimonials />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
-          <Scroll3D variant="slideCube">
+          <Scroll3D variant="bounce">
             <Social />
           </Scroll3D>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <Scroll3D variant="parallaxDepth">
+          <Scroll3D variant="elastic">
+            <GitHubStats />
+          </Scroll3D>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <Scroll3D variant="slideUp">
             <Contact />
           </Scroll3D>
         </ScrollReveal>
       </main>
-      <Footer />
+      <ScrollReveal delay={0.1}>
+        <Scroll3D variant="fadeUp">
+          <Footer />
+        </Scroll3D>
+      </ScrollReveal>
       <ScrollUp />
     </>
   );
