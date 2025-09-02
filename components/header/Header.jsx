@@ -152,6 +152,20 @@ const Header = () => {
 
 						<li className='nav__item'>
 							<a
+								href='#githubstats'
+								onClick={(e) => { handleNavClick(e, '#githubstats'); setActiveNav('#githubstats'); }}
+								className={
+									activeNav === '#githubstats'
+										? 'nav__link active-link'
+										: 'nav__link'
+								}
+							>
+								<i className='bx bxl-github nav__icon'></i> GitHub
+							</a>
+						</li>
+
+						<li className='nav__item'>
+							<a
 								href='#contact'
 								onClick={(e) => { handleNavClick(e, '#contact'); setActiveNav('#contact'); }}
 								className={
