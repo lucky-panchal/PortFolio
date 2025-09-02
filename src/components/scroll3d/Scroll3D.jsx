@@ -135,8 +135,11 @@ const Scroll3D = ({ children, className, variant = 'fadeUp' }) => {
         whileInView={mobileAnimate}
         viewport={{ once: true, amount: 0.3 }}
         transition={{
-          duration: 0.6,
-          ease: [0.25, 0.46, 0.45, 0.94]
+          duration: 0.9,
+          ease: [0.16, 1, 0.3, 1],
+          type: "spring",
+          stiffness: 100,
+          damping: 15
         }}
       >
         {children}
@@ -153,8 +156,8 @@ const Scroll3D = ({ children, className, variant = 'fadeUp' }) => {
         transformOrigin: 'center center'
       }}
       transition={{
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1]
       }}
     >
       {children}
