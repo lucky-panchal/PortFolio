@@ -1,11 +1,11 @@
 # 🚀 Lacki Lohar's Developer Portfolio
 
 
-Welcome to my personal developer portfolio — a sleek, interactive, and dynamic website that gives you a deep dive into who I am, what I build, and how I think. Built with passion and precision, this project showcases not only my skills but also my creativity in building web experiences.
+Welcome to my personal developer portfolio — a cutting-edge, interactive, and visually stunning website that showcases modern web development at its finest. Built with passion and precision, this project demonstrates advanced animations, dynamic effects, and professional UI/UX design.
 
 ---
 
-## 🧑‍💻 About Me
+## 🧑💻 About Me
 
 **Name:** Lacki Lohar 
 **Title:** Jr. Software Developer  
@@ -15,12 +15,27 @@ Passionate Engineering Graduate, self-starter, quick learner, and adapt at using
 
 ---
 
-## ✨ Features
+## ✨ Advanced Features
 
-- 🌀 **Framer Motion** — Smooth animations & transitions to give a dynamic feel to the site.
-- 🖱️ **Say Hello Button** — Instantly book a 1:1 meeting with me.
-- 🌗 **Dark Mode Toggle** — Because your eyes deserve the choice.
-- ⚡ Fully responsive layout and stylish UI.
+### 🎨 **Visual Effects & Animations**
+- 🌊 **Matrix Particle System** — Dynamic floating tech skills with collision detection
+- 💎 **Diamond-Shaped Navbar** — Unique hexagonal design with burning glow effects
+- 🔥 **Interactive Hover Effects** — Animated burning glow on navbar hover
+- 🎯 **Smart Navbar Animations** — Minimizes between sections, maximizes on content
+- 🌈 **Theme-Adaptive Particles** — Green for dark mode, professional gray for light mode
+
+### 🚀 **Navigation & UX**
+- 🎯 **Perfect Section Centering** — Navbar clicks center sections perfectly
+- 🔄 **Smooth Scroll Behavior** — Enhanced navigation with animation resume
+- 📱 **Mobile Optimized** — Disabled zoom/pinch, full-screen coverage
+- 🌗 **Advanced Theme Toggle** — Complete background and particle color adaptation
+- ⚡ **Responsive Design** — Optimized for all screen sizes
+
+### 🎮 **Interactive Elements**
+- 🖱️ **Say Hello Button** — Instantly book a 1:1 meeting with me
+- 🎨 **Dynamic Color Schemes** — Professional colors that adapt to themes
+- 💫 **Particle Collision System** — Particles avoid overlapping main content
+- 🔥 **Burning Navbar Effects** — Multi-layer glow animations
 
 ---
 
@@ -30,7 +45,7 @@ Passionate Engineering Graduate, self-starter, quick learner, and adapt at using
 - 📁 **Projects**
 - 🛠️ **Skills**
 - 💼 **Experience**
-- 🧑‍🎓 **About**
+- 🧑🎓 **About**
 - 📬 **Contact Me**
 
 Each section is carefully crafted to tell my story and showcase my journey.
@@ -39,12 +54,50 @@ Each section is carefully crafted to tell my story and showcase my journey.
 
 ## 🔧 Tech Stack
 
-- **React.js**
-- **Framer Motion**
-- **Tailwind CSS**
-- **JavaScript / HTML / CSS**
-- **EmailJS** for direct contact
-- **React Icons** for a modern feel
+### **Frontend Framework**
+- **React.js** — Component-based architecture
+- **JavaScript ES6+** — Modern JavaScript features
+- **HTML5 & CSS3** — Semantic markup and advanced styling
+
+### **Styling & Animations**
+- **Custom CSS** — Advanced animations and effects
+- **CSS Grid & Flexbox** — Modern layout systems
+- **CSS Animations** — Keyframe animations and transitions
+- **Responsive Design** — Mobile-first approach
+
+### **Interactive Features**
+- **Canvas API** — Matrix particle system
+- **Intersection Observer** — Scroll-based animations
+- **Custom Hooks** — Reusable React logic
+- **Event Handling** — Advanced user interactions
+
+### **Tools & Libraries**
+- **EmailJS** — Direct contact functionality
+- **React Icons** — Modern iconography
+- **Boxicons** — Additional icon library
+- **Git** — Version control
+
+---
+
+## 🎯 Key Highlights
+
+### **🎨 Visual Innovation**
+- Matrix-style particle system with 100+ floating tech skills
+- Diamond-shaped navbar with burning glow effects
+- Theme-adaptive color schemes (light/dark modes)
+- Professional particle collision detection
+
+### **🚀 Performance Optimized**
+- Mobile-optimized particle counts (100 mobile, 120 desktop)
+- Smooth 60fps animations
+- Efficient canvas rendering
+- Responsive design for all devices
+
+### **💡 User Experience**
+- Smart navbar that adapts to scroll position
+- Perfect section centering on navigation
+- Disabled mobile zoom for consistent experience
+- Smooth scroll behavior with animation resume
 
 ---
 
@@ -62,11 +115,10 @@ Each section is carefully crafted to tell my story and showcase my journey.
 
 ---
 
-## 🤘 Let’s Build Something Cool Together!
+## 🤘 Let's Build Something Cool Together!
 
 Thanks for stopping by. Feel free to fork this project, raise issues, or drop a star ⭐️ if you like it!
 
 ---
 
 > Built with ❤️ by **Lucky Panchal**
-
