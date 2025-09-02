@@ -3,8 +3,12 @@ import './Header.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Header = () => {
+	const [isNavigating, setIsNavigating] = useState(false);
+
 	useEffect(() => {
 		const handleScroll = () => {
+			if (isNavigating) return; // Skip animation during navigation
+			
 			const header = document.querySelector('.header');
 			const homeSection = document.querySelector('#home');
 			const projectsSection = document.querySelector('#projects');
@@ -37,7 +41,22 @@ const Header = () => {
 
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [isNavigating]);
+
+	const handleNavClick = (e, targetId) => {
+		e.preventDefault();
+		setIsNavigating(true);
+		
+		const targetSection = document.querySelector(targetId);
+		if (targetSection) {
+			targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			
+			// Re-enable animations after navigation completes
+			setTimeout(() => {
+				setIsNavigating(false);
+			}, 1000);
+		}
+	};
 
 	const [Toggle, showMenu] = useState(false);
 	const [activeNav, setActiveNav] = useState('#home');
@@ -54,7 +73,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#home'
-								onClick={() => setActiveNav('#home')}
+								onClick={(e) => { handleNavClick(e, '#home'); setActiveNav('#home'); }}
 								className={
 									activeNav === '#home' ? 'nav__link active-link' : 'nav__link'
 								}
@@ -66,7 +85,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#projects'
-								onClick={() => setActiveNav('#projects')}
+								onClick={(e) => { handleNavClick(e, '#projects'); setActiveNav('#projects'); }}
 								className={
 									activeNav === '#projects'
 										? 'nav__link active-link'
@@ -80,7 +99,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#skills'
-								onClick={() => setActiveNav('#skills')}
+								onClick={(e) => { handleNavClick(e, '#skills'); setActiveNav('#skills'); }}
 								className={
 									activeNav === '#skills'
 										? 'nav__link active-link'
@@ -94,7 +113,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#experience'
-								onClick={() => setActiveNav('#experience')}
+								onClick={(e) => { handleNavClick(e, '#experience'); setActiveNav('#experience'); }}
 								className={
 									activeNav === '#experience'
 										? 'nav__link active-link'
@@ -108,7 +127,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#about'
-								onClick={() => setActiveNav('#about')}
+								onClick={(e) => { handleNavClick(e, '#about'); setActiveNav('#about'); }}
 								className={
 									activeNav === '#about' ? 'nav__link active-link' : 'nav__link'
 								}
@@ -120,7 +139,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#social'
-								onClick={() => setActiveNav('#social')}
+								onClick={(e) => { handleNavClick(e, '#social'); setActiveNav('#social'); }}
 								className={
 									activeNav === '#social'
 										? 'nav__link active-link'
@@ -134,7 +153,7 @@ const Header = () => {
 						<li className='nav__item'>
 							<a
 								href='#contact'
-								onClick={() => setActiveNav('#contact')}
+								onClick={(e) => { handleNavClick(e, '#contact'); setActiveNav('#contact'); }}
 								className={
 									activeNav === '#contact'
 										? 'nav__link active-link'
