@@ -160,7 +160,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='bx bxl-github nav__icon'></i> GitHub
+								<i className='uil uil-github nav__icon'></i> GitHub
 							</a>
 						</li>
 
