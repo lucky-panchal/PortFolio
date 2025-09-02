@@ -46,20 +46,6 @@ const Social = () => {
 
     const socialLinks = [
         {
-            name: "GitHub",
-            icon: "bx bxl-github",
-            url: "https://github.com/lucky-panchal",
-            color: "#333",
-            stats: '',
-            extra: (
-                <div className="github-stats-images" style={{ marginTop: '1rem' }}>
-                    <img src={`https://github-readme-stats.vercel.app/api?username=lucky-panchal&theme=${githubStatsTheme}&hide_border=true&show_icons=true&title_color=00BFAE&icon_color=FFD600&count_private=true`} width="320" alt="GitHub Stats" style={{ maxWidth: '100%', borderRadius: 8 }} />
-                    <img src={`https://github-readme-streak-stats.herokuapp.com/?user=lucky-panchal&theme=${githubStatsTheme}&hide_border=true`} width="320" alt="GitHub Streak" style={{ maxWidth: '100%', borderRadius: 8 }} />
-                    <img src={`https://github-readme-stats.vercel.app/api/top-langs/?username=lucky-panchal&langs_count=7&theme=${githubStatsTheme}&layout=compact&hide_border=true`} width="340" alt="Top Languages" style={{ maxWidth: '100%', borderRadius: 8 }} />
-                </div>
-            )
-        },
-        {
             name: "LinkedIn",
             icon: "bx bxl-linkedin",
             url: "https://www.linkedin.com/in/lacki-lohar-463a23321",
@@ -94,8 +80,6 @@ const Social = () => {
                             </div>
                             <p className="social__stats">{social.stats}</p>
                             {social.extra}
-                            {/* Add spacing only for GitHub card */}
-                            {social.name === 'GitHub' && <div style={{ height: '1.5rem' }} />}
                             <a 
                                 href={social.url} 
                                 target="_blank" 
