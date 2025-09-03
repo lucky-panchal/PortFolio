@@ -115,16 +115,16 @@ const Data = () => {
       
       <div className="stats-preview">
         <div className="stat-item">
-          <span className="stat-number">15+</span>
+          <span className="stat-number">5+</span>
           <span className="stat-label">Projects</span>
         </div>
         <div className="stat-item">
-          <span className="stat-number">2+</span>
-          <span className="stat-label">Years Exp</span>
+          <span className="stat-number">1+</span>
+          <span className="stat-label">Year Learning</span>
         </div>
         <div className="stat-item">
-          <span className="stat-number">100%</span>
-          <span className="stat-label">Dedicated</span>
+          <span className="stat-number">300+</span>
+          <span className="stat-label">Commits</span>
         </div>
       </div>
 
