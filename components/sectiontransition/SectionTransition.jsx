@@ -22,7 +22,13 @@ const SectionTransition = () => {
     <div 
       className="fire-glow-line permanent"
       style={{ top: `${linePosition}px` }}
-    />
+    >
+      <div className="gas-particle"></div>
+      <div className="gas-particle"></div>
+      <div className="gas-particle"></div>
+      <div className="gas-particle"></div>
+      <div className="gas-particle"></div>
+    </div>
   );
 };
 
