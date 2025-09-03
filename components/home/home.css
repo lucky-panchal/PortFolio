@@ -253,7 +253,7 @@
 
 .home__content {
     grid-template-columns: 116px repeat(2, 1fr);
-    padding-top: 8rem;
+    padding-top: 0;
     column-gap: 3rem;
     align-items: center;
     max-width: 1200px;
@@ -262,6 +262,7 @@
     z-index: 2;
     min-height: 100vh;
     padding-bottom: 4rem;
+    transform: translateY(-2rem);
 }
 
 .home__social {
@@ -780,7 +781,7 @@
     
     .home__content {
         grid-template-columns: 0.5fr 3fr;
-        padding-top: 6rem;
+        padding-top: 2.5rem;
         gap: 2.5rem;
         padding-bottom: 4rem;
         min-height: 100vh;
