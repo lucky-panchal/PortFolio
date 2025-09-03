@@ -15,6 +15,7 @@ import ScrollUp from '../components/scrollup/ScrollUp';
 import CustomCursor from './components/cursor/CustomCursor';
 import Social from '../components/social/Social';
 import GitHubStats from '../components/githubstats/GitHubStats';
+import SectionTransition from '../components/sectiontransition/SectionTransition';
 import Scroll3D from './components/scroll3d/Scroll3D';
 import ScrollReveal from './components/ScrollReveal/ScrollReveal';
 
@@ -23,6 +24,7 @@ function App() {
     <>
       <CustomCursor />
       <Header />
+      <SectionTransition />
       <main className='main'>
         <Scroll3D variant="fadeUp">
           <Home />
