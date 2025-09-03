@@ -139,11 +139,11 @@
 .nav__list {
     display: flex;
     align-items: center; 
-    gap: 1.2rem;
+    gap: 1rem;
     padding: 0 0.5rem;
     margin: 0;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     min-width: min-content;
     transition: transform 0.3s ease;
 }
@@ -168,13 +168,12 @@
     color: #21262d;
     font-weight: var(--font-medium);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0.4rem 0.6rem;
+    padding: 0.25rem;
+    padding-bottom: 0.5rem;
     white-space: nowrap;
     overflow: visible;
     text-overflow: ellipsis;
     position: relative;
-    min-width: 60px;
-    text-align: center;
 }
 
 .nav__link::after {
@@ -217,13 +216,6 @@
 /* Fix Contact Me icon color consistency */
 .nav__link i {
     color: inherit;
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-}
-
-.nav__link span {
-    font-size: 0.75rem;
-    opacity: 0.9;
 }
 
 @media screen and (max-width: 768px) {
