@@ -76,7 +76,7 @@
     order: 1;
     justify-self: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
     margin: 0 auto;
 }
 
@@ -401,7 +401,7 @@
     }
 
     .home__img-wrapper {
-        max-width: 250px;
+        max-width: 280px;
     }
 
     .home__scroll {
@@ -425,7 +425,7 @@
     .home__img-wrapper {
         order: initial;
         justify-self: initial;
-        max-width: 200px;
+        max-width: 230px;
     }
 
     .home__data {
