@@ -73,11 +73,7 @@ function App() {
           </Scroll3D>
         </ScrollReveal>
       </main>
-      <ScrollReveal delay={0.1}>
-        <Scroll3D variant="fadeUp">
-          <Footer />
-        </Scroll3D>
-      </ScrollReveal>
+      <Footer />
       <ScrollUp />
     </>
   );
