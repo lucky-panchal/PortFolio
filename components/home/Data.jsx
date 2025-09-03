@@ -42,7 +42,7 @@ const Data = () => {
   }, [isAnimating]);
 
   const handleHover = () => {
-    setIsAnimating(true);
+    // Disabled to prevent layout issues
   };
 
   return (
@@ -58,7 +58,7 @@ const Data = () => {
           onMouseEnter={handleHover}
         >
           <span className="name-wrapper">
-            <span className="name-text">{displayText}</span>
+            <span className="name-text">Lacki Lohar</span>
             <div className="name-glow"></div>
             <div className="name-particles">
               <span></span>
