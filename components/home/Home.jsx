@@ -139,6 +139,20 @@ const Home = () => {
 
                 <div className="home__img-wrapper">
                   <img src={ProfilePic} alt="Profile" className="home__img" />
+                  <div className="home__img-overlay">
+                    <div className="overlay-content">
+                      <div className="overlay-icon">
+                        <i className="uil uil-code-branch"></i>
+                      </div>
+                      <div className="overlay-text">Let's Code Together!</div>
+                    </div>
+                  </div>
+                  <div className="code-particles">
+                    <span className="code-particle">&lt;/&gt;</span>
+                    <span className="code-particle">{}</span>
+                    <span className="code-particle">( )</span>
+                    <span className="code-particle">[ ]</span>
+                  </div>
                 </div>
 
                 <Data />
