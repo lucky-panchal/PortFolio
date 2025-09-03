@@ -48,11 +48,6 @@ const Data = () => {
   return (
     <div className="home__data">
       <div className="name-container">
-        <div className="name-badge">
-          <span className="badge-text">Available for Projects</span>
-          <div className="badge-dot"></div>
-        </div>
-        
         <h1 
           className="home__title font-bold enhanced-name"
           onMouseEnter={handleHover}
