@@ -28,7 +28,7 @@ const Home = () => {
 
     const createMatrix = () => {
       const isMobile = window.innerWidth <= 768;
-      const particleCount = isMobile ? 100 : 120;
+      const particleCount = isMobile ? 120 : 150;
       const speed = isMobile ? 1.5 : 2;
       
       for (let i = 0; i < particleCount; i++) {
@@ -55,17 +55,8 @@ const Home = () => {
         particle.x += particle.vx;
         particle.y += particle.vy;
         
-        // Content area boundaries (center area where text/image are)
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const contentWidth = isMobile ? canvas.width * 0.8 : canvas.width * 0.6;
-        const contentHeight = isMobile ? canvas.height * 0.7 : canvas.height * 0.6;
-        
-        // Check if particle is in content area
-        const inContentArea = particle.x > centerX - contentWidth/2 && 
-                             particle.x < centerX + contentWidth/2 && 
-                             particle.y > centerY - contentHeight/2 && 
-                             particle.y < centerY + contentHeight/2;
+        // Add slight drift for natural movement
+        particle.x += Math.sin(particle.y * 0.01) * 0.3;
         
         if (particle.x < -50 || particle.x > canvas.width + 50) {
           particle.x = Math.random() * canvas.width;
@@ -85,12 +76,10 @@ const Home = () => {
           particle.text = techSkills[Math.floor(Math.random() * techSkills.length)];
         }
         
-        // Only draw if not in content area
-        if (!inContentArea) {
-          const particleColor = isDark ? `rgba(0, 255, 65, ${particle.opacity + 0.3})` : `rgba(55, 65, 81, ${particle.opacity + 0.4})`;
-          ctx.fillStyle = particleColor;
-          ctx.fillText(particle.text, particle.x, particle.y);
-        }
+        // Draw particles with better transparency for background flow
+        const particleColor = isDark ? `rgba(0, 255, 65, ${particle.opacity * 0.6})` : `rgba(55, 65, 81, ${particle.opacity * 0.5})`;
+        ctx.fillStyle = particleColor;
+        ctx.fillText(particle.text, particle.x, particle.y);
       });
       
       animationId = requestAnimationFrame(drawMatrix);
