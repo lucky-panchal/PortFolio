@@ -128,7 +128,7 @@
 .home__content {
     grid-template-columns: 116px repeat(2, 1fr);
     padding-top: 5.5rem;
-    column-gap: 2rem;
+    column-gap: 3rem;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -139,9 +139,10 @@
 .home__social {
     display: grid;
     grid-template-columns: max-content;
-    row-gap: 1.5rem;
+    row-gap: 1.8rem;
     position: relative;
     z-index: 10;
+    margin-right: 1rem;
 }
 
 .home__social-icon {
@@ -376,7 +377,7 @@
 @media screen and (max-width: 992px) {
     .home__content {
         grid-template-columns: 100px repeat(2, 1fr);
-        column-gap: 1.25rem;
+        column-gap: 2rem;
         padding-top: 4rem;
     }
 
@@ -418,7 +419,7 @@
     .home__content {
         grid-template-columns: 0.5fr 3fr;
         padding-top: 1rem;
-        gap: 2rem;
+        gap: 2.5rem;
         padding-bottom: 2rem;
     }
 
