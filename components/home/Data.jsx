@@ -117,11 +117,6 @@ const Data = () => {
             ></path>
           </svg>
         </h1>
-        
-        <div className="typing-indicator">
-          <span className="typing-text">Currently coding amazing projects...</span>
-          <div className="typing-cursor"></div>
-        </div>
       </div>
 
       <h3 className="home__subtitle enhanced-subtitle">

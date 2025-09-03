@@ -447,6 +447,7 @@
     font-weight: 800;
     transition: all 0.4s ease;
     text-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+    white-space: nowrap;
 }
 
 [data-theme="dark"] .name-text {
@@ -457,7 +458,7 @@
 }
 
 .enhanced-name:hover .name-text {
-    transform: scale(1.05);
+    transform: scale(1.02);
     filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.6));
 }
 
