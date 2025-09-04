@@ -1,21 +1,69 @@
+<div align="center">
+
 # 🚀 Lacki Lohar - Portfolio Website
 
-A modern, interactive portfolio website showcasing my journey as a software developer. Built with React.js and featuring stunning animations, responsive design, and dynamic content.
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=22C55E&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;React.js+Enthusiast;UI%2FUX+Designer;Open+Source+Contributor;Always+Learning+New+Tech" alt="Typing SVG" />
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" /></a>
+  <a href="https://github.com/lucky-panchal"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <a href="https://cal.com/lucky-panchal-qckdio"><img src="https://img.shields.io/badge/Book_Meeting-22C55E?style=for-the-badge&logo=calendar&logoColor=white" /></a>
+</p>
+
+---
+
+### 🌟 A modern, interactive portfolio website showcasing my journey as a software developer
+### ✨ Built with React.js and featuring stunning animations, responsive design, and dynamic content
+
+</div>
+
+<div align="center">
+
+## 🎯 **Live Demo**
+
+<a href="#">
+  <img src="https://img.shields.io/badge/🌐_Visit_Portfolio-22C55E?style=for-the-badge&logoColor=white" height="50" />
+</a>
+
+<img src="https://github-readme-stats.vercel.app/api?username=lucky-panchal&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=22C55E&icon_color=22C55E" />
+
+</div>
+
+---
 
 ## ✨ Features
 
 ### 🎨 **Interactive Design**
-- **Animated Name Effects** - Gradient text with glow animations and floating particles
-- **Profile Image Overlay** - "Let's Code Together!" message with code particles
-- **Compelling CTA Button** - "Let's Build Together" with pulse animations and shimmer effects
-- **Social Media Icons** - Brand-specific hover animations (GitHub, LinkedIn, Instagram)
+```css
+🌈 Animated Name Effects     → Gradient text with glow animations
+💫 Profile Image Overlay     → "Let's Code Together!" message  
+🚀 Compelling CTA Button     → "Let's Build Together" with pulse
+📱 Social Media Icons        → Brand-specific hover animations
+✨ Particle System          → Free-flowing background particles
+🎭 Theme Transitions         → Smooth dark/light mode switching
+```
 
 ### 📊 **GitHub Integration**
-- **Live GitHub Stats** - Real-time statistics from GitHub API
-- **Contribution Graph** - Animated contribution activity with glow effects
-- **Top Languages** - Dynamic language usage visualization
-- **Achievement Trophies** - GitHub achievements display
-- **Tech Stack Showcase** - Interactive technology badges
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=lucky-panchal&bg_color=0d1117&color=22c55e&line=22c55e&point=ffffff&area=true&hide_border=true" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lucky-panchal&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=22C55E" />
+
+</div>
+
+- 📈 **Live GitHub Stats** - Real-time statistics from GitHub API
+- 🔥 **Contribution Graph** - Animated contribution activity with glow effects
+- 🏆 **Achievement Trophies** - GitHub achievements display
+- 💻 **Tech Stack Showcase** - Interactive technology badges
 
 ### 🌟 **Advanced Animations**
 - **Particle System** - Free-flowing background particles
@@ -36,7 +84,13 @@ A modern, interactive portfolio website showcasing my journey as a software deve
 - **Smooth Navigation** - Seamless scrolling between sections
 - **Dark/Light Theme** - Toggle between themes with persistence
 
+<div align="center">
+
 ## 🛠️ Tech Stack
+
+<img src="https://skillicons.dev/icons?i=react,js,html,css,git,github,vscode" />
+
+</div>
 
 ### **Frontend**
 - **React.js** - Component-based UI library
@@ -58,6 +112,18 @@ A modern, interactive portfolio website showcasing my journey as a software deve
 - **Git** - Version control
 - **GitHub** - Code repository and deployment
 - **VS Code** - Development environment
+
+<div align="center">
+
+## 📈 GitHub Stats
+
+<img src="https://github-profile-trophy.vercel.app/?username=lucky-panchal&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=2&column=3" />
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=lucky-panchal&theme=radical&hide_border=true&background=0D1117" />
+
+</div>
+
+---
 
 ## 🚀 Getting Started
 
@@ -153,6 +219,20 @@ Portfolio/
 
 ## 🌟 Animations & Effects
 
+<div align="center">
+
+### ✨ **Visual Showcase**
+
+```
+🎭 CSS Animations        🎨 Interactive Elements     🚀 Performance
+├─ Keyframe transitions  ├─ Hover transformations    ├─ 60fps animations
+├─ Cubic-bezier easing   ├─ Click feedback          ├─ Lazy loading
+├─ Staggered delays      ├─ Scroll triggers         └─ Optimized assets
+└─ Transform & filters   └─ Theme transitions
+```
+
+</div>
+
 ### **CSS Animations**
 - `@keyframes` for smooth transitions
 - `transform` and `filter` properties
@@ -215,8 +295,38 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Design inspiration from modern portfolio trends
 - Open source community for tools and libraries
 
+<div align="center">
+
 ---
 
-⭐ **Star this repository if you found it helpful!**
+### 🌟 **Show Your Support**
 
-Built with ❤️ by [Lacki Lohar](https://github.com/lucky-panchal)
+<a href="#">
+  <img src="https://img.shields.io/badge/⭐_Star_This_Repo-FFD700?style=for-the-badge&logoColor=black" height="40" />
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/🍴_Fork_Project-22C55E?style=for-the-badge&logoColor=white" height="40" />
+</a>
+<a href="https://cal.com/lucky-panchal-qckdio">
+  <img src="https://img.shields.io/badge/📅_Book_Meeting-FF5722?style=for-the-badge&logoColor=white" height="40" />
+</a>
+
+### 💫 **Connect With Me**
+
+<a href="https://github.com/lucky-panchal">
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="#">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=1000&color=22C55E&center=true&vCenter=true&width=400&lines=Thanks+for+visiting!;Let's+build+something+amazing!;Always+open+to+collaborate" alt="Typing SVG" />
+
+**Built with ❤️ by [Lacki Lohar](https://github.com/lucky-panchal)**
+
+<img src="https://komarev.com/ghpvc/?username=lucky-panchal&color=22c55e&style=for-the-badge" />
+
+</div>
