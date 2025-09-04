@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/🌐_Live_Portfolio-FF5722?style=for-the-badge&logoColor=white" /></a>
+  <a href="https://lackilohar.netlify.app"><img src="https://img.shields.io/badge/🌐_Live_Portfolio-FF5722?style=for-the-badge&logoColor=white" /></a>
   <a href="https://github.com/lucky-panchal"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
   <a href="https://cal.com/lucky-panchal-qckdio"><img src="https://img.shields.io/badge/📅_Book_Meeting-22C55E?style=for-the-badge&logo=calendar&logoColor=white" /></a>
 </p>
@@ -38,7 +38,7 @@
 
 ## 🎯 **Live Demo & Quick Stats**
 
-<a href="#">
+<a href="https://lackilohar.netlify.app">
   <img src="https://img.shields.io/badge/🌐_Visit_Portfolio-22C55E?style=for-the-badge&logoColor=white" height="50" />
 </a>
 <a href="https://cal.com/lucky-panchal-qckdio">
@@ -392,14 +392,10 @@ yarn build
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 📞 Contact
 
 **Lacki Lohar**
-- 🌐 Portfolio: [Live Demo Link]
+- 🌐 Portfolio: [lackilohar.netlify.app](https://lackilohar.netlify.app)
 - 💼 LinkedIn: [lacki-lohar-463a23321](https://linkedin.com/in/lacki-lohar-463a23321)
 - 🐱 GitHub: [@lucky-panchal](https://github.com/lucky-panchal)
 - 📧 Email: luckykanti31122006@gmail.com
@@ -417,10 +413,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 🌟 **Show Your Support**
 
-<a href="#">
+<a href="https://github.com/lucky-panchal/PortFolio">
   <img src="https://img.shields.io/badge/⭐_Star_This_Repo-FFD700?style=for-the-badge&logoColor=black" height="40" />
 </a>
-<a href="#">
+<a href="https://github.com/lucky-panchal/PortFolio/fork">
   <img src="https://img.shields.io/badge/🍴_Fork_Project-22C55E?style=for-the-badge&logoColor=white" height="40" />
 </a>
 <a href="https://cal.com/lucky-panchal-qckdio">
@@ -449,7 +445,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 📧 Email: luckykanti31122006@gmail.com
 📱 WhatsApp: +91 7425875484
-🌐 Portfolio: [Live Demo Link]
+🌐 Portfolio: https://lackilohar.netlify.app
 📅 Schedule: cal.com/lucky-panchal-qckdio
 ```
 
