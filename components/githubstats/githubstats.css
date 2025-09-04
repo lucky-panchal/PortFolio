@@ -46,36 +46,89 @@
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
-    animation: waveFlow 4s linear infinite;
+    background: linear-gradient(90deg, 
+        rgba(34, 197, 94, 0.1) 0%,
+        rgba(34, 197, 94, 0.3) 50%,
+        rgba(34, 197, 94, 0.1) 100%
+    );
+    clip-path: polygon(0 0, 0% 100%, 0% 100%, 0 0);
+    animation: commitWave 10s ease-in-out infinite;
     z-index: 1;
     pointer-events: none;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] .githubstats__graph::before {
+    background: linear-gradient(90deg, 
+        rgba(34, 197, 94, 0.15) 0%,
+        rgba(34, 197, 94, 0.4) 50%,
+        rgba(34, 197, 94, 0.15) 100%
+    );
+}
+
+.githubstats__graph::after {
+    content: '💻';
+    position: absolute;
+    top: 20%;
+    left: 0;
+    font-size: 16px;
+    animation: commitJourney 10s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.6));
 }
 
 .githubstats__graph img {
     position: relative;
     z-index: 0;
-    animation: graphFloat 6s ease-in-out infinite;
 }
 
-@keyframes waveFlow {
+@keyframes commitWave {
     0% {
-        left: -100%;
+        clip-path: polygon(0 0, 0% 100%, 0% 100%, 0 0);
     }
-    100% {
-        left: 100%;
-    }
-}
-
-@keyframes graphFloat {
-    0%, 100% {
-        transform: translateY(0);
+    25% {
+        clip-path: polygon(0 0, 25% 80%, 25% 100%, 0 100%);
     }
     50% {
-        transform: translateY(-5px);
+        clip-path: polygon(0 0, 50% 60%, 50% 100%, 0 100%);
+    }
+    75% {
+        clip-path: polygon(0 0, 75% 40%, 75% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes commitJourney {
+    0% {
+        left: 0;
+        top: 80%;
+        transform: scale(1);
+    }
+    25% {
+        left: 25%;
+        top: 60%;
+        transform: scale(1.2);
+    }
+    50% {
+        left: 50%;
+        top: 40%;
+        transform: scale(1.1);
+    }
+    75% {
+        left: 75%;
+        top: 20%;
+        transform: scale(1.3);
+    }
+    100% {
+        left: 95%;
+        top: 10%;
+        transform: scale(1);
     }
 }
 
