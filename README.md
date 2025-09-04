@@ -413,7 +413,7 @@ yarn build
 
 ### 🌟 **Show Your Support**
 
-<a href="https://github.com/lucky-panchal/PortFolio">
+<a href="https://github.com/lucky-panchal/PortFolio/stargazers">
   <img src="https://img.shields.io/badge/⭐_Star_This_Repo-FFD700?style=for-the-badge&logoColor=black" height="40" />
 </a>
 <a href="https://github.com/lucky-panchal/PortFolio/fork">
