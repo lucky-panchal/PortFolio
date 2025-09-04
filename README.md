@@ -398,8 +398,8 @@ yarn build
 **Lacki Lohar**
 - 🌐 Portfolio: [Live Demo](https://lackilohar.netlify.app)
 - 💼 LinkedIn: [lacki-lohar-463a23321](https://linkedin.com/in/lacki-lohar-463a23321)
-- 🐱 GitHub: [@lucky-panchal](https://github.com/lucky-panchal)
-- 📧 Email: [mailto:](luckykanti31122006@gmail.com)
+- 🐱 Instagram: [@luckyp4nch4l](https://www.instagram.com/luckyp4nch4l)
+
 
 ## 🙏 Acknowledgments
 
