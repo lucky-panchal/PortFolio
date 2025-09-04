@@ -399,10 +399,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Lacki Lohar**
-- 🌐 Portfolio: [Live Demo Link]
+- 🌐 Portfolio: [Live Demo Link](https://lackilohar.netlify.app)
 - 💼 LinkedIn: [lacki-lohar-463a23321](https://linkedin.com/in/lacki-lohar-463a23321)
 - 🐱 GitHub: [@lucky-panchal](https://github.com/lucky-panchal)
-- 📧 Email: luckykanti31122006@gmail.com
+- 📧 Email: [mailto:](luckykanti31122006@gmail.com)
 
 ## 🙏 Acknowledgments
 
@@ -449,7 +449,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 📧 Email: luckykanti31122006@gmail.com
 📱 WhatsApp: +91 7425875484
-🌐 Portfolio: [Live Demo Link]
+🌐 Portfolio : https://lackilohar.netlify.app
 📅 Schedule: cal.com/lucky-panchal-qckdio
 ```
 
