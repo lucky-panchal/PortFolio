@@ -26,8 +26,9 @@
 }
 
 .githubstats__row .githubstats__card {
-    flex: 0 1 400px;
-    max-width: 400px;
+    flex: 0 1 500px;
+    max-width: 500px;
+    min-height: 300px;
 }
 
 .githubstats__card:not(.githubstats__card--wide) {
@@ -98,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 200px;
+    min-height: 250px;
 }
 
 .githubstats__image img {
