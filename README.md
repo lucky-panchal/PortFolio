@@ -38,7 +38,7 @@
 
 ## 🎯 **Live Demo & Quick Stats**
 
-<a href="#https://lackilohar.netlify.app">
+<a href="https://lackilohar.netlify.app">
   <img src="https://img.shields.io/badge/🌐_Visit_Portfolio-22C55E?style=for-the-badge&logoColor=white" height="50" />
 </a>
 <a href="https://cal.com/lucky-panchal-qckdio">
