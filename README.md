@@ -392,14 +392,11 @@ yarn build
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📞 Contact
 
 **Lacki Lohar**
-- 🌐 Portfolio: [Live Demo Link](https://lackilohar.netlify.app)
+- 🌐 Portfolio: [Live Demo](https://lackilohar.netlify.app)
 - 💼 LinkedIn: [lacki-lohar-463a23321](https://linkedin.com/in/lacki-lohar-463a23321)
 - 🐱 GitHub: [@lucky-panchal](https://github.com/lucky-panchal)
 - 📧 Email: [mailto:](luckykanti31122006@gmail.com)
