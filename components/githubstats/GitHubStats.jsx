@@ -64,23 +64,6 @@ const GitHubStats = () => {
                         </div>
                     </div>
 
-                    {/* Middle Row: Contribution Graph */}
-                    <div className="githubstats__row">
-                        <div className="githubstats__card githubstats__card--wide githubstats__card--animated">
-                            <div className="githubstats__header">
-                                <i className="bx bx-git-branch githubstats__icon"></i>
-                                <h3>Contribution Activity</h3>
-                            </div>
-                            <div className="githubstats__image githubstats__graph">
-                                <img 
-                                    src={`https://github-readme-activity-graph.vercel.app/graph?username=lucky-panchal&bg_color=${theme === 'dark' ? '0d1117' : 'ffffff'}&color=22c55e&line=22c55e&point=ffffff&area=true&hide_border=true&custom_title=Lacki's%20Contribution%20Graph`}
-                                    alt="Contribution Graph"
-                                    loading="lazy"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
                     {/* Bottom Row: Coding Time & Tech Focus */}
                     <div className="githubstats__row">
                         <div className="githubstats__card">
@@ -118,6 +101,23 @@ const GitHubStats = () => {
                                 <span className="githubstats__tech-item">React Native</span>
                                 <span className="githubstats__tech-item">MongoDB</span>
                                 <span className="githubstats__tech-item">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Last Row: Contribution Graph */}
+                    <div className="githubstats__row">
+                        <div className="githubstats__card githubstats__card--wide githubstats__card--animated">
+                            <div className="githubstats__header">
+                                <i className="bx bx-git-branch githubstats__icon"></i>
+                                <h3>Contribution Activity</h3>
+                            </div>
+                            <div className="githubstats__image githubstats__graph">
+                                <img 
+                                    src={`https://github-readme-activity-graph.vercel.app/graph?username=lucky-panchal&bg_color=${theme === 'dark' ? '0d1117' : 'ffffff'}&color=22c55e&line=22c55e&point=ffffff&area=true&hide_border=true&custom_title=Lacki's%20Contribution%20Graph`}
+                                    alt="Contribution Graph"
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
                     </div>
