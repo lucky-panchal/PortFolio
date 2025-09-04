@@ -37,6 +37,21 @@
     min-height: 500px !important;
 }
 
+.githubstats__graph img {
+    animation: graphPulse 3s ease-in-out infinite;
+}
+
+@keyframes graphPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) saturate(1);
+    }
+    50% {
+        transform: scale(1.02);
+        filter: brightness(1.1) saturate(1.2);
+    }
+}
+
 .githubstats__card:not(.githubstats__card--wide) {
     justify-self: center;
     max-width: 400px;
