@@ -2,6 +2,7 @@
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .githubstats__container {
@@ -15,6 +16,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
+    justify-items: center;
 }
 
 .githubstats__card:not(.githubstats__card--wide) {
@@ -60,6 +62,7 @@
     grid-column: 1 / -1;
     max-width: none;
     width: 100%;
+    text-align: center;
 }
 
 .githubstats__header {
@@ -140,6 +143,7 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 0;
+    align-items: center;
 }
 
 .githubstats__metric {
@@ -167,6 +171,7 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     padding: 1rem 0;
+    justify-content: center;
 }
 
 .githubstats__tech-item {
