@@ -12,11 +12,22 @@
 }
 
 .githubstats__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
-    justify-items: center;
+}
+
+.githubstats__row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.githubstats__row .githubstats__card {
+    flex: 0 1 400px;
+    max-width: 400px;
 }
 
 .githubstats__card:not(.githubstats__card--wide) {
@@ -59,10 +70,10 @@
 }
 
 .githubstats__card--wide {
-    grid-column: 1 / -1;
     max-width: none;
     width: 100%;
     text-align: center;
+    flex: 1 1 100%;
 }
 
 .githubstats__header {
@@ -206,22 +217,20 @@
         padding: 3rem 0;
     }
     
-    .githubstats__grid {
-        grid-template-columns: 1fr;
+    .githubstats__row {
+        flex-direction: column;
+        align-items: center;
         gap: 1.5rem;
-        justify-items: center;
+    }
+    
+    .githubstats__row .githubstats__card {
+        flex: 1 1 100%;
+        max-width: 350px;
+        width: 100%;
     }
     
     .githubstats__card {
         padding: 1rem;
-        width: 100%;
-        max-width: 350px;
-    }
-    
-    .githubstats__card:nth-child(4),
-    .githubstats__card:nth-child(6) {
-        grid-column: 1;
-        max-width: 100%;
     }
     
     .githubstats__image {
