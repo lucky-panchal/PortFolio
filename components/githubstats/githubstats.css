@@ -270,6 +270,10 @@
         padding: 0.8rem 1.5rem;
         font-size: var(--small-font-size);
     }
+    
+    .githubstats__graph::after {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 480px) {
