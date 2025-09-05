@@ -121,22 +121,8 @@ const Data = () => {
       </h3>
       <p className="home__description">I'm a creative developer based in Ahmedabad, and I'm very passionate and dedicated to my work.</p>
       
-      <div className="stats-preview">
-        <div className="stat-item">
-          <span className="stat-number">5+</span>
-          <span className="stat-label">Projects</span>
-        </div>
-        <div className="stat-item">
-          <span className="stat-number">1+</span>
-          <span className="stat-label">Year Learning</span>
-        </div>
-        <div className="stat-item">
-          <span className="stat-number">300+</span>
-          <span className="stat-label">Commits</span>
-        </div>
-      </div>
-
-      <div className="cta-container">
+      {/* CTA Button - Hidden on mobile (max-width: 600px) */}
+      <div className="cta-container desktop-only">
         <div className="cta-pulse-ring"></div>
         <a href="https://cal.com/lucky-panchal-qckdio" className="cta-button" target="_blank" rel="noopener noreferrer">
           <div className="cta-content">
@@ -156,6 +142,18 @@ const Data = () => {
             <span></span>
             <span></span>
             <span></span>
+          </div>
+        </a>
+      </div>
+
+      {/* Mobile Meeting Button - Only visible on mobile (max-width: 600px) */}
+      <div className="mobile-meeting-button mobile-only">
+        <a href="https://cal.com/lucky-panchal-qckdio" className="mobile-cta-button" target="_blank" rel="noopener noreferrer">
+          <div className="mobile-cta-content">
+            <div className="mobile-cta-icon">
+              <i className="uil uil-calendar-alt"></i>
+            </div>
+            <span className="mobile-cta-text">Schedule Meeting</span>
           </div>
         </a>
       </div>
