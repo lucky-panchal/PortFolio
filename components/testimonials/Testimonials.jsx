@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './testimonial.css';
 import { Data } from './Data';
 import Scroll3D from '../../src/components/scroll3d/Scroll3D';
@@ -6,40 +6,70 @@ import Scroll3D from '../../src/components/scroll3d/Scroll3D';
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
+  const [isTyping, setIsTyping] = useState(false);
+  const typeIntervalRef = useRef(null);
+  const autoAdvanceRef = useRef(null);
+  const isChangingRef = useRef(false);
 
   useEffect(() => {
+    // Clear any existing intervals
+    if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
+    if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+
     const text = Data[currentIndex].description;
     setDisplayedText('');
     setIsTyping(true);
     
     let i = 0;
-    const typeInterval = setInterval(() => {
+    typeIntervalRef.current = setInterval(() => {
       if (i < text.length) {
         setDisplayedText(text.slice(0, i + 1));
         i++;
       } else {
         setIsTyping(false);
-        clearInterval(typeInterval);
+        clearInterval(typeIntervalRef.current);
         
         // Auto-advance after typing completes
-        setTimeout(() => {
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % Data.length);
-        }, 2000);
+        autoAdvanceRef.current = setTimeout(() => {
+          if (!isChangingRef.current) {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % Data.length);
+          }
+        }, 3000);
       }
     }, 50);
 
-    return () => clearInterval(typeInterval);
+    return () => {
+      if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
+      if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+    };
   }, [currentIndex]);
 
   const nextTestimonial = () => {
-    setIsTyping(false);
+    if (isChangingRef.current) return;
+    
+    isChangingRef.current = true;
+    if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
+    if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+    
     setCurrentIndex((prevIndex) => (prevIndex + 1) % Data.length);
+    
+    setTimeout(() => {
+      isChangingRef.current = false;
+    }, 100);
   };
 
   const prevTestimonial = () => {
-    setIsTyping(false);
+    if (isChangingRef.current) return;
+    
+    isChangingRef.current = true;
+    if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
+    if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+    
     setCurrentIndex((prevIndex) => (prevIndex - 1 + Data.length) % Data.length);
+    
+    setTimeout(() => {
+      isChangingRef.current = false;
+    }, 100);
   };
 
   return (
@@ -58,7 +88,7 @@ const Testimonials = () => {
               <div className="testimonial__image-container">
                 <img 
                   src={Data[currentIndex].image} 
-                  alt="" 
+                  alt={Data[currentIndex].title}
                   className="testimonial__img" 
                 />
               </div>
