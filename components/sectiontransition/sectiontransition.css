@@ -130,6 +130,12 @@
 
 @media screen and (max-width: 768px) {
   .fire-glow-line {
-    display: none;
+    height: 3px;
+  }
+  
+  .fire-glow-line::after {
+    top: -6px;
+    height: 15px;
+    filter: blur(6px);
   }
 }
