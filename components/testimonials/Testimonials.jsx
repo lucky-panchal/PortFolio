@@ -3,6 +3,7 @@ import './testimonial.css';
 import { Data } from './Data';
 import Scroll3D from '../../src/components/scroll3d/Scroll3D';
 
+
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
