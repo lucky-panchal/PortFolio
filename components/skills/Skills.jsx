@@ -4,6 +4,7 @@ import Frontend from './Frontend';
 import Coursework from './Coursework';
 import './skills.css'
 
+
 const Skills = () => {
   return (
     <section className="skills section" id="skills">
