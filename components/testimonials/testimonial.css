@@ -105,6 +105,7 @@
     right: 0;
 }
 
+
 @media screen and (max-width: 768px) {
     .testimonial__flex {
         flex-direction: column;
