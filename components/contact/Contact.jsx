@@ -2,8 +2,10 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './contact.css';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const Contact = () => {
+    const { t, language } = useTranslation();
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -17,57 +19,57 @@ const Contact = () => {
 
     return (
         <section className="contact section" id="contact">
-            <h2 className="section__title">Get In Touch 📩</h2>
-            <span className="section__subtitle">Ready to get started on your project? <br /> Contact me now for a Free consultation.</span>
+            <h2 className="section__title">{t('contactTitle')}</h2>
+            <span className="section__subtitle">{t('contactSubtitle')}</span>
 
             <div className="contact__container container grid">
                 <div className="contact__content">
-                    <h3 className="contact__title">Talk To Me<i className="uil uil-calling"></i></h3>
+                    <h3 className="contact__title">{t('talkToMe')}<i className="uil uil-calling"></i></h3>
 
                     <div className="contact__info">
 
                         <div className="contact__card">
                             <i className="bx bx-mail-send contact__card-icon"></i>
 
-                            <h3 className="contact__card-title">Email</h3>
+                            <h3 className="contact__card-title">{t('email')}</h3>
                             <span className="contact__card-data">luckykanti31122006@gmail.com</span>
 
-                            <a href="mailto:luckykanti31122006@gmail.com" className="contact__button">Write Me <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
+                            <a href="mailto:luckykanti31122006@gmail.com" className="contact__button">{t('writeMe')} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
                         </div>
 
                         <div className="contact__card">
                             <i className="bx bxl-whatsapp contact__card-icon"></i>
 
-                            <h3 className="contact__card-title">WhatsApp</h3>
+                            <h3 className="contact__card-title">{t('whatsapp')}</h3>
                             <span className="contact__card-data">(+91) 7425875484</span>
 
-                            <a href="https://api.whatsapp.com/send?phone=7425875484&text=Hello Lacki Lohar, I hope you're doing well. I would like to connect with you ❤️" className="contact__button">
-                                Write Me <i className="bx bx-right-arrow-alt contact__button-icon"></i>
+                            <a href={`https://api.whatsapp.com/send?phone=7425875484&text=Hello ${language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}, I hope you're doing well. I would like to connect with you ❤️`} className="contact__button">
+                                {t('writeMe')} <i className="bx bx-right-arrow-alt contact__button-icon"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className="contact__content">
-                    <h3 className="contact__title">Write Me Your Message<i className="uil uil-message"></i></h3>
+                    <h3 className="contact__title">{t('writeMessage')}<i className="uil uil-message"></i></h3>
 
                     <form ref={form} onSubmit={sendEmail} className="contact__form">
                         <div className="contact__form-div">
-                            <label className="contact__form-tag">Name</label>
-                            <input type="text" name='name' className='contact__form-input' placeholder='Insert Your Name' />
+                            <label className="contact__form-tag">{t('name')}</label>
+                            <input type="text" name='name' className='contact__form-input' placeholder={t('nameLabel')} />
                         </div>
 
                         <div className="contact__form-div">
-                            <label className="contact__form-tag">Mail</label>
-                            <input type="email" name='email' className='contact__form-input' placeholder='Your Email Address' />
+                            <label className="contact__form-tag">{t('mail')}</label>
+                            <input type="email" name='email' className='contact__form-input' placeholder={t('mailLabel')} />
                         </div>
 
                         <div className="contact__form-div contact__form-area">
-                            <label className="contact__form-tag">Message</label>
-                            <textarea name="message" cols="30" rows="10" className='contact__form-input' placeholder='Send a message to get started.'></textarea>
+                            <label className="contact__form-tag">{t('message')}</label>
+                            <textarea name="message" cols="30" rows="10" className='contact__form-input' placeholder={t('messageLabel')}></textarea>
                         </div>
 
                         <button className="button button--flex">
-                            Send Message
+                            {t('sendMessage')}
                             <svg
                                 className="button__icon"
                                 xmlns="http://www.w3.org/2000/svg"
