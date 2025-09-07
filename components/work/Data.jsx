@@ -4,11 +4,13 @@ import Work5 from '../../src/assets/Work5.png';
 import Work6 from '../../src/assets/Work6.jpg'
 
 export const projectsData = [
-
 	{
 		id: 1,
 		image: Work4,
-		title: 'PortFolio',
+		title: {
+			en: 'Portfolio',
+			hi: 'पोर्टफोलियो'
+		},
 		category: 'web',
 		demoUrl: 'https://lackilohar.netlify.app/',
 		status: 'completed',
@@ -16,22 +18,30 @@ export const projectsData = [
 	{
 		id: 2,
 		image: Work5,
-		title: 'Manorath- "The Future"',
+		title: {
+			en: 'Manorath- "The Future"',
+			hi: 'मनोरथ- "भविष्य"'
+		},
 		category: 'app',
 		status: 'development',
 	},
 	{
 		id: 3,
 		image: Work3,
-		title: 'WanderScape',
-		// demoUrl: 'https://github.com/lucky-panchal/WanderScape-backend.gi',
+		title: {
+			en: 'WanderScape',
+			hi: 'वंडरस्केप'
+		},
 		category: 'web',
 		status: 'development',
 	},
 	{
 		id: 4,
 		image: Work6,
-		title: 'Figma-Project',
+		title: {
+			en: 'Figma-Project',
+			hi: 'फिग्मा-प्रोजेक्ट'
+		},
 		category: 'web',		
 		status: 'coming_soon',
 	}
@@ -39,12 +49,21 @@ export const projectsData = [
 
 export const projectsNav = [
 	{
-		name: 'all',
+		name: {
+			en: 'all',
+			hi: 'सभी'
+		}
 	},
 	{
-		name: 'app',
+		name: {
+			en: 'app',
+			hi: 'ऐप'
+		}
 	},
 	{
-		name: 'web',
+		name: {
+			en: 'web',
+			hi: 'वेब'
+		}
 	},
 ];
