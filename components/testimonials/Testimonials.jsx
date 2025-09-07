@@ -91,14 +91,14 @@ const Testimonials = () => {
               <div className="testimonial__image-container">
                 <img 
                   src={Data[currentIndex].image} 
-                  alt={Data[currentIndex].title}
+                  alt={typeof Data[currentIndex].title === 'object' ? Data[currentIndex].title[language] : Data[currentIndex].title}
                   className="testimonial__img" 
                 />
               </div>
 
               <div className="testimonial__text-content">
                 <h3 className="testimonial__name">
-                  {Data[currentIndex].title}
+                  {typeof Data[currentIndex].title === 'object' ? Data[currentIndex].title[language] : Data[currentIndex].title}
                 </h3>
                 <p className="testimonial__description">
                   {displayedText}
