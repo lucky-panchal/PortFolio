@@ -4,12 +4,15 @@ import "./about.css";
 import AboutImg from "../../src/assets/about-pic.jpg";
 import CV from "../../src/assets/CV.pdf"
 import Info from './Info';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const About = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="about section" id="about">
-        <h2 className="section__title">About Me</h2>
-        <span className="section__subtitle">My Intoduction</span>
+        <h2 className="section__title">{t('aboutTitle')}</h2>
+        <span className="section__subtitle">{t('aboutSubtitle')}</span>
 
         <div className="about__container container grid">
           <img src={AboutImg} alt="" className="about__img" />
@@ -18,11 +21,11 @@ const About = () => {
             <Info />
 
            <p className="about__description">
-  I'm a Frontend Developer skilled in HTML, CSS, JavaScript, React, and the MERN stack. I focus on creating clean UI/UX designs and have a growing interest in AI/ML. Always eager to learn and open to internship opportunities to grow and contribute.
+  {t('aboutDescription')}
 </p>
 
 
-             <a download="" href={CV} className="button button--flex">Download My CV 
+             <a download="" href={CV} className="button button--flex">{t('downloadCV')} 
               <svg
                 className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
