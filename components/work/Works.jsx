@@ -2,25 +2,36 @@
 import React, { useEffect, useState } from 'react';
 import { projectsData, projectsNav } from './Data';
 import WorksItems from './WorksItems';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const Works = () => {
+    const { language } = useTranslation();
     const[item, setItem] = useState({ name: 'all' });
     const [projects, setProjects] = useState([]);
     const [active, setActive] = useState(false);
 
     useEffect(() => {
-        if(item.name === "all") {
+        if(item.name === "all" || item.name === "सभी") {
             setProjects(projectsData);
         } else {
+          const categoryMap = {
+            'app': 'app',
+            'ऐप': 'app',
+            'web': 'web',
+            'वेब': 'web'
+          };
+          
+          const mappedCategory = categoryMap[item.name] || item.name;
+          
           const newProjects = projectsData.filter((project) => {
-            return project.category === item.name;
+            return project.category === mappedCategory;
           });
           setProjects(newProjects);
         }
     }, [item]);
 
-    const handleClick = (e, index) => {
-        setItem({ name: e.target.textContent });
+    const handleClick = (e, index, navItem) => {
+        setItem({ name: navItem.name[language] });
         setActive(index);
     };
   return (
@@ -29,8 +40,8 @@ const Works = () => {
             {projectsNav.map((item, index) => {
                 return (
                     <span onClick={(e) => {
-                        handleClick(e, index);
-                    }} className={`${active === index ? 'active-work' : ''} work__item`} key={index}>{item.name}</span>
+                        handleClick(e, index, item);
+                    }} className={`${active === index ? 'active-work' : ''} work__item`} key={index}>{item.name[language]}</span>
                 );
             })}
         </div>
