@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './githubstats.css';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const GitHubStats = () => {
+    const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
@@ -28,8 +30,8 @@ const GitHubStats = () => {
 
     return (
         <section className={`githubstats section ${isVisible ? 'animate' : ''}`} id="githubstats">
-            <h2 className="section__title">GitHub Stats 📊</h2>
-            <span className="section__subtitle">My coding journey in numbers</span>
+            <h2 className="section__title">{t('githubTitle')}</h2>
+            <span className="section__subtitle">{t('githubSubtitle')}</span>
 
             <div className="githubstats__container container">
                 <div className="githubstats__grid">
@@ -38,7 +40,7 @@ const GitHubStats = () => {
                         <div className="githubstats__card">
                             <div className="githubstats__header">
                                 <i className="bx bx-code githubstats__icon"></i>
-                                <h3>Top Languages</h3>
+                                <h3>{t('topLanguages')}</h3>
                             </div>
                             <div className="githubstats__image">
                                 <img 
@@ -52,7 +54,7 @@ const GitHubStats = () => {
                         <div className="githubstats__card">
                             <div className="githubstats__header">
                                 <i className="bx bx-trophy githubstats__icon"></i>
-                                <h3>Achievements</h3>
+                                <h3>{t('githubTrophies')}</h3>
                             </div>
                             <div className="githubstats__image">
                                 <img 
@@ -69,7 +71,7 @@ const GitHubStats = () => {
                         <div className="githubstats__card">
                             <div className="githubstats__header">
                                 <i className="bx bx-time githubstats__icon"></i>
-                                <h3>Coding Time</h3>
+                                <h3>{t('codingMetrics')}</h3>
                             </div>
                             <div className="githubstats__metrics">
                                 <div className="githubstats__metric">
@@ -90,7 +92,7 @@ const GitHubStats = () => {
                         <div className="githubstats__card">
                             <div className="githubstats__header">
                                 <i className="bx bx-code-block githubstats__icon"></i>
-                                <h3>Tech Focus</h3>
+                                <h3>{t('techFocus')}</h3>
                             </div>
                             <div className="githubstats__tech-list">
                                 <span className="githubstats__tech-item">React.js</span>
@@ -110,7 +112,7 @@ const GitHubStats = () => {
                         <div className="githubstats__card githubstats__card--wide githubstats__card--animated">
                             <div className="githubstats__header">
                                 <i className="bx bx-git-branch githubstats__icon"></i>
-                                <h3>Contribution Activity</h3>
+                                <h3>{t('contributionGraph')}</h3>
                             </div>
                             <div className="githubstats__image githubstats__graph">
                                 <img 
@@ -131,7 +133,7 @@ const GitHubStats = () => {
                         className="githubstats__button"
                     >
                         <i className="bx bxl-github"></i>
-                        Visit My GitHub
+                        {t('visitGitHub')}
                         <i className="bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
