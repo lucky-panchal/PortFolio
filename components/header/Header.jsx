@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const Header = () => {
+	const { t, language } = useTranslation();
 	const [isNavigating, setIsNavigating] = useState(false);
 
 	useEffect(() => {
@@ -65,7 +67,7 @@ const Header = () => {
 		<header className='header'>
 			<nav className='nav container'>
 				<a href='index.html ' className='nav__logo'>
-					&lt;Lacki Lohar/&gt;
+					&lt;{language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}/&gt;
 				</a>
 
 				<div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
@@ -78,7 +80,7 @@ const Header = () => {
 									activeNav === '#home' ? 'nav__link active-link' : 'nav__link'
 								}
 							>
-								<i className='uil uil-estate nav__icon'></i> Home
+								<i className='uil uil-estate nav__icon'></i> {t('home')}
 							</a>
 						</li>
 
@@ -92,7 +94,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-scenery nav__icon'></i> Projects
+								<i className='uil uil-scenery nav__icon'></i> {t('portfolio')}
 							</a>
 						</li>
 
@@ -106,7 +108,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-file-alt nav__icon'></i> Skills
+								<i className='uil uil-file-alt nav__icon'></i> {t('skills')}
 							</a>
 						</li>
 
@@ -120,7 +122,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-bag-alt nav__icon'></i> Experience
+								<i className='uil uil-bag-alt nav__icon'></i> {t('experienceTitle')}
 							</a>
 						</li>
 
@@ -132,7 +134,7 @@ const Header = () => {
 									activeNav === '#about' ? 'nav__link active-link' : 'nav__link'
 								}
 							>
-								<i className='uil uil-user nav__icon'></i> About
+								<i className='uil uil-user nav__icon'></i> {t('about')}
 							</a>
 						</li>
 
@@ -146,7 +148,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-share nav__icon'></i> Social
+								<i className='uil uil-share nav__icon'></i> {t('social')}
 							</a>
 						</li>
 
@@ -160,7 +162,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-github nav__icon'></i> GitHub
+								<i className='uil uil-github nav__icon'></i> {t('github')}
 							</a>
 						</li>
 
@@ -174,7 +176,7 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-message nav__icon'></i> Contact Me
+								<i className='uil uil-message nav__icon'></i> {t('contactMe')}
 							</a>
 						</li>
 
