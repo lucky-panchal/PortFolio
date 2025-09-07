@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import motion
 import './qualification.css';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Qualification = () => {
   const { t } = useTranslation();

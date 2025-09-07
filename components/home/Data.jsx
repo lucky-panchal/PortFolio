@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Data = () => {
+  const { t, language } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
   
@@ -53,7 +55,7 @@ const Data = () => {
           onMouseEnter={handleHover}
         >
           <span className="name-wrapper">
-            <span className="name-text">Lacki Lohar</span>
+            <span className="name-text">{language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}</span>
             <div className="name-glow"></div>
             <div className="name-particles">
               <span></span>
@@ -116,10 +118,10 @@ const Data = () => {
 
       <h3 className="home__subtitle enhanced-subtitle">
         <span className="subtitle-icon">💻</span>
-        Software Developer
-        <span className="subtitle-badge">Student</span>
+        {t('subtitle')}
+        <span className="subtitle-badge">{t('subtitleBadge')}</span>
       </h3>
-      <p className="home__description">I'm a creative developer based in Ahmedabad, and I'm very passionate and dedicated to my work.</p>
+      <p className="home__description">{t('description')}</p>
       
       {/* CTA Button - Hidden on mobile (max-width: 600px) */}
       <div className="cta-container desktop-only">
@@ -130,8 +132,8 @@ const Data = () => {
               <i className="uil uil-calendar-alt"></i>
             </div>
             <div className="cta-text">
-              <span className="cta-main">Let's Build Together</span>
-              <span className="cta-sub">Schedule a meeting</span>
+              <span className="cta-main">{t('ctaMain')}</span>
+              <span className="cta-sub">{t('ctaSub')}</span>
             </div>
             <div className="cta-arrow">
               <i className="uil uil-arrow-right"></i>
@@ -153,7 +155,7 @@ const Data = () => {
             <div className="mobile-cta-icon">
               <i className="uil uil-calendar-alt"></i>
             </div>
-            <span className="mobile-cta-text">Schedule Meeting</span>
+            <span className="mobile-cta-text">{t('ctaSub')}</span>
           </div>
         </a>
       </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import "./work.css";
 import Works from './Works';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Work = () => {
   const { t } = useTranslation();

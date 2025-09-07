@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './testimonial.css';
 import { Data } from './Data';
 import Scroll3D from '../../src/components/scroll3d/Scroll3D';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 
 const Testimonials = () => {

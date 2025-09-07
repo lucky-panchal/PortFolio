@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Header = () => {
 	const { t, language } = useTranslation();

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './experience.css';
 import Certificate from "../../src/assets/Certificate1.pdf"
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 
 const Experience = () => {

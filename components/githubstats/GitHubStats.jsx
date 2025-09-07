@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './githubstats.css';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const GitHubStats = () => {
     const { t } = useTranslation();

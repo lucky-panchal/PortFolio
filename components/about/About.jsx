@@ -4,7 +4,7 @@ import "./about.css";
 import AboutImg from "../../src/assets/about-pic.jpg";
 import CV from "../../src/assets/CV.pdf"
 import Info from './Info';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const About = () => {
   const { t } = useTranslation();

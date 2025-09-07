@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { projectsData, projectsNav } from './Data';
 import WorksItems from './WorksItems';
-import { useTranslation } from '../../src/hooks/useTranslation';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Works = () => {
     const { language } = useTranslation();

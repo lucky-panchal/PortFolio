@@ -5,9 +5,11 @@ import Social from './Social';
 import Data from './Data';
 import ScrollDown from './ScrollDown';
 import ProfilePic from '../../src/assets/profile-pic.png';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 
 const Home = () => {
+  const { t } = useTranslation();
   const parallaxRef = useRef(null);
   const canvasRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -144,7 +146,7 @@ const Home = () => {
                       <div className="overlay-icon">
                         <i className="uil uil-code-branch"></i>
                       </div>
-                      <div className="overlay-text">Let's Code Together!</div>
+                      <div className="overlay-text">{t('mobileCodeText')}</div>
                     </div>
                   </div>
                   <div className="code-particles">

@@ -1,5 +1,7 @@
 import './App.css';
 import { useState } from 'react';
+import { LanguageProvider } from './hooks/useTranslation.jsx';
+import LanguageToggle from '../components/LanguageToggle/LanguageToggle';
 
 import Header from '../components/header/Header';
 import Home from '../components/home/Home';
@@ -21,7 +23,7 @@ import ScrollReveal from './components/ScrollReveal/ScrollReveal';
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <CustomCursor />
       <Header />
       <SectionTransition />
@@ -77,7 +79,8 @@ function App() {
       </main>
       <Footer />
       <ScrollUp />
-    </>
+      <LanguageToggle />
+    </LanguageProvider>
   );
 }
 

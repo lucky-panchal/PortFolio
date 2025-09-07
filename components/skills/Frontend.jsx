@@ -1,10 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Frontend = () => {
+  const { t } = useTranslation();
+  
   return (
         <div className="skills__content">
-            <h3 className="skills__title">Frontend Developer</h3>
+            <h3 className="skills__title">{t('frontendTitle')}</h3>
 
             <div className="skills__box">
                 <div className="skills__group">
@@ -13,7 +16,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">HTML</h3>
-                            <span className="skills__level">Intermediate</span>
+                            <span className="skills__level">{t('intermediate')}</span>
                         </div>
                     </div>
 
@@ -22,7 +25,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">CSS</h3>
-                            <span className="skills__level">Advance</span>
+                            <span className="skills__level">{t('advanced')}</span>
                         </div>
                     </div>
 
@@ -32,7 +35,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">JavaScript</h3>
-                            <span className="skills__level">Intermediate</span>
+                            <span className="skills__level">{t('intermediate')}</span>
                         </div>
                     </div>
 
@@ -41,7 +44,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">MongoDB</h3>
-                            <span className="skills__level">Intermediate</span>
+                            <span className="skills__level">{t('intermediate')}</span>
                         </div>
                     </div>
 
@@ -50,7 +53,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">TypeScript</h3>
-                            <span className="skills__level">Basic</span>
+                            <span className="skills__level">{t('basic')}</span>
                         </div>
                     </div>
                 </div>
@@ -61,7 +64,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">Bootstrap</h3>
-                            <span className="skills__level">Basic</span>
+                            <span className="skills__level">{t('basic')}</span>
                         </div>
                     </div>
 
@@ -70,7 +73,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">Git</h3>
-                            <span className="skills__level">Advance</span>
+                            <span className="skills__level">{t('advanced')}</span>
                         </div>
                     </div>
 
@@ -79,7 +82,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">React</h3>
-                            <span className="skills__level">Intermediate</span>
+                            <span className="skills__level">{t('intermediate')}</span>
                         </div>
                     </div>
 
@@ -88,7 +91,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">Node Js</h3>
-                            <span className="skills__level">Advance</span>
+                            <span className="skills__level">{t('advanced')}</span>
                         </div>
                     </div>
 
@@ -97,7 +100,7 @@ const Frontend = () => {
 
                         <div>
                             <h3 className="skills__name">Tailwind CSS</h3>
-                            <span className="skills__level">Basic</span>
+                            <span className="skills__level">{t('basic')}</span>
                         </div>
                     </div>
                 </div>

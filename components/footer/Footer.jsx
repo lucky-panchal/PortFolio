@@ -1,24 +1,27 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import "./footer.css";
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Footer = () => {
+  const { t, language } = useTranslation();
+  
   return (
     <footer className="footer">
         <div className="footer__container container">
-            <h1 className="footer__title">&lt;Lacki Lohar/&gt;</h1>
+            <h1 className="footer__title">&lt;{language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}/&gt;</h1>
 
             <ul className="footer__list">
                 <li>
-                    <a href="#about" className="footer__link">About</a>
+                    <a href="#about" className="footer__link">{t('about')}</a>
                 </li>
 
                 <li>
-                    <a href="#skills" className="footer__link">Skills</a>
+                    <a href="#skills" className="footer__link">{t('skills')}</a>
                 </li>
 
                 <li>
-                    <a href="#testimonials" className="footer__link">Testimonials</a>
+                    <a href="#testimonials" className="footer__link">{t('testimonialsSubtitle')}</a>
                 </li>
             </ul>
 
@@ -28,7 +31,7 @@ const Footer = () => {
                 </a>
             </div>
 
-            <span className="footer__copy">&#169; Lacki Lohar. All rigths reserved</span>
+            <span className="footer__copy">&#169; {language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}. All rights reserved</span>
         </div>
     </footer>
   )
