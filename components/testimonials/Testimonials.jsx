@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import './testimonial.css';
 import { Data } from './Data';
 import Scroll3D from '../../src/components/scroll3d/Scroll3D';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 
 const Testimonials = () => {
+  const { t, language } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -17,7 +19,7 @@ const Testimonials = () => {
     if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
     if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
 
-    const text = Data[currentIndex].description;
+    const text = Data[currentIndex].description[language];
     setDisplayedText('');
     setIsTyping(true);
     
@@ -43,7 +45,7 @@ const Testimonials = () => {
       if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
       if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
     };
-  }, [currentIndex]);
+  }, [currentIndex, language]);
 
   const nextTestimonial = () => {
     if (isChangingRef.current) return;
@@ -75,8 +77,8 @@ const Testimonials = () => {
 
   return (
     <section className="testimonial container section" id="testimonials">
-      <h2 className="section__title">People Often Say</h2>
-      <span className="section__subtitle">Testimonials</span>
+      <h2 className="section__title">{t('testimonialsTitle')}</h2>
+      <span className="section__subtitle">{t('testimonialsSubtitle')}</span>
 
       <Scroll3D variant="rotationTransition" className="testimonial__container">
         <button className="carousel__button carousel__button--prev" onClick={prevTestimonial}>
