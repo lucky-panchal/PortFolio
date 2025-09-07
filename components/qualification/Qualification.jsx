@@ -2,8 +2,11 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import motion
 import './qualification.css';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const Qualification = () => {
+  const { t } = useTranslation();
+  
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,13 +30,13 @@ const Qualification = () => {
 
   return (
     <section className="qualification section" id="qualification">
-      <h2 className="section__title">Qualification 🧑🏻‍🎓</h2>
-      <span className="section__subtitle">My Personal Journey 🚗</span>
+      <h2 className="section__title">{t('qualificationTitle')} 🧑🏻🎓</h2>
+      <span className="section__subtitle">{t('qualificationSubtitle')} 🚗</span>
 
       <div className="qualification__container container">
         <div className="qualification__tabs">
           <div className="qualification__button qualification__active button--flex">
-            <i className="uil uil-graduation-cap qualification__icon"></i> Education
+            <i className="uil uil-graduation-cap qualification__icon"></i> {t('education')}
           </div>
         </div>
 
@@ -48,8 +51,8 @@ const Qualification = () => {
             {/* Education Entry 1 */}
             <motion.div className="qualification__data" variants={dataVariants}>
               <div>
-                <h3 className="qualification__title">Higher Secondary🧪</h3>
-                <span className="qualification__subtitle">RBSE - Udaipur, Rajasthan</span>
+                <h3 className="qualification__title">{t('higherSecondary')}🧪</h3>
+                <span className="qualification__subtitle">{t('rbseUdaipur')}</span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2022 - 2024
                 </div>
@@ -85,10 +88,10 @@ const Qualification = () => {
               </div>
               
               <div>
-                <h3 className="qualification__title">Bachelor of Technology🎓</h3>
-                <span className="qualification__subtitle">Rai University - Ahmedabad, Gujarat</span>
+                <h3 className="qualification__title">{t('bachelorTech')}🎓</h3>
+                <span className="qualification__subtitle">{t('raiUniversity')}</span>
                 <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> 2024 - Present 
+                  <i className="uil uil-calendar-alt"></i> 2024 - {t('present')} 
                 </div>
               </div>
             </motion.div>
