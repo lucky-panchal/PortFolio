@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './social.css';
-
-
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const GITHUB_USERNAME = 'lucky-panchal';
 const Social = () => {
+    const { t } = useTranslation();
     const [githubStats, setGithubStats] = useState({ repos: 0, commits: 0 });
     const [linkedinFollowers, setLinkedinFollowers] = useState(0);
     const [instagramFollowers, setInstagramFollowers] = useState(0);
@@ -47,32 +47,34 @@ const Social = () => {
 
     const socialLinks = [
         {
-            name: "LinkedIn",
-            icon: "bx bxl-linkedin",
-            url: "https://www.linkedin.com/in/lacki-lohar-463a23321",
-            color: "#0077b5",
-            stats: `${linkedinFollowers}+ Connections • Professional Network`
-        },
-        {
-            name: "Instagram",
+            name: t('instagram'),
             icon: "bx bxl-instagram",
             url: "https://www.instagram.com/luckyp4nch4l",
             color: "#e4405f",
-            stats: `${instagramFollowers.toLocaleString()} Followers • Just Sharing Life`
+            stats: `${instagramFollowers.toLocaleString()} Followers • Just Sharing Life`,
+            className: "instagram"
+        },
+        {
+            name: t('linkedin'),
+            icon: "bx bxl-linkedin",
+            url: "https://www.linkedin.com/in/lacki-lohar-463a23321",
+            color: "#0077b5",
+            stats: `${linkedinFollowers}+ Connections • Professional Network`,
+            className: "linkedin"
         }
     ];
 
     return (
         <>
             <section className={`social section ${isVisible ? 'animate' : ''}`} id="social">
-                <h2 className="section__title">Connect With Me 🌐</h2>
-                <span className="section__subtitle">Let&apos;s stay connected across platforms</span>
+                <h2 className="section__title">{t('connectWithMe')} 🌐</h2>
+                <span className="section__subtitle">{t('stayConnected')}</span>
 
                 <div className="social__container container grid">
                     {socialLinks.map((social, index) => (
                         <div 
-                            key={social.name} 
-                            className={`social__card ${social.name.toLowerCase()}`}
+                            key={social.className} 
+                            className={`social__card ${social.className}`}
                             style={{ '--delay': `${index * 0.1}s` }}
                         >
                             <div className="social__card-header">
@@ -87,7 +89,7 @@ const Social = () => {
                                 rel="noopener noreferrer"
                                 className="social__button"
                             >
-                                Follow Me
+                                {t('followMe')}
                                 <i className="bx bx-right-arrow-alt social__button-icon"></i>
                             </a>
                             <div className="social__glow" style={{ backgroundColor: social.color }}></div>
