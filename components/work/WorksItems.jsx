@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from 'react';
+import { useTranslation } from '../../src/hooks/useTranslation';
 
 const WorksItems = ({ item }) => {
+	const { t, language } = useTranslation();
 	const [showTooltip, setShowTooltip] = useState(false);
 	const [showPreview, setShowPreview] = useState(false);
 	const previewRef = useRef(null);
@@ -77,13 +79,13 @@ const handleDemoClick = (e) => {
 			onMouseLeave={handleMouseLeave}
 		>
 			<img src={item.image} alt='' className='work__img' />
-			<h3 className='work__title'>{item.title}</h3>
+			<h3 className='work__title'>{item.title[language]}</h3>
 			
 			{!isMobile && showPreview && item.status === 'completed' && item.demoUrl && item.demoUrl !== '#' && (
 				<div className="work__preview" ref={previewRef}>
 					<iframe 
 						src={item.demoUrl} 
-						title={`Preview of ${item.title}`}
+						title={`Preview of ${item.title[language]}`}
 						className="work__preview-iframe"
 						sandbox="allow-scripts allow-same-origin"
 					/>
@@ -92,7 +94,7 @@ const handleDemoClick = (e) => {
 							className="work__preview-button"
 							onClick={() => window.open(item.demoUrl, '_blank')}
 						>
-							Open Full Site
+							{t('openFullSite')}
 						</button>
 					</div>
 				</div>
@@ -108,11 +110,11 @@ const handleDemoClick = (e) => {
 					}
 					onMouseLeave={() => setShowTooltip(false)}
 				>
-					<i className='bx bx-globe work__button-icon' /> Website
+					<i className='bx bx-globe work__button-icon' /> {t('website')}
 				</a>
 				{showTooltip && (item.status === 'development' || item.status === 'coming_soon') && (
 					<div className='work__tooltip'>
-						{item.status === 'coming_soon' ? 'Coming Soon' : 'Under Development'}
+						{item.status === 'coming_soon' ? t('comingSoon') : t('underDevelopment')}
 					</div>
 				)}
 				<a
@@ -120,7 +122,7 @@ const handleDemoClick = (e) => {
 					className='work__button'
 					onClick={handleSourceClick}
 				>
-					<i className='bx bxl-github work__button-icon' /> Source
+					<i className='bx bxl-github work__button-icon' /> {t('sourceCode')}
 				</a>
 			</div>
 		</div>
