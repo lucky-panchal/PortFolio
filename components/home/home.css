@@ -797,9 +797,11 @@
     .home__social {
         order: 1;
         display: flex;
+        flex-direction: row;
         justify-content: center;
         gap: 1.5rem;
         width: 100%;
+        padding-top: 3rem;
     }
 
     .home__img-wrapper {
@@ -992,6 +994,7 @@
     .home__social {
         order: -2;
         display: flex;
+        flex-direction: row;
         justify-content: center;
         gap: 1.2rem;
         margin-bottom: 0.5rem;
@@ -1374,3 +1377,23 @@
     }
 }
 
+/* Mobile Language Toggle in Social Section */
+.mobile-language-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-language-toggle {
+        display: block;
+    }
+    
+    .mobile-language-toggle .language-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 55px;
+        height: 55px;
+        margin: 0;
+    }
+}
