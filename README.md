@@ -2,7 +2,7 @@
 
 # 🚀 Lacki Lohar - Portfolio Website
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=22C55E&center=true&vCenter=true&width=700&lines=Full+Stack+Developer+%7C+Student;React.js+%26+JavaScript+Enthusiast;UI%2FUX+Designer+%7C+Problem+Solver;Open+Source+Contributor;1%2B+Year+Learning+Journey;Always+Building+Something+Cool!" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=22C55E&center=true&vCenter=true&width=700&lines=Full+Stack+Developer+%7C+Student;React.js+%26+JavaScript+Enthusiast;UI%2FUX+Designer+%7C+Problem+Solver;%E0%A4%B8%E0%A5%89%E0%A4%AB%E0%A5%8D%E0%A4%9F%E0%A4%B5%E0%A5%87%E0%A4%AF%E0%A4%B0+%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%B2%E0%A4%AA%E0%A4%B0+%7C+%E0%A4%9B%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0;Bilingual+Portfolio+%7C+%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A5%80+%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F%E0%A4%AB%E0%A5%8B%E0%A4%B2%E0%A4%BF%E0%A4%AF%E0%A5%8B;Open+Source+Contributor;1%2B+Year+Learning+Journey;Always+Building+Something+Cool!" alt="Typing SVG" />
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -10,7 +10,27 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bilingual-🌐-22C55E?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Hindi_Support-🇮🇳-FF9933?style=for-the-badge" />
 </p>
+
+<div align="center">
+
+### 💻 **Coding in Progress...**
+
+```javascript
+const developer = {
+    name: "Lacki Lohar | लक्की लौहार",
+    languages: ["English", "हिंदी"],
+    code: ["JavaScript", "React", "HTML", "CSS"],
+    currentFocus: "Building bilingual web experiences",
+    funFact: "Portfolio speaks both English & Hindi! 🌐"
+};
+
+console.log("नमस्ते! Welcome to my portfolio!");
+```
+
+</div>
 
 <p align="center">
   <a href="https://lackilohar.netlify.app"><img src="https://img.shields.io/badge/🌐_Live_Portfolio-FF5722?style=for-the-badge&logoColor=white" /></a>
@@ -64,10 +84,27 @@
 </table>
 
 **📈 Real Portfolio Metrics:**
-```
-🎯 5+ Projects Completed    📚 1+ Year Learning    💻 300+ GitHub Commits
-🌟 Modern UI/UX Design     🚀 React.js Expert     📱 Mobile-First Approach
-🌐 Bilingual Support        🇮🇳 Hindi Translation    ⚡ Instant Switching
+```javascript
+const portfolioStats = {
+  projects: {
+    completed: 5,
+    inProgress: 2,
+    technologies: ['React', 'JavaScript', 'CSS3', 'HTML5']
+  },
+  experience: {
+    learning: '1+ Year',
+    commits: '300+',
+    languages: ['English', 'हिंदी']
+  },
+  features: {
+    responsive: true,
+    bilingual: true,
+    darkMode: true,
+    animations: 'advanced'
+  }
+};
+
+console.log('🚀 Portfolio loaded successfully!');
 ```
 
 </div>
@@ -358,12 +395,36 @@ yarn build
 ### ✨ **Visual Showcase**
 
 ```
-🎭 CSS Animations        🎨 Interactive Elements     🚀 Performance
-├─ Keyframe transitions  ├─ Hover transformations    ├─ 60fps animations
-├─ Cubic-bezier easing   ├─ Click feedback          ├─ Lazy loading
-├─ Staggered delays      ├─ Scroll triggers         └─ Optimized assets
-└─ Transform & filters   └─ Theme transitions
+🎭 CSS Animations        🎨 Interactive Elements     🚀 Performance        🌐 Bilingual
+├─ Keyframe transitions  ├─ Hover transformations    ├─ 60fps animations    ├─ Instant switching
+├─ Cubic-bezier easing   ├─ Click feedback          ├─ Lazy loading        ├─ Context persistence
+├─ Staggered delays      ├─ Scroll triggers         ├─ Optimized assets    ├─ Mobile integration
+└─ Transform & filters   └─ Theme transitions       └─ Bundle optimization └─ Cultural adaptation
 ```
+
+<div align="center">
+
+### 💻 **Code Architecture | कोड आर्किटेक्चर**
+
+```jsx
+// Bilingual Translation Hook
+const useTranslation = () => {
+  const [language, setLanguage] = useState('en');
+  const t = (key) => translations[language][key];
+  
+  return { t, language, setLanguage };
+};
+
+// Component Usage
+function Header() {
+  const { t } = useTranslation();
+  return <h1>{t('home')} | {t('about')}</h1>;
+}
+
+// Output: "Home | About" or "होम | परिचय"
+```
+
+</div>
 
 </div>
 
@@ -472,13 +533,21 @@ yarn build
 📅 Schedule: cal.com/lucky-panchal-qckdio
 ```
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=1000&color=22C55E&center=true&vCenter=true&width=500&lines=Thanks+for+visiting+my+portfolio!;Let's+build+something+amazing+together!;Always+open+to+collaborate+%26+learn;Student+developer+with+big+dreams!;Ready+to+take+on+new+challenges!" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=1000&color=22C55E&center=true&vCenter=true&width=600&lines=Thanks+for+visiting+my+portfolio!;%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%87+%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F%E0%A4%AB%E0%A5%8B%E0%A4%B2%E0%A4%BF%E0%A4%AF%E0%A5%8B+%E0%A4%AE%E0%A5%87%E0%A4%82+%E0%A4%86%E0%A4%AA%E0%A4%95%E0%A4%BE+%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%97%E0%A4%A4+%E0%A4%B9%E0%A5%88!;Let's+build+something+amazing+together!;%E0%A4%86%E0%A4%87%E0%A4%8F+%E0%A4%AE%E0%A4%BF%E0%A4%B2%E0%A4%95%E0%A4%B0+%E0%A4%95%E0%A5%81%E0%A4%9B+%E0%A4%85%E0%A4%A6%E0%A5%8D%E0%A4%AD%E0%A5%81%E0%A4%A4+%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%A4%E0%A5%87+%E0%A4%B9%E0%A5%88%E0%A4%82!;Always+open+to+collaborate+%26+learn;Student+developer+with+big+dreams!;Ready+to+take+on+new+challenges!;Bilingual+coding+enthusiast!" alt="Typing SVG" />
 
-### 🎯 **Current Status**
-```
-🎓 Computer Science Student        📚 Continuously Learning
-💼 Open for Internships           🚀 Building Cool Projects  
-🤝 Available for Collaboration    💡 Always Exploring New Tech
+### 🎯 **Current Status | वर्तमान स्थिति**
+```javascript
+const currentStatus = {
+    🎓 education: "Computer Science Student | कंप्यूटर साइंस छात्र",
+    📚 learning: "Continuously Learning | निरंतर सीखना",
+    💼 seeking: "Open for Internships | इंटर्नशिप के लिए उपलब्ध",
+    🚀 building: "Building Cool Projects | शानदार प्रोजेक्ट्स बना रहा हूं",
+    🤝 collaboration: "Available for Collaboration | सहयोग के लिए तैयार",
+    💡 exploring: "Always Exploring New Tech | नई तकनीक खोजना",
+    🌐 specialty: "Bilingual Web Development | द्विभाषी वेब डेवलपमेंट"
+};
+
+console.log("Ready to code in any language! 🚀");
 ```
 
 **Built with ❤️ by [Lacki Lohar](https://github.com/lucky-panchal)**
