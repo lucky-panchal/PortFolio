@@ -29,6 +29,7 @@
 
 ### 🌟 A modern, interactive portfolio showcasing my coding journey as a passionate student developer
 ### ✨ Built with React.js + Vite featuring stunning animations, responsive design, and real GitHub integration
+### 🌐 **NEW:** Complete bilingual support with instant English/Hindi translation switching
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=lucky-panchal&bg_color=0d1117&color=22c55e&line=22c55e&point=ffffff&area=true&hide_border=true&custom_title=My%20Coding%20Journey" width="100%" />
 
@@ -66,6 +67,7 @@
 ```
 🎯 5+ Projects Completed    📚 1+ Year Learning    💻 300+ GitHub Commits
 🌟 Modern UI/UX Design     🚀 React.js Expert     📱 Mobile-First Approach
+🌐 Bilingual Support        🇮🇳 Hindi Translation    ⚡ Instant Switching
 ```
 
 </div>
@@ -118,6 +120,13 @@
 - **Smooth Navigation** - Seamless scrolling between sections
 - **Dark/Light Theme** - Toggle between themes with persistence
 
+### 🌐 **Bilingual Support (NEW!)**
+- **Complete Hindi Translation** - Full portfolio available in Hindi (हिंदी)
+- **Instant Language Switching** - Real-time content translation without page reload
+- **Mobile-Optimized Toggle** - Language selector integrated with social icons on mobile
+- **Consistent Layout** - Same design and animations across both languages
+- **Cultural Localization** - Proper Hindi typography and text formatting
+
 <div align="center">
 
 ## 🛠️ Tech Stack & Dependencies
@@ -142,6 +151,13 @@
 }
 ```
 
+### **🌍 Internationalization**
+- **Custom Translation System** - Built-in i18n without external libraries
+- **React Context API** - Global language state management
+- **Local Storage Persistence** - Remembers user's language preference
+- **Dynamic Content Loading** - Instant translation switching
+- **Mobile-First Language Toggle** - Integrated with social media icons
+
 ### **🎨 Features & Integrations**
 - **EmailJS** - Direct email sending from contact form
 - **Cal.com** - Meeting scheduling integration
@@ -149,6 +165,8 @@
 - **Responsive Design** - Mobile-first approach
 - **Theme Toggle** - Dark/Light mode with persistence
 - **Custom Animations** - CSS keyframes & transforms
+- **Bilingual Support** - English/Hindi translation system
+- **Language Persistence** - Remembers user's language choice
 
 <div align="center">
 
@@ -302,12 +320,12 @@ yarn build
 
 ### 🎯 **Key Features by Section**
 
-| 🏠 **Home** | 📊 **GitHub** | 💼 **Work** | 📞 **Contact** |
-|-------------|---------------|-------------|----------------|
-| Animated name effects | Live contribution graph | Project showcase | Email integration |
-| Interactive CTA button | Real-time statistics | Technology stack | WhatsApp direct link |
-| Social media links | Achievement trophies | Responsive gallery | Contact form |
-| Particle animations | Language breakdown | Live demos | Meeting scheduler |
+| 🏠 **Home** | 📊 **GitHub** | 💼 **Work** | 📞 **Contact** | 🌐 **Bilingual** |
+|-------------|---------------|-------------|----------------|------------------|
+| Animated name effects | Live contribution graph | Project showcase | Email integration | English/Hindi toggle |
+| Interactive CTA button | Real-time statistics | Technology stack | WhatsApp direct link | Instant translation |
+| Social media links | Achievement trophies | Responsive gallery | Contact form | Mobile-optimized |
+| Particle animations | Language breakdown | Live demos | Meeting scheduler | Cultural localization |
 
 </div>
 
@@ -377,12 +395,17 @@ yarn build
 
 ## 🎯 Future Enhancements
 
+- [x] **Bilingual Support** - Complete English/Hindi translation system ✅
+- [x] **Mobile Language Toggle** - Integrated with social icons ✅
+- [x] **Cultural Localization** - Proper Hindi typography ✅
 - [ ] Blog section integration
 - [ ] Project showcase with live demos
 - [ ] Contact form with email integration
 - [ ] Advanced particle system
 - [ ] 3D elements and interactions
 - [ ] Progressive Web App (PWA) features
+- [ ] Additional language support (Spanish, French)
+- [ ] Voice-over narration in multiple languages
 
 ## 🤝 Contributing
 
