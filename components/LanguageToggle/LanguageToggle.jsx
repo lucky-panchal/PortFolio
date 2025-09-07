@@ -1,9 +1,13 @@
 import React from 'react';
-import { useLanguage } from '../../src/contexts/LanguageContext';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 import './LanguageToggle.css';
 
 const LanguageToggle = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language, setLanguage } = useTranslation();
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'hi' : 'en');
+  };
 
   return (
     <button 
