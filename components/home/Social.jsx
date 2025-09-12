@@ -6,6 +6,7 @@ import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 const Social = () => {
   const { t } = useTranslation();
   
+  
   return (
     <div className="home__social">
         <div className="mobile-language-toggle">
