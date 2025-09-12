@@ -9,6 +9,7 @@ const LanguageToggle = () => {
     setLanguage(language === 'en' ? 'hi' : 'en');
   };
 
+  
   return (
     <button 
       className="language-toggle"
