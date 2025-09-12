@@ -29,6 +29,7 @@ const Frontend = () => {
                         </div>
                     </div>
 
+
                     <div className="skills__data">
                         <i className='bx bxl-javascript' ></i>
 
