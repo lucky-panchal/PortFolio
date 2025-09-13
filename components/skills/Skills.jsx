@@ -9,6 +9,7 @@ import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 const Skills = () => {
   const { t } = useTranslation();
   
+
   return (
     <section className="skills section" id="skills">
       <h2 className="section__title">{t('skillsTitle')}</h2>
