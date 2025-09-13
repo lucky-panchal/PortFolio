@@ -87,6 +87,7 @@ const Qualification = () => {
                 />
               </div>
               
+
               <div>
                 <h3 className="qualification__title">{t('bachelorTech')}🎓</h3>
                 <span className="qualification__subtitle">{t('raiUniversity')}</span>
