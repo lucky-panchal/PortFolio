@@ -13,6 +13,7 @@ const Info = () => {
 				<h3 className='about__title'>{t('leadership')}</h3>
 				<span className='about__subtitle'>{t('strategicImpact')}</span>
 			</div>
+			
 
 			<div className='about__box'>
 				<i className='bx bx-conversation about__icon'></i>
