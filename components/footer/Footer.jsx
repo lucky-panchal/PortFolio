@@ -32,6 +32,7 @@ const Footer = () => {
             </div>
 
             <span className="footer__copy">&#169; {language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}. All rights reserved</span>
+
         </div>
     </footer>
   )
