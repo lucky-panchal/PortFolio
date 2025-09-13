@@ -46,6 +46,7 @@ const Contact = () => {
                             <a href={`https://api.whatsapp.com/send?phone=7425875484&text=Hello ${language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}, I hope you're doing well. I would like to connect with you ❤️`} className="contact__button">
                                 {t('writeMe')} <i className="bx bx-right-arrow-alt contact__button-icon"></i>
                             </a>
+                            
                         </div>
                     </div>
                 </div>

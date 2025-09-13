@@ -7,6 +7,7 @@ const Social = () => {
   const { t } = useTranslation();
   
   
+  
   return (
     <div className="home__social">
         <div className="mobile-language-toggle">

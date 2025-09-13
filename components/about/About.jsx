@@ -53,7 +53,9 @@ const About = () => {
               </svg>
             </a>
           </div>
+          
         </div>
+
     </section>
   )
 }

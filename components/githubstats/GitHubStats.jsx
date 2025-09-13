@@ -7,6 +7,7 @@ const GitHubStats = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
+    
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => setIsVisible(entry.isIntersecting),
