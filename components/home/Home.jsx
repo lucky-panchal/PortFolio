@@ -4,7 +4,7 @@ import "./home.css";
 import Social from './Social';
 import Data from './Data';
 import ScrollDown from './ScrollDown';
-import ProfilePic from '../../src/assets/profile-pic.jpg';
+import ProfilePic from '../../src/assets/profile-pic.png';
 import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 
