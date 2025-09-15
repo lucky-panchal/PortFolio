@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../../src/hooks/useTranslation.jsx';
-
 const Data = () => {
   const { t, language } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
