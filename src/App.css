@@ -103,6 +103,13 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  touch-action: pan-y;
+  -ms-touch-action: pan-y;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body,
@@ -116,18 +123,15 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
-  touch-action: pan-x pan-y;
+  touch-action: pan-y;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
-}
-
-html {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
 }
 
 * {
@@ -233,6 +237,7 @@ img {
   .container {
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
+    max-width: calc(100vw - 3rem);
   }
 
   .button {
@@ -258,9 +263,16 @@ img {
   .section__subtitle {
     margin-bottom: var(--mb-3);
   }
+
+  .container {
+    max-width: calc(100vw - 2rem);
+  }
 }
 
 @media screen and (max-width: 576px) {
+  .container {
+    max-width: calc(100vw - 1.5rem);
+  }
 }
 
 /* For small devices */
@@ -272,6 +284,7 @@ img {
   .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
+    max-width: calc(100vw - 2rem);
   }
 }
 
