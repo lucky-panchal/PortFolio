@@ -14,7 +14,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, { passive: false });
 
-  // Prevent pinch zoom on touch devices
+  // COMPLETE horizontal scroll block - this catches ALL horizontal scroll including touchpad
+  document.addEventListener('wheel', function(e) {
+    if (e.deltaX !== 0) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      return false;
+    }
+  }, { passive: false, capture: true });
+
+  // Block touchpad gestures
+  document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('gesturechange', function(e) {
+    e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('gestureend', function(e) {
+    e.preventDefault();
+  }, { passive: false });
+
+  // Prevent pinch zoom
   document.addEventListener('touchstart', function(e) {
     if (e.touches.length > 1) {
       e.preventDefault();
@@ -27,31 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, { passive: false });
 
-  // Force horizontal scroll to always be 0
-  setInterval(() => {
+  // Force scroll position
+  const forcePosition = () => {
     if (window.scrollX !== 0) {
       window.scrollTo(0, window.scrollY);
     }
-  }, 10);
+  };
+  
+  setInterval(forcePosition, 1);
+  window.addEventListener('scroll', forcePosition, { passive: false });
 
-  // Block ALL horizontal scroll attempts
-  document.addEventListener('wheel', function(e) {
-    if (e.deltaX !== 0) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-  }, { passive: false });
-
-  // Block horizontal touch scroll
-  document.addEventListener('touchmove', function(e) {
-    if (e.touches.length === 1) {
-      const touch = e.touches[0];
-      if (Math.abs(touch.clientX - (touch.target.offsetLeft || 0)) > 10) {
-        e.preventDefault();
-      }
-    }
-  }, { passive: false });
+  // Override scroll behavior
+  Object.defineProperty(window, 'scrollX', {
+    get: () => 0,
+    set: () => {},
+    configurable: false
+  });
 
   // Prevent context menu
   document.addEventListener('contextmenu', function(e) {
