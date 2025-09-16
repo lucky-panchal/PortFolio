@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import { LanguageProvider } from './hooks/useTranslation.jsx';
+import { useLoading } from './hooks/useLoading.jsx';
 import LanguageToggle from '../components/LanguageToggle/LanguageToggle';
 
 import Header from '../components/header/Header';
@@ -20,8 +21,19 @@ import GitHubStats from '../components/githubstats/GitHubStats';
 import SectionTransition from '../components/sectiontransition/SectionTransition';
 import Scroll3D from './components/scroll3d/Scroll3D';
 import ScrollReveal from './components/ScrollReveal/ScrollReveal';
+import FullPageSkeleton from './components/Skeleton/FullPageSkeleton';
 
 function App() {
+  const isLoading = useLoading(2500);
+
+  if (isLoading) {
+    return (
+      <LanguageProvider>
+        <FullPageSkeleton />
+      </LanguageProvider>
+    );
+  }
+
   return (
     <LanguageProvider>
       <CustomCursor />
