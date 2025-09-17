@@ -113,6 +113,9 @@ export const translations = {
 
     // Work Section
     website: "Website",
+    completed: "Completed",
+    development: "In Development",
+    coming_soon: "Coming Soon",
     comingSoon: "Coming Soon",
     underDevelopment: "Under Development",
     openFullSite: "Open Full Site",
@@ -278,6 +281,9 @@ export const translations = {
 
     // Work Section
     website: "वेबसाइट",
+    completed: "पूर्ण",
+    development: "विकास में",
+    coming_soon: "जल्द आ रहा है",
     comingSoon: "जल्द आ रहा है",
     underDevelopment: "विकास के तहत",
     openFullSite: "पूरी साइट खोलें",
