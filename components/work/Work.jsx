@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import "./work.css";
-import Works from './Works';
+import EnhancedWorks from './EnhancedWorks';
 import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Work = () => {
@@ -12,7 +12,7 @@ const Work = () => {
         <h2 className="section__title">{t('projectsTitle')} 🧑🏻💻</h2>
         <span className="section__subtitle">{t('projectsSubtitle')}</span>
 
-        <Works />
+        <EnhancedWorks />
     </section>
   )
 }
