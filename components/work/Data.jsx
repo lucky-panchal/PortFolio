@@ -58,7 +58,7 @@ export const projectsData = [
 		},
 		category: 'web',
 		demoUrl: 'https://google.com',
-		status: 'completed',
+		status: 'development',
 		size: 'medium',
 		gradient: ['#FF8A80', '#EA80FC'],
 		techStack: ['Vue.js', 'Maps API', 'Node.js'],
