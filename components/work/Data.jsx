@@ -17,6 +17,7 @@ export const projectsData = [
 		},
 		category: 'web',
 		demoUrl: 'https://lackilohar.netlify.app/',
+		sourceUrl: 'https://github.com/lucky-panchal/PortFolio.git',
 		status: 'completed',
 		size: 'hero',
 		gradient: ['#FF6B6B', '#4ECDC4'],
