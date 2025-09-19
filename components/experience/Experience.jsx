@@ -22,6 +22,12 @@ const Experience = () => {
             <div className="exp__container grid">
                 
                 <div className="exp__content">
+                    <div className="exp__sparkles">
+                        <div className="sparkle"></div>
+                        <div className="sparkle"></div>
+                        <div className="sparkle"></div>
+                        <div className="sparkle"></div>
+                    </div>
                     <div>
                         <i className="uil uil-web-grid exp__icon"></i>
                         <h3 className="exp__title">{t('asStudent')}</h3>
@@ -67,6 +73,12 @@ const Experience = () => {
                 </div>
 
                 <div className="exp__content">
+                    <div className="exp__sparkles">
+                        <div className="sparkle"></div>
+                        <div className="sparkle"></div>
+                        <div className="sparkle"></div>
+                        <div className="sparkle"></div>
+                    </div>
                     <div>
                         <i className="uil uil-arrow exp__icon"></i>
                         <h3 className="exp__title">{t('virtualInternship')}</h3>
