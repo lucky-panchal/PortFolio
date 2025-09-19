@@ -15,14 +15,32 @@
   background-color: var(--container-color);
   padding: 6rem 0 2rem 2.5rem;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 .exp__content:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  border-color: var(--title-color);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+}
+
+.exp__content:nth-child(2):hover {
+  box-shadow: 0 15px 30px rgba(240, 147, 251, 0.2);
+  border-color: #f093fb;
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(79, 172, 254, 0.1));
+}
+
+/* ===== THEME-BASED CARD COLORS ===== */
+[data-theme="light"] .exp__content:hover {
+  border-color: #FFD700;
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+}
+
+[data-theme="light"] .exp__content:nth-child(2):hover {
+  border-color: #FFA500;
+  box-shadow: 0 15px 30px rgba(255, 165, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(218, 165, 32, 0.1));
 }
 
 /* Icons and titles */
@@ -85,14 +103,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-}
-
-.active-modal .exp__modal-content {
-  transform: scale(1);
 }
 
 .exp__modal-close {
@@ -221,13 +231,21 @@
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
+[data-theme="light"] .exp__content::before {
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #DAA520, #B8860B, #CD853F);
+}
+
 .exp__content:hover::before {
-  opacity: 0.12;
+  opacity: 0.15;
+}
+
+[data-theme="light"] .exp__content:hover::before {
+  opacity: 0.2;
 }
 
 @keyframes diamondSpin {
-  from { transform: rotate(0deg) scale(0.8); }
-  to { transform: rotate(360deg) scale(1.2); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== PULSING BORDER ===== */
@@ -245,13 +263,21 @@
   animation: borderPulse 2s ease-in-out infinite;
 }
 
+[data-theme="light"] .exp__content::after {
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #DAA520);
+}
+
 .exp__content:hover::after {
+  opacity: 0.8;
+}
+
+[data-theme="light"] .exp__content:hover::after {
   opacity: 1;
 }
 
 @keyframes borderPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
 /* ===== FLOATING SPARKLES ===== */
@@ -309,13 +335,29 @@
   animation-delay: 0.5s;
 }
 
+[data-theme="light"] .sparkle:nth-child(1) {
+  color: #FFD700;
+}
+
+[data-theme="light"] .sparkle:nth-child(2) {
+  color: #FFA500;
+}
+
+[data-theme="light"] .sparkle:nth-child(3) {
+  color: #FF8C00;
+}
+
+[data-theme="light"] .sparkle:nth-child(4) {
+  color: #DAA520;
+}
+
 @keyframes sparkleFloat {
   0%, 100% {
-    transform: translateY(0) scale(0.5);
+    transform: translateY(0);
     opacity: 0.7;
   }
   50% {
-    transform: translateY(-15px) scale(1.2);
+    transform: translateY(-15px);
     opacity: 1;
   }
 }
@@ -324,13 +366,22 @@
 .exp__content:hover .exp__icon {
   color: #667eea;
   text-shadow: 0 0 20px #667eea;
-  transform: scale(1.3) rotate(10deg);
   transition: all 0.4s ease;
 }
 
 .exp__content:nth-child(2):hover .exp__icon {
   color: #f093fb;
   text-shadow: 0 0 20px #f093fb;
+}
+
+[data-theme="light"] .exp__content:hover .exp__icon {
+  color: #FFD700;
+  text-shadow: 0 0 20px #FFD700;
+}
+
+[data-theme="light"] .exp__content:nth-child(2):hover .exp__icon {
+  color: #FFA500;
+  text-shadow: 0 0 20px #FFA500;
 }
 
 /* ===== TITLE WAVE EFFECT ===== */
@@ -348,13 +399,22 @@
 .exp__content:hover .exp__button {
   color: #667eea;
   text-shadow: 0 0 10px #667eea;
-  transform: translateX(5px);
   transition: all 0.3s ease;
 }
 
 .exp__content:nth-child(2):hover .exp__button {
   color: #f093fb;
   text-shadow: 0 0 10px #f093fb;
+}
+
+[data-theme="light"] .exp__content:hover .exp__button {
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
+}
+
+[data-theme="light"] .exp__content:nth-child(2):hover .exp__button {
+  color: #FFA500;
+  text-shadow: 0 0 10px #FFA500;
 }
 
 @media screen and (max-width: 350px) {
