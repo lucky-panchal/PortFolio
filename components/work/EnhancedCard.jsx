@@ -60,6 +60,12 @@ const EnhancedCard = ({ project, index }) => {
     }
   };
 
+  const handleSourceClick = () => {
+    if (project.sourceUrl) {
+      window.open(project.sourceUrl, '_blank');
+    }
+  };
+
   return (
     <motion.div
       ref={cardRef}
@@ -184,6 +190,8 @@ const EnhancedCard = ({ project, index }) => {
 
           <motion.button
             className="enhanced-btn source-btn"
+            onClick={handleSourceClick}
+            disabled={!project.sourceUrl}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
