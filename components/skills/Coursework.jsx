@@ -6,7 +6,13 @@ import { useTranslation } from '../../src/hooks/useTranslation.jsx';
     
     return (
         <div className="skills__content">
-  <h3 className="skills__title">{t('courseworkTitle')}</h3>
+            <div className="skills__floating-particles">
+                <div className="floating-particle"></div>
+                <div className="floating-particle"></div>
+                <div className="floating-particle"></div>
+                <div className="floating-particle"></div>
+            </div>
+            <h3 className="skills__title">{t('courseworkTitle')}</h3>
 
   <div className="skills__box">
     <div className="skills__group">
