@@ -7,6 +7,12 @@ const Frontend = () => {
   
   return (
         <div className="skills__content">
+            <div className="skills__floating-particles">
+                <div className="floating-particle"></div>
+                <div className="floating-particle"></div>
+                <div className="floating-particle"></div>
+                <div className="floating-particle"></div>
+            </div>
             <h3 className="skills__title">{t('frontendTitle')}</h3>
 
             <div className="skills__box">
