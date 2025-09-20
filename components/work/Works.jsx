@@ -21,6 +21,7 @@ const Works = () => {
             'वेब': 'web'
           };
           
+          
           const mappedCategory = categoryMap[item.name] || item.name;
           
           const newProjects = projectsData.filter((project) => {
