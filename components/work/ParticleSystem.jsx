@@ -8,6 +8,7 @@ const ParticleSystem = ({ mousePosition }) => {
   useEffect(() => {
     const particles = particlesRef.current;
     
+    
     // Create floating animation for each particle
     particles.forEach((particle, index) => {
       if (!particle) return;
