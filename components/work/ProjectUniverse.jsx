@@ -9,7 +9,9 @@ import ParticleSystem from './ParticleSystem';
 import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 import './projectuniverse.css';
 
+
 gsap.registerPlugin(ScrollTrigger);
+
 
 const ProjectUniverse = () => {
   const { t, language } = useTranslation();
