@@ -13,6 +13,7 @@ const EnhancedWorks = () => {
   const filtersRef = useRef();
   const gridRef = useRef();
 
+  
   // Filter projects
   useEffect(() => {
     if (activeFilter === 'all' || activeFilter === 'सभी') {
