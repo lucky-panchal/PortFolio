@@ -46,6 +46,7 @@ export const projectsData = [
 		features: ['AI Integration', 'Real-time Data', 'Push Notifications'],
 		particleColor: '#FFD93D'
 	},
+	
 	{
 		id: 3,
 		image: Work3,
