@@ -37,6 +37,7 @@ export const projectsData = [
 			en: 'AI-powered future prediction mobile application',
 			hi: 'AI-संचालित भविष्य भविष्यवाणी मोबाइल एप्लिकेशन'
 		},
+		
 		category: 'app',
 		status: 'development',
 		size: 'large',
@@ -46,7 +47,7 @@ export const projectsData = [
 		features: ['AI Integration', 'Real-time Data', 'Push Notifications'],
 		particleColor: '#FFD93D'
 	},
-	
+
 	
 
 	{
