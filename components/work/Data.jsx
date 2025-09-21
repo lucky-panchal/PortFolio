@@ -47,6 +47,7 @@ export const projectsData = [
 		particleColor: '#FFD93D'
 	},
 	
+	
 	{
 		id: 3,
 		image: Work3,
