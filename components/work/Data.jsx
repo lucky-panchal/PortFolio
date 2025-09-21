@@ -27,6 +27,7 @@ export const projectsData = [
 		particleColor: '#4ECDC4'
 	},
 	{
+		
 		id: 2,
 		image: Work5,
 		title: {
@@ -37,7 +38,7 @@ export const projectsData = [
 			en: 'AI-powered future prediction mobile application',
 			hi: 'AI-संचालित भविष्य भविष्यवाणी मोबाइल एप्लिकेशन'
 		},
-		
+
 		category: 'app',
 		status: 'development',
 		size: 'large',
