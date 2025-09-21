@@ -27,7 +27,7 @@ export const projectsData = [
 		particleColor: '#4ECDC4'
 	},
 	{
-		
+
 		id: 2,
 		image: Work5,
 		title: {
@@ -93,6 +93,7 @@ export const projectsData = [
 		particleColor: '#64B5F6'
 	}
 ];
+
 
 export const projectsNav = [
 	{
