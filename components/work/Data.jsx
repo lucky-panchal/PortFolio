@@ -112,6 +112,7 @@ export const projectsNav = [
 		icon: '🌐',
 		color: '#4ECDC4'
 	},
+	
 	{
 		name: {
 			en: 'app',
