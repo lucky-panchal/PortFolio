@@ -104,6 +104,7 @@ export const projectsNav = [
 		icon: '🌟',
 		color: '#FF6B6B'
 	},
+	
 	{
 		name: {
 			en: 'web',
