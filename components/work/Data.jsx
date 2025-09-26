@@ -114,6 +114,7 @@ export const projectsNav = [
 		color: '#4ECDC4'
 	},
 	
+	
 	{
 		name: {
 			en: 'app',
