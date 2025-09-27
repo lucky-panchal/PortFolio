@@ -105,6 +105,7 @@ export const projectsNav = [
 		color: '#FF6B6B'
 	},
 	
+	
 	{
 		name: {
 			en: 'web',
