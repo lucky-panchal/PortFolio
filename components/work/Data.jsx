@@ -106,6 +106,7 @@ export const projectsNav = [
 	},
 	
 	
+	
 	{
 		name: {
 			en: 'web',
