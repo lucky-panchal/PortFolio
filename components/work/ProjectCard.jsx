@@ -15,6 +15,7 @@ const ProjectCard = ({ project, index, mousePosition, isLoaded }) => {
 
   const cardSize = cardSizes[project.size] || cardSizes.medium;
 
+  
   // 3D Tilt Effect
   useEffect(() => {
     if (!cardRef.current || !isHovered) return;
