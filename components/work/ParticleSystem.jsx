@@ -10,6 +10,7 @@ const ParticleSystem = ({ mousePosition }) => {
     
     
     
+    
     // Create floating animation for each particle
     particles.forEach((particle, index) => {
       if (!particle) return;
