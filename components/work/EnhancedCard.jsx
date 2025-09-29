@@ -8,6 +8,7 @@ const EnhancedCard = ({ project, index }) => {
   const imageRef = useRef();
   const [isHovered, setIsHovered] = useState(false);
 
+  
   const [tiltValues, setTiltValues] = useState({ x: 0, y: 0 });
 
   // Define card sizes based on index and project type
