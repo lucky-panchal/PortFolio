@@ -130,6 +130,7 @@ export const projectsNav = [
 
 ];
 
+
 export const cardSizes = {
 	hero: { width: '100%', height: '500px', cols: 2 },
 	large: { width: '65%', height: '400px', cols: 1 },
