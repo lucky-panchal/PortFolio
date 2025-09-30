@@ -101,7 +101,7 @@ export const projectsNav = [
 			en: 'all',
 			hi: 'सभी'
 		},
-		
+
 		icon: '🌟',
 		color: '#FF6B6B'
 	},
@@ -116,6 +116,7 @@ export const projectsNav = [
 		icon: '🌐',
 		color: '#4ECDC4'
 	},
+	
 	
 	
 	{
