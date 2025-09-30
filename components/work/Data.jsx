@@ -137,3 +137,4 @@ export const cardSizes = {
 	featured: { width: '100%', height: '450px', cols: 2 }
 };
 
+
