@@ -118,7 +118,7 @@ export const projectsNav = [
 	},
 	
 	
-	
+
 	{
 		name: {
 			en: 'app',
@@ -127,6 +127,7 @@ export const projectsNav = [
 		icon: '📱',
 		color: '#FFD93D'
 	}
+	
 ];
 
 export const cardSizes = {
