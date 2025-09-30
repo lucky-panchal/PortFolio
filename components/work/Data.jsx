@@ -136,4 +136,3 @@ export const cardSizes = {
 	medium: { width: '40%', height: '320px', cols: 1 },
 	featured: { width: '100%', height: '450px', cols: 2 }
 };
-
