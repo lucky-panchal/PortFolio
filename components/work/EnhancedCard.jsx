@@ -11,6 +11,7 @@ const EnhancedCard = ({ project, index }) => {
 
   
   
+  
   const [tiltValues, setTiltValues] = useState({ x: 0, y: 0 });
 
   // Define card sizes based on index and project type
