@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '../../src/hooks/useTranslation.jsx';
-
 const EnhancedCard = ({ project, index }) => {
   const { t, language } = useTranslation();
   const cardRef = useRef();
