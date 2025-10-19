@@ -3,6 +3,7 @@ import Image2 from "../../src/assets/Testimonial2.jpg";
 import Image3 from "../../src/assets/Testimonial3.jpg";
 export const Data = [
     {   
+      
       id: 1,
       image: Image1,
       title: {
