@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lackilohar.netlify.app/sitemap.xml
