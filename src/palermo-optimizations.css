@@ -1,0 +1,175 @@
+/* Palermo-style GPU acceleration and performance optimizations */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
+}
+
+/* GPU acceleration for animated elements */
+.home,
+.about,
+.skills,
+.work,
+.testimonial,
+.contact,
+.home__img,
+.testimonial__card,
+.project-card,
+.section__title {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Basic section styling */
+.home.section,
+.about.section,
+.skills.section,
+.work.section,
+.testimonial.section,
+.contact.section {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+
+
+/* Prevent horizontal scroll during animations */
+body {
+  overflow-x: hidden;
+}
+
+/* Smooth section transitions */
+section {
+  transform-origin: center center;
+}
+
+/* Observer API enhanced states */
+.in-view {
+  visibility: visible;
+  opacity: 1;
+}
+
+.fully-visible {
+  transform: scale(1) !important;
+}
+
+/* Enhanced hover states */
+.skills__data,
+.enhanced-card,
+.testimonial__card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skills__data:hover,
+.enhanced-card:hover,
+.testimonial__card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Complete wireframe removal */
+*,
+*::before,
+*::after {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+*:focus,
+*:hover,
+*:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove all debug elements */
+.container,
+.grid,
+.section,
+div,
+span,
+a,
+button,
+input,
+textarea {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove browser default styles */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide any development indicators */
+[data-*] {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Clean professional look */
+body {
+  overflow-x: hidden;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/* Optimize images for lazy loading */
+img[data-src] {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+img[data-src].loaded {
+  opacity: 1;
+}
+
+/* Smooth transitions for all interactive elements */
+.button,
+.enhanced-filter,
+.contact__button,
+.home__social-icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover,
+.enhanced-filter:hover,
+.contact__button:hover,
+.home__social-icon:hover {
+  transform: translateY(-2px) translateZ(0);
+}
+
+/* Optimize scroll performance */
+.home__container,
+.about__container,
+.skills__container,
+.work__container {
+  contain: layout style paint;
+}
+
+/* Prevent layout shifts during animations */
+.enhanced-grid {
+  contain: layout;
+}
+
+/* Optimize text rendering */
+.section__title,
+.section__subtitle,
+.home__title {
+  text-rendering: optimizeLegibility;
+  font-display: swap;
+}

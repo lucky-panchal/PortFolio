@@ -69,7 +69,7 @@ const EnhancedCard = ({ project, index }) => {
   return (
     <motion.div
       ref={cardRef}
-      className={`enhanced-card ${cardSize}`}
+      className={`enhanced-card project-card project ${cardSize}`}
       style={{
         '--card-gradient-start': project.gradient[0],
         '--card-gradient-end': project.gradient[1],
@@ -78,13 +78,6 @@ const EnhancedCard = ({ project, index }) => {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.6, 
-        delay: index * 0.15,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
       whileHover={{ 
         scale: 1.02, 
         y: -5,

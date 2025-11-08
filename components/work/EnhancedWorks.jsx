@@ -29,16 +29,7 @@ const EnhancedWorks = () => {
     }
   }, [activeFilter]);
 
-  // Simple animation without GSAP conflicts
-  useEffect(() => {
-    // Simple CSS-based animations
-    const cards = gridRef.current?.children;
-    if (cards) {
-      Array.from(cards).forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-      });
-    }
-  }, [filteredProjects]);
+
 
   const handleFilterClick = (filterName) => {
     setActiveFilter(filterName);
@@ -69,8 +60,8 @@ const EnhancedWorks = () => {
       </div>
 
       {/* Dynamic Masonry Grid */}
-      <div ref={gridRef} className="enhanced-grid">
-        <AnimatePresence mode="wait">
+      <div ref={gridRef} className="enhanced-grid" style={{ position: 'relative' }}>
+        <AnimatePresence>
           {filteredProjects.map((project, index) => (
             <EnhancedCard
               key={project.id}

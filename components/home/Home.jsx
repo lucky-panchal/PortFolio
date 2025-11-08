@@ -10,10 +10,7 @@ import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Home = () => {
   const { t } = useTranslation();
-  const parallaxRef = useRef(null);
   const canvasRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const particlesRef = useRef([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -87,55 +84,25 @@ const Home = () => {
       animationId = requestAnimationFrame(drawMatrix);
     };
 
-    const handleScroll = () => {
-      const scrolled = window.pageYOffset;
-      if (parallaxRef.current) {
-        parallaxRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    };
-
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20
-      });
-    };
-
     resizeCanvas();
     createMatrix();
     drawMatrix();
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', resizeCanvas);
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationId);
     };
   }, []);
 
   return (
-    <section className="home section" id="home">
+    <section className="home section hero" id="home">
         <canvas 
           ref={canvasRef}
           className="particle-canvas"
         />
-        <div className="parallax-container">
-            <div className="parallax-layer layer-1" style={{
-              transform: `translate(${mousePosition.x}px, ${mousePosition.y}px) translateZ(-1px) scale(2)`
-            }}></div>
-            <div className="parallax-layer layer-2" style={{
-              transform: `translate(${mousePosition.x * 1.5}px, ${mousePosition.y * 1.5}px) translateZ(-2px) scale(3)`
-            }}></div>
-            <div className="parallax-layer layer-3" style={{
-              transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px) translateZ(-3px) scale(4)`
-            }}></div>
-            <div className="parallax-layer layer-4"></div>
-        </div>
-        <div className="home__container container grid" ref={parallaxRef}>
+        <div className="home__container container grid">
             <div className="home__content grid">
                 <Social />
 

@@ -108,7 +108,7 @@
 .enhanced-card {
   position: relative;
   background: var(--container-color);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -406,7 +406,7 @@
   border-radius: 15px;
   font-size: 0.75rem;
   color: var(--title-color);
-  border: 1px solid rgba(var(--title-color-rgb, 0, 0, 0), 0.2);
+  border: none;
   transition: all 0.3s ease;
   animation: techFloat 3s ease-in-out infinite;
 }
@@ -428,7 +428,7 @@
   border-radius: 15px;
   font-size: 0.75rem;
   color: var(--text-color);
-  border: 1px dashed rgba(var(--title-color-rgb, 0, 0, 0), 0.3);
+  border: none;
 }
 
 /* ===== PROGRESS BAR ===== */
@@ -495,7 +495,7 @@
   font-size: 0.9rem;
   font-weight: var(--font-medium);
   cursor: pointer;
-  border: 2px solid rgba(var(--title-color-rgb, 0, 0, 0), 0.2);
+  border: none;
   transition: all 0.3s ease;
   overflow: hidden;
   flex: 1;
@@ -538,7 +538,7 @@
   height: 300px;
   background: var(--container-color);
   border-radius: 15px;
-  border: 2px solid rgba(var(--title-color-rgb, 0, 0, 0), 0.2);
+  border: none;
   z-index: 100;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);

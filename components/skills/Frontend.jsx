@@ -6,7 +6,7 @@ const Frontend = () => {
   const { t } = useTranslation();
   
   return (
-        <div className="skills__content">
+        <div className="skills__content skill">
             <div className="skills__floating-particles">
                 <div className="floating-particle"></div>
                 <div className="floating-particle"></div>

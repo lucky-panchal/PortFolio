@@ -1,7 +1,14 @@
 import './App.css';
+import './palermo-optimizations.css';
+import './no-wireframe.css';
 import { useState } from 'react';
 import { LanguageProvider } from './hooks/useTranslation.jsx';
 import { useLoading } from './hooks/useLoading.jsx';
+import { useSmoothScroll } from './hooks/useSmoothScroll.jsx';
+import { useScrollAnimations } from './hooks/useScrollAnimations.jsx';
+import { useLazyLoad } from './hooks/useLazyLoad.jsx';
+import { useAdvancedObserver } from './hooks/useAdvancedObserver.jsx';
+import { useVisibilityAnimations } from './hooks/useVisibilityAnimations.jsx';
 import LanguageToggle from '../components/LanguageToggle/LanguageToggle';
 
 import Header from '../components/header/Header';
@@ -25,6 +32,15 @@ import FullPageSkeleton from './components/Skeleton/FullPageSkeleton';
 
 function App() {
   const isLoading = useLoading(2500);
+  
+  // Palermo-style smooth scrolling and animations
+  useSmoothScroll();
+  useScrollAnimations();
+  useLazyLoad();
+  
+  // Advanced Observer API enhancements
+  useAdvancedObserver();
+  useVisibilityAnimations();
 
   if (isLoading) {
     return (

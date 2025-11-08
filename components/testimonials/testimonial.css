@@ -14,7 +14,7 @@
 
 .testimonial__card {
     background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
     padding: 2rem;
     border-radius: 1.5rem;
     width: 100%;

@@ -37,7 +37,7 @@
         height: 280px;
         background: var(--social-card-bg, #fff);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
-        border: 1.5px solid var(--social-card-border, #e0e0e0);
+        border: none;
         padding: 2.5rem 2rem 2rem 2rem;
         border-radius: 1.5rem;
         display: flex;
@@ -117,7 +117,7 @@
 
 .social__card {
     background-color: var(--container-color);
-    border: 1px solid var(--border-color);
+    border: none;
     padding: 2rem 1.5rem;
     border-radius: 1rem;
     position: relative;
@@ -237,7 +237,7 @@
     padding: 2rem;
     background: linear-gradient(135deg, var(--first-color-lighten), var(--container-color));
     border-radius: 1rem;
-    border: 1px solid var(--border-color);
+    border: none;
 }
 
 .social__cta-text {

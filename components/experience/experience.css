@@ -11,7 +11,7 @@
 /* Content card styling */
 .exp__content {
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   background-color: var(--container-color);
   padding: 6rem 0 2rem 2.5rem;
   overflow: hidden;
