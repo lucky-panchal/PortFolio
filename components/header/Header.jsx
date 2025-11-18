@@ -65,13 +65,13 @@ const Header = () => {
 
 	return (
 		<header className='header'>
-			<nav className='nav container'>
+			<nav className='nav'>
 				<a href='index.html ' className='nav__logo'>
 					&lt;{language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}/&gt;
 				</a>
 
 				<div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
-					<ul className='nav__list grid'>
+					<ul className='nav__list'>
 						<li className='nav__item'>
 							<a
 								href='#home'
@@ -80,7 +80,8 @@ const Header = () => {
 									activeNav === '#home' ? 'nav__link active-link' : 'nav__link'
 								}
 							>
-								<i className='uil uil-estate nav__icon'></i> {t('home')}
+								<i className='uil uil-estate nav__icon'></i>
+								<span className='nav__text'>{t('home')}</span>
 							</a>
 						</li>
 
@@ -94,7 +95,8 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-scenery nav__icon'></i> {t('portfolio')}
+								<i className='uil uil-scenery nav__icon'></i>
+								<span className='nav__text'>{t('portfolio')}</span>
 							</a>
 						</li>
 
@@ -108,7 +110,8 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-file-alt nav__icon'></i> {t('skills')}
+								<i className='uil uil-file-alt nav__icon'></i>
+								<span className='nav__text'>{t('skills')}</span>
 							</a>
 						</li>
 
@@ -122,7 +125,8 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-bag-alt nav__icon'></i> {t('experienceTitle')}
+								<i className='uil uil-bag-alt nav__icon'></i>
+								<span className='nav__text'>{t('experienceTitle')}</span>
 							</a>
 						</li>
 
@@ -137,7 +141,8 @@ const Header = () => {
 									activeNav === '#about' ? 'nav__link active-link' : 'nav__link'
 								}
 							>
-								<i className='uil uil-user nav__icon'></i> {t('about')}
+								<i className='uil uil-user nav__icon'></i>
+								<span className='nav__text'>{t('about')}</span>
 							</a>
 						</li>
 
@@ -151,7 +156,8 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-share nav__icon'></i> {t('social')}
+								<i className='uil uil-share nav__icon'></i>
+								<span className='nav__text'>{t('social')}</span>
 							</a>
 						</li>
 
@@ -165,7 +171,8 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-github nav__icon'></i> {t('github')}
+								<i className='uil uil-github nav__icon'></i>
+								<span className='nav__text'>{t('github')}</span>
 							</a>
 						</li>
 
@@ -179,7 +186,8 @@ const Header = () => {
 										: 'nav__link'
 								}
 							>
-								<i className='uil uil-message nav__icon'></i> {t('contactMe')}
+								<i className='uil uil-message nav__icon'></i>
+								<span className='nav__text'>{t('contactMe')}</span>
 							</a>
 						</li>
 
