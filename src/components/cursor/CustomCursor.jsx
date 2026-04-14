@@ -1,47 +1,65 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import './CustomCursor.css';
+
 const CustomCursor = () => {
-  const cursorRef = useRef(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const animationFrameRef = useRef(null);
-
   useEffect(() => {
-    const updateMousePosition = (e) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    if (!dot || !ring) return;
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let isHovering = false;
+
+    const onMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = `${mouseX - 3}px`;
+      dot.style.top = `${mouseY - 3}px`;
     };
 
-    const updateCursorPosition = () => {
-      if (!cursorRef.current) return;
-
-      // Smooth movement using lerp (linear interpolation)
-      const lerp = (start, end, factor) => start + (end - start) * factor;
-
-      const currentX = parseFloat(cursorRef.current.style.transform.split('(')[1]) || 0;
-      const currentY = parseFloat(cursorRef.current.style.transform.split(',')[1]) || 0;
-      
-      const targetX = mouseRef.current.x - 3;
-      const targetY = mouseRef.current.y - 3;
-
-      const newX = lerp(currentX, targetX, 0.8);
-      const newY = lerp(currentY, targetY, 0.8);
-
-      cursorRef.current.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
-
-      animationFrameRef.current = requestAnimationFrame(updateCursorPosition);
+    const onEnter = () => {
+      isHovering = true;
+      ring.classList.add('cursor-ring--hover');
+      dot.classList.add('cursor-dot--hover');
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
-    animationFrameRef.current = requestAnimationFrame(updateCursorPosition);
-
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
+    const onLeave = () => {
+      isHovering = false;
+      ring.classList.remove('cursor-ring--hover');
+      dot.classList.remove('cursor-dot--hover');
     };
+
+    const animate = () => {
+      ringX += (mouseX - ringX) * 0.1;
+      ringY += (mouseY - ringY) * 0.1;
+      ring.style.left = `${ringX - 16}px`;
+      ring.style.top = `${ringY - 16}px`;
+      requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('mousemove', onMove);
+    animate();
+
+    // attach hover to all interactive elements after mount
+    const attach = () => {
+      document.querySelectorAll('a, button, .work__card, .social__card, .exp__item-header, .testi__btn, .nav__link, .nav__cta').forEach(el => {
+        el.addEventListener('mouseenter', onEnter);
+        el.addEventListener('mouseleave', onLeave);
+      });
+    };
+    // slight delay to ensure DOM is ready
+    setTimeout(attach, 500);
+
+    return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
-  return <div ref={cursorRef} className="cursor-dot" />;
+  return (
+    <>
+      <div className="cursor-dot"></div>
+      <div className="cursor-ring"></div>
+    </>
+  );
 };
 
 export default CustomCursor;
