@@ -1,18 +1,4 @@
-/* Completely hide scrollbar */
-::-webkit-scrollbar {
-  display: none;
-}
-
-/* For Firefox */
-html {
-  scrollbar-width: none;
-}
-
-/* Remove any yellow highlighting */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  overflow-x: hidden;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #0a0a0a; border-radius: 2px; }
+* { -ms-overflow-style: none; scrollbar-width: thin; scrollbar-color: #0a0a0a #ffffff; }

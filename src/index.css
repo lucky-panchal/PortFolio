@@ -1,20 +1,15 @@
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
-
-* {
+*, *::before, *::after {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
   padding: 0;
-  width: 100vw !important;
-  position: relative;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 #root {
-  width: 100vw !important;
-  overflow-x: hidden !important;
+  width: 100%;
+  overflow-x: hidden;
 }
