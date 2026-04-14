@@ -1,118 +1,57 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './testimonial.css';
 import { Data } from './Data';
-import Scroll3D from '../../src/components/scroll3d/Scroll3D';
-import { useTranslation } from '../../src/hooks/useTranslation.jsx';
-
 
 const Testimonials = () => {
-  const { t, language } = useTranslation();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const typeIntervalRef = useRef(null);
-  const autoAdvanceRef = useRef(null);
-  const isChangingRef = useRef(false);
+  const [current, setCurrent] = useState(0);
+  const timerRef = useRef(null);
+
+  const go = (idx) => {
+    clearTimeout(timerRef.current);
+    setCurrent((idx + Data.length) % Data.length);
+  };
 
   useEffect(() => {
-    // Clear any existing intervals
-    if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
-    if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+    timerRef.current = setTimeout(() => go(current + 1), 5000);
+    return () => clearTimeout(timerRef.current);
+  }, [current]);
 
-    const text = Data[currentIndex].description[language];
-    setDisplayedText('');
-    setIsTyping(true);
-    
-    let i = 0;
-    typeIntervalRef.current = setInterval(() => {
-      if (i < text.length) {
-        setDisplayedText(text.slice(0, i + 1));
-        i++;
-      } else {
-        setIsTyping(false);
-        clearInterval(typeIntervalRef.current);
-        
-        // Auto-advance after typing completes
-        autoAdvanceRef.current = setTimeout(() => {
-          if (!isChangingRef.current) {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % Data.length);
-          }
-        }, 3000);
-      }
-    }, 50);
-
-    return () => {
-      if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
-      if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
-    };
-  }, [currentIndex, language]);
-
-  const nextTestimonial = () => {
-    if (isChangingRef.current) return;
-    
-    isChangingRef.current = true;
-    if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
-    if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
-    
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % Data.length);
-    
-    setTimeout(() => {
-      isChangingRef.current = false;
-    }, 100);
-  };
-
-  const prevTestimonial = () => {
-    if (isChangingRef.current) return;
-    
-    isChangingRef.current = true;
-    if (typeIntervalRef.current) clearInterval(typeIntervalRef.current);
-    if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
-    
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + Data.length) % Data.length);
-    
-    setTimeout(() => {
-      isChangingRef.current = false;
-    }, 100);
-  };
+  const item = Data[current];
 
   return (
-    <section className="testimonial container section" id="testimonials">
-      <h2 className="section__title">{t('testimonialsTitle')}</h2>
-      <span className="section__subtitle">{t('testimonialsSubtitle')}</span>
+    <section className="testimonials section" id="testimonials">
+      <div className="container">
+        <div className="section-label inview">
+          <span className="section-label__title">Testimonials</span>
+          <span className="section-label__number">06</span>
+        </div>
+        <div className="section-line"><div className="section-line__grow"></div></div>
 
-      <Scroll3D variant="rotationTransition" className="testimonial__container">
-        <button className="carousel__button carousel__button--prev" onClick={prevTestimonial}>
-          &lt;
-        </button>
-        
-        <div className="testimonial__content-wrapper">
-          <div className="testimonial__card">
-            <div className="testimonial__flex">
-              <div className="testimonial__image-container">
-                <img 
-                  src={Data[currentIndex].image} 
-                  alt={typeof Data[currentIndex].title === 'object' ? Data[currentIndex].title[language] : Data[currentIndex].title}
-                  className="testimonial__img" 
-                />
-              </div>
+        <h2 className="heading-display">
+          <span className="reveal-text inview"><span>People Often</span></span>
+          <span className="reveal-text inview"><span className="alt">Say.</span></span>
+        </h2>
 
-              <div className="testimonial__text-content">
-                <h3 className="testimonial__name">
-                  {typeof Data[currentIndex].title === 'object' ? Data[currentIndex].title[language] : Data[currentIndex].title}
-                </h3>
-                <p className="testimonial__description">
-                  {displayedText}
-                  {isTyping && <span className="cursor">|</span>}
-                </p>
-              </div>
+        <div className="testi__wrap inview">
+          <div className="testi__card">
+            <p className="testi__quote">"{typeof item.description === 'object' ? item.description.en : item.description}"</p>
+            <div className="testi__author">
+              <img src={item.image} alt={typeof item.title === 'object' ? item.title.en : item.title} className="testi__avatar" />
+              <span className="testi__name">{typeof item.title === 'object' ? item.title.en : item.title}</span>
             </div>
           </div>
-        </div>
 
-        <button className="carousel__button carousel__button--next" onClick={nextTestimonial}>
-          &gt;
-        </button>
-      </Scroll3D>
+          <div className="testi__controls">
+            <button className="testi__btn" onClick={() => go(current - 1)} aria-label="Previous">←</button>
+            <div className="testi__dots">
+              {Data.map((_, i) => (
+                <button key={i} className={`testi__dot${i === current ? ' testi__dot--active' : ''}`} onClick={() => go(i)} aria-label={`Go to ${i + 1}`} />
+              ))}
+            </div>
+            <button className="testi__btn" onClick={() => go(current + 1)} aria-label="Next">→</button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
