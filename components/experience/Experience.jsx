@@ -1,156 +1,136 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './experience.css';
-import Certificate from "../../src/assets/Certificate1.pdf"
-import { useTranslation } from '../../src/hooks/useTranslation.jsx';
+import Certificate from '../../src/assets/Certificate1.pdf';
+import HackImg1 from '../../src/assets/IMG20260403235704.jpg';
+import HackImg2 from '../../src/assets/rai_university_ahmedabad_14050121_172507316.jpg.jpeg';
+import HackCert from '../../src/assets/IMG-20260414-WA0014.jpg';
 
+const experiences = [
+  {
+    id: 1,
+    role: 'B.Tech Student (CSE)',
+    company: 'Rai University, Ahmedabad',
+    period: "Jun'24 — Present",
+    icon: 'uil uil-graduation-cap',
+    details: [
+      'Pursuing Bachelor of Technology in Computer Science',
+      'Building full-stack applications with MERN Stack',
+      'Creating UI interfaces and UX interactions',
+      'Version Control System specialist',
+    ],
+  },
+  {
+    id: 2,
+    role: 'Virtual Internship',
+    company: 'AICTE — Eduskills',
+    period: "Apr'25 — Jun'25",
+    icon: 'uil uil-briefcase-alt',
+    details: [
+      'Google for Developers Verified Certificate',
+      'Data preprocessing and model evaluation',
+      'Machine learning fundamentals',
+    ],
+    certificate: Certificate,
+  },
+  {
+    id: 3,
+    role: '🏆 1st Place — DefenceTech Domain',
+    company: 'Gandhinagar University Hackathon · Team codeXlearner',
+    period: '3rd — 4th April 2026',
+    icon: 'uil uil-trophy',
+    details: [
+      '36 hours. No sleep. Built under pressure from scratch.',
+      'Project: Secure Military Communications Monitoring',
+      'Real-time anomaly detection — jamming & spoofing using hybrid AI + rule-based approach',
+      'Secured 1st Rank in DefenceTech domain at Gandhinagar University Hackathon',
+      'Recognized by Rai University on official social media',
+    ],
+    images: [HackImg1, HackImg2],
+    hackCert: HackCert,
+    certificateSoon: false,
+  },
+];
 
 const Experience = () => {
-    const { t } = useTranslation();
-    const [toggleState, setToggleState] = useState(false);
+  const [open, setOpen] = useState(null);
 
-    const toggleTab = (index) => {
-        setToggleState(index);
-    }
-
-    return (
-        <div className="section experience section" id="experience">
-            <h2 className="section__title">{t('experienceTitle')} 💼</h2>
-            <span className="section__subtitle">{t('experienceSubtitle')}</span>
-
-            <div className="exp__container grid">
-                
-                <div className="exp__content">
-                    <div className="exp__sparkles">
-                        <div className="sparkle"></div>
-                        <div className="sparkle"></div>
-                        <div className="sparkle"></div>
-                        <div className="sparkle"></div>
-                    </div>
-                    <div>
-                        <i className="uil uil-web-grid exp__icon"></i>
-                        <h3 className="exp__title">{t('asStudent')}</h3>
-                    </div>
-
-                    <div>
-                        <span className="exp__comp">{t('raiUniversityAhmedabad')}</span>
-                    </div>
-
-                    <span className="exp__button" onClick={() => toggleTab(1)}>{t('viewMore')} <i className="uil uil-arrow-right exp__button-icon"></i></span>
-
-                    <div className={toggleState === 1 ? "exp__modal active-modal" : "exp__modal"}>
-                        <div className="exp__modal-content">
-                            <i onClick={() => toggleTab(0)} className="uil uil-times exp__modal-close"></i>
-
-                            <h3 className="exp__modal-title">{t('pursuingBtech')} <br /> {t('junPresent')}🧑🏻💻</h3>
-                            <p className="exp__modal-description"></p>
-
-                            <ul className="exp__modal-experiences grid">
-                                <li className="exp__modal-experience">
-                                    <i className="uil uil-check-circle exp__modal-icon"></i>
-                                    <p className="exp__modal-info">{t('mernStack')}</p>
-                                </li>
-
-                                <li className="exp__modal-experience">
-                                    <i className="uil uil-check-circle exp__modal-icon"></i>
-                                    <p className="exp__modal-info">{t('createUI')}</p>
-                                </li>
-
-                                <li className="exp__modal-experience">
-                                    <i className="uil uil-check-circle exp__modal-icon"></i>
-                                    <p className="exp__modal-info">{t('createUX')}</p>
-                                </li>
-
-                                <li className="exp__modal-experience">
-                                    <i className="uil uil-check-circle exp__modal-icon"></i>
-                                    <p className="exp__modal-info">{t('vcsSpecialist')}</p>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="exp__content">
-                    <div className="exp__sparkles">
-                        <div className="sparkle"></div>
-                        <div className="sparkle"></div>
-                        <div className="sparkle"></div>
-                        <div className="sparkle"></div>
-                    </div>
-                    <div>
-                        <i className="uil uil-arrow exp__icon"></i>
-                        <h3 className="exp__title">{t('virtualInternship')}</h3>
-                    </div>
-
-                    <div>
-                        <span className="exp__comp">{t('aicteEduskills')}</span>
-                    </div>
-
-                    <span className="exp__button" onClick={() => toggleTab(2)}>{t('viewMore')} <i className="uil uil-arrow-right exp__button-icon"></i></span>
-
-                    <div className={toggleState === 2 ? "exp__modal active-modal" : "exp__modal"}>
-                        <div className="exp__modal-content">
-                            <i onClick={() => toggleTab(0)} className="uil uil-times exp__modal-close"></i>
-
-                            <h3 className="exp__modal-title">{t('internship')} <br /> {t('aprJun')}</h3>
-                            <p className="exp__modal-description">{t('gainedKnowledge')}
-                            </p>
-
-                            <ul className="exp__modal-experiences grid">
-                                <li className="exp__modal-experience">
-                                    <i className="uil uil-check-circle exp__modal-icon"></i>
-                                    <p className="exp__modal-info">{t('googleCertificate')}</p>
-                                </li>
-
-                                <li className="exp__modal-experience">
-                                    <i className="uil uil-check-circle exp__modal-icon"></i>
-                                    <p className="exp__modal-info">{t('dataPreprocessing')}</p>
-                                </li>
-                            </ul>
-
-                            <a
-                                download=""
-                                href={Certificate}
-                                className="button button--flex exp__download-button"
-                            >
-                                {t('downloadCertificate')}
-                                <svg
-                                    className="button__icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                >
-                                    <path
-                                        d="M15.25 22.7502H9.25C3.82 22.7502 1.5 20.4302 1.5 15.0002V9.00024C1.5 3.57024 3.82 1.25024 9.25 1.25024H14.25C14.66 1.25024 15 1.59024 15 2.00024C15 2.41024 14.66 2.75024 14.25 2.75024H9.25C4.64 2.75024 3 4.39024 3 9.00024V15.0002C3 19.6102 4.64 21.2502 9.25 21.2502H15.25C19.86 21.2502 21.5 19.6102 21.5 15.0002V10.0002C21.5 9.59024 21.84 9.25024 22.25 9.25024C22.66 9.25024 23 9.59024 23 10.0002V15.0002C23 20.4302 20.68 22.7502 15.25 22.7502Z"
-                                        fill="var(--container-color)"
-                                    ></path>
-                                    <path
-                                        d="M22.25 10.7502H18.25C14.83 10.7502 13.5 9.42023 13.5 6.00023V2.00023C13.5 1.70023 13.68 1.42023 13.96 1.31023C14.24 1.19023 14.56 1.26023 14.78 1.47023L22.78 9.47023C22.99 9.68023 23.06 10.0102 22.94 10.2902C22.82 10.5702 22.55 10.7502 22.25 10.7502ZM15 3.81023V6.00023C15 8.58023 15.67 9.25023 18.25 9.25023H20.44L15 3.81023Z"
-                                        fill="var(--container-color)"
-                                    ></path>
-                                    <path
-                                        d="M13.25 13.7502H7.25C6.84 13.7502 6.5 13.4102 6.5 13.0002C6.5 12.5902 6.84 12.2502 7.25 12.2502H13.25C13.66 12.2502 14 12.5902 14 13.0002C14 13.4102 13.66 13.7502 13.25 13.7502Z"
-                                        fill="var(--container-color)"
-                                    ></path>
-                                    <path
-                                        d="M11.25 17.7502H7.25C6.84 17.7502 6.5 17.4102 6.5 17.0002C6.5 16.5902 6.84 16.2502 7.25 16.2502H11.25C11.66 16.2502 12 16.5902 12 17.0002C12 17.4102 11.66 17.7502 11.25 17.7502Z"
-                                        fill="var(--container-color)"
-                                    ></path>
-                                </svg>
-                            </a>
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+  return (
+    <section className="experience section" id="experience">
+      <div className="container">
+        <div className="section-label inview">
+          <span className="section-label__title">Experience</span>
+          <span className="section-label__number">03</span>
         </div>
-    )
-}
+        <div className="section-line"><div className="section-line__grow"></div></div>
 
-export default Experience
+        <h2 className="heading-display">
+          <span className="reveal-text inview"><span>What I've</span></span>
+          <span className="reveal-text inview"><span className="alt">Done So Far.</span></span>
+        </h2>
+
+        <div className="exp__list">
+          {experiences.map((exp, i) => (
+            <div key={exp.id} className="exp__item inview" style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div className="exp__item-header" onClick={() => setOpen(open === exp.id ? null : exp.id)}>
+                <div className="exp__item-left">
+                  <i className={exp.icon}></i>
+                  <div>
+                    <h3 className="exp__role">{exp.role}</h3>
+                    <span className="exp__company">{exp.company}</span>
+                  </div>
+                </div>
+                <div className="exp__item-right">
+                  <span className="exp__period">{exp.period}</span>
+                  <i className={`uil ${open === exp.id ? 'uil-angle-up' : 'uil-angle-down'} exp__toggle`}></i>
+                </div>
+              </div>
+
+              {open === exp.id && (
+                <div className="exp__item-body">
+                  <ul className="exp__details">
+                    {exp.details.map((d, j) => (
+                      <li key={j} className="exp__detail">
+                        <i className="uil uil-check-circle"></i>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {exp.images && (
+                    <div className="exp__images">
+                      {exp.images.map((img, j) => (
+                        <div key={j} className="exp__image-wrap">
+                          <img src={img} alt={`Hackathon moment ${j + 1}`} className="exp__image" />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {exp.hackCert && (
+                    <div className="exp__cert-section">
+                      <span className="exp__cert-label">Certificate</span>
+                      <div className="exp__cert-img-wrap">
+                        <img src={exp.hackCert} alt="Hackathon Certificate" className="exp__cert-img" />
+                      </div>
+                      <a href={exp.hackCert} download="DefenceTech_Certificate.jpg" className="btn btn--primary exp__cert-btn">
+                        Download Certificate ↓
+                      </a>
+                    </div>
+                  )}
+                  {exp.certificate && (
+                    <a href={exp.certificate} download className="btn btn--outline exp__cert-btn">
+                      Download Certificate ↓
+                    </a>
+                  )}
+                  {exp.certificateSoon && (
+                    <span className="exp__cert-soon">Certificate — Coming Soon</span>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
