@@ -1,101 +1,73 @@
-/* eslint-disable no-unused-vars */
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './contact.css';
-import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Contact = () => {
-    const { t, language } = useTranslation();
-    const form = useRef();
+  const form = useRef();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_3yx8z6y', 'template_rzjy7wl', form.current, {
+      publicKey: 'foMuZCYtoVTsEePVu',
+    });
+    e.target.reset();
+  };
 
-        emailjs.sendForm('service_3yx8z6y', 'template_rzjy7wl', form.current, {
-            publicKey: 'foMuZCYtoVTsEePVu',
-        })
-        e.target.reset()
-    };
+  return (
+    <section className="contact section" id="contact">
+      <div className="container">
+        <div className="section-label inview">
+          <span className="section-label__title">Contact</span>
+          <span className="section-label__number">08</span>
+        </div>
+        <div className="section-line"><div className="section-line__grow"></div></div>
 
-    return (
-        <section className="contact section" id="contact">
-            <h2 className="section__title">{t('contactTitle')}</h2>
-            <span className="section__subtitle">{t('contactSubtitle')}</span>
+        <h2 className="heading-display">
+          <span className="reveal-text inview"><span>Let's Talk Business</span></span>
+          <span className="reveal-text inview"><span className="alt">Or Just Say Hello.</span></span>
+        </h2>
 
-            <div className="contact__container container grid">
-                <div className="contact__content">
-                    <h3 className="contact__title">{t('talkToMe')}<i className="uil uil-calling"></i></h3>
-
-                    <div className="contact__info">
-
-                        <div className="contact__card">
-                            <i className="bx bx-mail-send contact__card-icon"></i>
-
-                            <h3 className="contact__card-title">{t('email')}</h3>
-                            <span className="contact__card-data">luckykanti31122006@gmail.com</span>
-
-                            <a href="mailto:luckykanti31122006@gmail.com" className="contact__button">{t('writeMe')} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
-                        </div>
-
-                        <div className="contact__card">
-                            <i className="bx bxl-whatsapp contact__card-icon"></i>
-
-                            <h3 className="contact__card-title">{t('whatsapp')}</h3>
-                            <span className="contact__card-data">(+91) 7425875484</span>
-
-                            <a href={`https://api.whatsapp.com/send?phone=7425875484&text=Hello ${language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}, I hope you're doing well. I would like to connect with you ❤️`} className="contact__button">
-                                {t('writeMe')} <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-                            </a>
-                            
-
-                        </div>
-
-                    </div>
-                </div>
-                <div className="contact__content">
-                    <h3 className="contact__title">{t('writeMessage')}<i className="uil uil-message"></i></h3>
-
-                    <form ref={form} onSubmit={sendEmail} className="contact__form">
-                        <div className="contact__form-div">
-                            <label className="contact__form-tag">{t('name')}</label>
-                            <input type="text" name='name' className='contact__form-input' placeholder={t('nameLabel')} />
-                        </div>
-
-                        <div className="contact__form-div">
-                            <label className="contact__form-tag">{t('mail')}</label>
-                            <input type="email" name='email' className='contact__form-input' placeholder={t('mailLabel')} />
-                        </div>
-
-                        <div className="contact__form-div contact__form-area">
-                            <label className="contact__form-tag">{t('message')}</label>
-                            <textarea name="message" cols="30" rows="10" className='contact__form-input' placeholder={t('messageLabel')}></textarea>
-                        </div>
-
-                        <button className="button button--flex">
-                            {t('sendMessage')}
-                            <svg
-                                className="button__icon"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                            >
-                                <path
-                                    d="M14.2199 21.9352C13.0399 21.9352 11.3699 21.1052 10.0499 17.1352L9.32988 14.9752L7.16988 14.2552C3.20988 12.9352 2.37988 11.2652 2.37988 10.0852C2.37988 8.91525 3.20988 7.23525 7.16988 5.90525L15.6599 3.07525C17.7799 2.36525 19.5499 2.57525 20.6399 3.65525C21.7299 4.73525 21.9399 6.51525 21.2299 8.63525L18.3999 17.1252C17.0699 21.1052 15.3999 21.9352 14.2199 21.9352ZM7.63988 7.33525C4.85988 8.26525 3.86988 9.36525 3.86988 10.0852C3.86988 10.8052 4.85988 11.9052 7.63988 12.8252L10.1599 13.6652C10.3799 13.7352 10.5599 13.9152 10.6299 14.1352L11.4699 16.6552C12.3899 19.4352 13.4999 20.4252 14.2199 20.4252C14.9399 20.4252 16.0399 19.4352 16.9699 16.6552L19.7999 8.16525C20.3099 6.62525 20.2199 5.36525 19.5699 4.71525C18.9199 4.06525 17.6599 3.98525 16.1299 4.49525L7.63988 7.33525Z"
-                                    fill="var(--container-color)"
-                                ></path>
-                                <path
-                                    d="M10.11 14.7052C9.92005 14.7052 9.73005 14.6352 9.58005 14.4852C9.29005 14.1952 9.29005 13.7152 9.58005 13.4252L13.16 9.83518C13.45 9.54518 13.93 9.54518 14.22 9.83518C14.51 10.1252 14.51 10.6052 14.22 10.8952L10.64 14.4852C10.5 14.6352 10.3 14.7052 10.11 14.7052Z"
-                                    fill="var(--container-color)"
-                                ></path>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
+        <div className="contact__grid">
+          <div className="contact__info inview">
+            <div className="contact__info-item">
+              <span className="contact__info-label">Email</span>
+              <a href="mailto:luckykanti31122006@gmail.com" className="contact__info-value">
+                luckykanti31122006@gmail.com ↗
+              </a>
             </div>
-        </section>
-    )
-}
+            <div className="contact__info-item">
+              <span className="contact__info-label">WhatsApp</span>
+              <a href="https://api.whatsapp.com/send?phone=7425875484&text=Hello Lacki Lohar, I would like to connect with you." className="contact__info-value" target="_blank" rel="noopener noreferrer">
+                (+91) 7425875484 ↗
+              </a>
+            </div>
+            <div className="contact__info-item">
+              <span className="contact__info-label">Schedule</span>
+              <a href="https://cal.com/lucky-panchal-qckdio" className="contact__info-value" target="_blank" rel="noopener noreferrer">
+                Book a meeting ↗
+              </a>
+            </div>
+          </div>
 
-export default Contact
+          <form ref={form} onSubmit={sendEmail} className="contact__form inview">
+            <div className="contact__field">
+              <label className="contact__label">Name</label>
+              <input type="text" name="name" className="contact__input" placeholder="Your name" required />
+            </div>
+            <div className="contact__field">
+              <label className="contact__label">Email</label>
+              <input type="email" name="email" className="contact__input" placeholder="your@email.com" required />
+            </div>
+            <div className="contact__field contact__field--area">
+              <label className="contact__label">Message</label>
+              <textarea name="message" className="contact__input" placeholder="Tell me about your project..." rows="5" required></textarea>
+            </div>
+            <button type="submit" className="btn btn--primary">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
