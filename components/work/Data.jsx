@@ -3,6 +3,7 @@ import Work3 from '../../src/assets/Work3.png';
 import Work4 from '../../src/assets/Work4.png';
 import Work5 from '../../src/assets/Work5.jpg';
 import Work6 from '../../src/assets/Work6.png';
+import Lakshhya from '../../src/assets/Lakshhya.png';
 
 export const projectsData = [
 	{
@@ -29,25 +30,25 @@ export const projectsData = [
 		particleColor: '#4ECDC4'
 	},
 	{
-
 		id: 2,
-		image: Work5,
+		image: Lakshhya,
 		title: {
-			en: 'Figma-Project',
-			hi: 'फिग्मा-प्रोजेक्ट'
+			en: 'LakshyaAI',
+			hi: 'LakshyaAI'
 		},
 		description: {
-			en: 'Design system and UI component library',
-			hi: 'डिज़ाइन सिस्टम और UI कंपोनेंट लाइब्रेरी'
+			en: 'Full-stack AI plagiarism detection system built solo in Sem 4. FastAPI backend with TF-IDF & BERT (semantic) engines, sentence-level highlight matching, auto PDF reports, and a React frontend with animated score rings and 3-mode result viewer.',
+			hi: 'Full-stack AI plagiarism detection system built solo in Sem 4. FastAPI backend with TF-IDF & BERT (semantic) engines, sentence-level highlight matching, auto PDF reports, and a React frontend with animated score rings and 3-mode result viewer.'
 		},
-
-		category: 'app',
-		status: 'coming_soon',
+		category: 'web',
+		demoUrl: 'https://lakshhya.netlify.app',
+		sourceUrl: 'https://github.com/lucky-panchal',
+		status: 'completed',
 		size: 'large',
 		gradient: ['#A8E6CF', '#FFD93D'],
-		techStack: ['React Native', 'AI/ML', 'Firebase'],
-		progress: 30,
-		features: ['AI Integration', 'Real-time Data', 'Push Notifications'],
+		techStack: ['React', 'FastAPI', 'BERT', 'TF-IDF', 'Python'],
+		progress: 100,
+		features: ['NLP Plagiarism Detection', 'PDF Reports', 'Semantic Matching'],
 		particleColor: '#FFD93D'
 	},
 
