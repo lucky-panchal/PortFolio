@@ -1,18 +1,23 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
-import "./../scrollup/scrollup.css";
+import React, { useEffect } from 'react';
+import './scrollup.css';
 
 const ScrollUp = () => {
-    window.addEventListener("scroll", function () {
-        const scrollUp = this.document.querySelector(".scrollup");
-        if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
-        else scrollUp.classList.remove("show-scroll");
-    });
-  return (
-    <a href="#" className="scrollup">
-        <i className="uil uil-arrow-up scrollup__icon"></i>
-    </a>
-  )
-}
+  useEffect(() => {
+    const onScroll = () => {
+      const btn = document.querySelector('.scrollup');
+      if (!btn) return;
+      if (window.scrollY >= 560) btn.classList.add('show-scroll');
+      else btn.classList.remove('show-scroll');
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-export default ScrollUp
+  return (
+    <a href="#home" className="scrollup" aria-label="Back to top">
+      <i className="uil uil-arrow-up"></i>
+    </a>
+  );
+};
+
+export default ScrollUp;

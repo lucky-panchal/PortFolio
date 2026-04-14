@@ -1,41 +1,32 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import "./footer.css";
-import { useTranslation } from '../../src/hooks/useTranslation.jsx';
+import './footer.css';
 
-const Footer = () => {
-  const { t, language } = useTranslation();
-  
-  return (
-    <footer className="footer">
-        <div className="footer__container container">
-            <h1 className="footer__title">&lt;{language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}/&gt;</h1>
-
-            <ul className="footer__list">
-                <li>
-                    <a href="#about" className="footer__link">{t('about')}</a>
-                </li>
-
-                <li>
-                    <a href="#skills" className="footer__link">{t('skills')}</a>
-                </li>
-
-                <li>
-                    <a href="#testimonials" className="footer__link">{t('testimonialsSubtitle')}</a>
-                </li>
-            </ul>
-
-            <div className="footer__social">
-                <a href="https://www.instagram.com/luckyp4nch4l/" className="footer__social-link" target="_blank">
-                    <i className="bx bxl-instagram"></i>
-                </a>
-            </div>
-
-            <span className="footer__copy">&#169; {language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}. All rights reserved</span>
-
+const Footer = () => (
+  <footer className="footer">
+    <div className="footer__container container">
+      <div className="footer__top">
+        <div className="footer__divider-line"></div>
+      </div>
+      <div className="footer__content">
+        <span className="footer__logo">&lt;Lacki Lohar/&gt;</span>
+        <ul className="footer__links">
+          <li><a href="#projects" className="footer__link">Work</a></li>
+          <li><a href="#skills" className="footer__link">Skills</a></li>
+          <li><a href="#about" className="footer__link">About</a></li>
+          <li><a href="#contact" className="footer__link">Contact</a></li>
+        </ul>
+        <div className="footer__socials">
+          <a href="https://github.com/lucky-panchal" className="footer__social" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/lacki-lohar-463a23321" className="footer__social" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/luckyp4nch4l/" className="footer__social" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
-    </footer>
-  )
-}
+      </div>
+      <div className="footer__bottom">
+        <span className="footer__copy">© {new Date().getFullYear()} Lacki Lohar. All rights reserved.</span>
+        <a href="#home" className="footer__back">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+);
 
-export default Footer
+export default Footer;

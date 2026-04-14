@@ -1,47 +1,37 @@
 .scrollup {
-    position: fixed;
-    right: 2.5rem;
-    bottom: -20%;
-    background-color: var(--title-color);
-    opacity: 0.8;
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.4rem;
-    z-index: var(--z-tooltip);
-    transition: .4s;
+  position: fixed;
+  right: 2rem;
+  bottom: -20%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #0a0a0a;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s ease, opacity 0.4s ease, transform 0.2s ease;
+  opacity: 0;
 }
 
-.scrollup__icon {
-    font-size: 1.5rem;
-    color: var(--container-color);
-}
-
-.scrollup__icon:hover {
-    background-color: var(--title-color-dark);
+.scrollup:hover {
+  transform: translateY(-3px);
+  background: #262626;
 }
 
 .show-scroll {
-    bottom: 3rem;
+  bottom: 3rem;
+  opacity: 1;
 }
 
-@media screen and (max-width: 992px) {
-    .scrollup {
-        right: 1.5rem;
-        padding: 0.25rem 0.4rem;
-    }
-
-    .scrollup__icon {
-        font-size: 1.25rem;
-    }
+@media screen and (max-width: 768px) {
+  .show-scroll {
+    bottom: 5.5rem;
   }
 
-  @media screen and (max-width: 768px) {
-    .show-scroll {
-        bottom: 4rem;
-    }
+  .scrollup {
+    right: 1rem;
   }
-  
-  @media screen and (max-width: 350px) {
-    .scrollup {
-        right: 1rem;
-    }
-  }
+}
