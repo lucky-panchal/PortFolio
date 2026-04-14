@@ -1,217 +1,80 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
-import { useTranslation } from '../../src/hooks/useTranslation.jsx';
+const navLinks = [
+  { href: '#home',       icon: 'uil-estate',    label: 'Home' },
+  { href: '#projects',   icon: 'uil-scenery',   label: 'Work' },
+  { href: '#skills',     icon: 'uil-file-alt',  label: 'Skills' },
+  { href: '#experience', icon: 'uil-bag-alt',   label: 'Experience' },
+  { href: '#about',      icon: 'uil-user',      label: 'About' },
+  { href: '#contact',    icon: 'uil-message',   label: 'Contact' },
+];
 
 const Header = () => {
-	const { t, language } = useTranslation();
-	const [isNavigating, setIsNavigating] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState('#home');
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (isNavigating) return; // Skip animation during navigation
-			
-			const header = document.querySelector('.header');
-			const homeSection = document.querySelector('#home');
-			const projectsSection = document.querySelector('#projects');
-			const scrollY = window.scrollY;
-			const windowHeight = window.innerHeight;
-			
-			// Only minimize between home and projects sections
-			let shouldMinimize = false;
-			
-			if (homeSection && projectsSection) {
-				const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
-				const projectsTop = projectsSection.offsetTop;
-				
-				// Check if we're between home and projects sections
-				if (scrollY > homeBottom - windowHeight * 0.3 && 
-					scrollY < projectsTop + windowHeight * 0.2) {
-					shouldMinimize = true;
-				}
-			}
-			
-			if (shouldMinimize) {
-				header?.classList.add('minimized');
-			} else {
-				header?.classList.remove('minimized');
-			}
-			
-			if (scrollY >= 80) header?.classList.add('scroll-header');
-			else header?.classList.remove('scroll-header');
-		};
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, [isNavigating]);
+  const handleClick = (e, href) => {
+    e.preventDefault();
+    setActive(href);
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
-	const handleNavClick = (e, targetId) => {
-		e.preventDefault();
-		setIsNavigating(true);
-		
-		const targetSection = document.querySelector(targetId);
-		if (targetSection) {
-			targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-			
-			// Re-enable animations after navigation completes
-			setTimeout(() => {
-				setIsNavigating(false);
-			}, 1000);
-		}
-	};
+  return (
+    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
+      <nav className="nav container">
+        <a href="#home" className="nav__logo" onClick={(e) => handleClick(e, '#home')}>
+          &lt;Lacki Lohar/&gt;
+        </a>
 
-	const [Toggle, showMenu] = useState(false);
-	const [activeNav, setActiveNav] = useState('#home');
+        {/* desktop links */}
+        <ul className="nav__list">
+          {navLinks.map(({ href, label }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className={`nav__link link-hover${active === href ? ' nav__link--active' : ''}`}
+                onClick={(e) => handleClick(e, href)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-	return (
-		<header className='header'>
-			<nav className='nav'>
-				<a href='index.html ' className='nav__logo'>
-					&lt;{language === 'hi' ? 'लक्की लौहार' : 'Lacki Lohar'}/&gt;
-				</a>
+        {/* desktop CTA */}
+        <a
+          href="https://cal.com/lucky-panchal-qckdio"
+          className="nav__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Let's talk
+        </a>
+      </nav>
 
-				<div className={Toggle ? 'nav__menu show-menu' : 'nav__menu'}>
-					<ul className='nav__list'>
-						<li className='nav__item'>
-							<a
-								href='#home'
-								onClick={(e) => { handleNavClick(e, '#home'); setActiveNav('#home'); }}
-								className={
-									activeNav === '#home' ? 'nav__link active-link' : 'nav__link'
-								}
-							>
-								<i className='uil uil-estate nav__icon'></i>
-								<span className='nav__text'>{t('home')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item'>
-							<a
-								href='#projects'
-								onClick={(e) => { handleNavClick(e, '#projects'); setActiveNav('#projects'); }}
-								className={
-									activeNav === '#projects'
-										? 'nav__link active-link'
-										: 'nav__link'
-								}
-							>
-								<i className='uil uil-scenery nav__icon'></i>
-								<span className='nav__text'>{t('portfolio')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item'>
-							<a
-								href='#skills'
-								onClick={(e) => { handleNavClick(e, '#skills'); setActiveNav('#skills'); }}
-								className={
-									activeNav === '#skills'
-										? 'nav__link active-link'
-										: 'nav__link'
-								}
-							>
-								<i className='uil uil-file-alt nav__icon'></i>
-								<span className='nav__text'>{t('skills')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item'>
-							<a
-								href='#experience'
-								onClick={(e) => { handleNavClick(e, '#experience'); setActiveNav('#experience'); }}
-								className={
-									activeNav === '#experience'
-										? 'nav__link active-link'
-										: 'nav__link'
-								}
-							>
-								<i className='uil uil-bag-alt nav__icon'></i>
-								<span className='nav__text'>{t('experienceTitle')}</span>
-							</a>
-						</li>
-
-
-
-
-						<li className='nav__item'>
-							<a
-								href='#about'
-								onClick={(e) => { handleNavClick(e, '#about'); setActiveNav('#about'); }}
-								className={
-									activeNav === '#about' ? 'nav__link active-link' : 'nav__link'
-								}
-							>
-								<i className='uil uil-user nav__icon'></i>
-								<span className='nav__text'>{t('about')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item'>
-							<a
-								href='#social'
-								onClick={(e) => { handleNavClick(e, '#social'); setActiveNav('#social'); }}
-								className={
-									activeNav === '#social'
-										? 'nav__link active-link'
-										: 'nav__link'
-								}
-							>
-								<i className='uil uil-share nav__icon'></i>
-								<span className='nav__text'>{t('social')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item'>
-							<a
-								href='#githubstats'
-								onClick={(e) => { handleNavClick(e, '#githubstats'); setActiveNav('#githubstats'); }}
-								className={
-									activeNav === '#githubstats'
-										? 'nav__link active-link'
-										: 'nav__link'
-								}
-							>
-								<i className='uil uil-github nav__icon'></i>
-								<span className='nav__text'>{t('github')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item'>
-							<a
-								href='#contact'
-								onClick={(e) => { handleNavClick(e, '#contact'); setActiveNav('#contact'); }}
-								className={
-									activeNav === '#contact'
-										? 'nav__link active-link'
-										: 'nav__link'
-								}
-							>
-								<i className='uil uil-message nav__icon'></i>
-								<span className='nav__text'>{t('contactMe')}</span>
-							</a>
-						</li>
-
-						<li className='nav__item theme-toggle-desktop'>
-							<ThemeToggle />
-						</li>
-					</ul>
-				</div>
-
-				{!Toggle && (
-          <div className='theme-toggle-mobile'>
-            <ThemeToggle />
-          </div>
-        )}
-
-				<div className='nav__toggle' onClick={() => showMenu(!Toggle)}>
-					<i className='uil uil-apps'></i>
-				</div>
-			</nav>
-		</header>
-	);
+      {/* mobile bottom bar */}
+      <nav className="nav-mobile">
+        {navLinks.map(({ href, icon, label }) => (
+          <a
+            key={href}
+            href={href}
+            className={`nav-mobile__link${active === href ? ' nav-mobile__link--active' : ''}`}
+            onClick={(e) => handleClick(e, href)}
+            aria-label={label}
+          >
+            <i className={`uil ${icon}`}></i>
+          </a>
+        ))}
+      </nav>
+    </header>
+  );
 };
-
-
-
 
 export default Header;
