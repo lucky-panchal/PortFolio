@@ -1,557 +1,173 @@
-<div align="center">
+# Lacki Lohar — Portfolio
 
-# 🚀 Lacki Lohar - Portfolio Website
+> A minimal, fast, and fully responsive developer portfolio built with React + Vite.
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=22C55E&center=true&vCenter=true&width=700&lines=Full+Stack+Developer+%7C+Student;React.js+%26+JavaScript+Enthusiast;UI%2FUX+Designer+%7C+Problem+Solver;%E0%A4%B8%E0%A5%89%E0%A4%AB%E0%A5%8D%E0%A4%9F%E0%A4%B5%E0%A5%87%E0%A4%AF%E0%A4%B0+%E0%A4%A1%E0%A5%87%E0%A4%B5%E0%A4%B2%E0%A4%AA%E0%A4%B0+%7C+%E0%A4%9B%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0;Bilingual+Portfolio+%7C+%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A5%80+%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F%E0%A4%AB%E0%A5%8B%E0%A4%B2%E0%A4%BF%E0%A4%AF%E0%A5%8B;Open+Source+Contributor;1%2B+Year+Learning+Journey;Always+Building+Something+Cool!" alt="Typing SVG" />
-
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Bilingual-🌐-22C55E?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Hindi_Support-🇮🇳-FF9933?style=for-the-badge" />
-</p>
-
-<div align="center">
-
-### 💻 **Coding in Progress...**
-
-```javascript
-const developer = {
-    name: "Lacki Lohar | लक्की लौहार",
-    languages: ["English", "हिंदी"],
-    code: ["JavaScript", "React", "HTML", "CSS"],
-    currentFocus: "Building bilingual web experiences",
-    funFact: "Portfolio speaks both English & Hindi! 🌐"
-};
-
-console.log("नमस्ते! Welcome to my portfolio!");
-```
-
-</div>
-
-<p align="center">
-  <a href="https://lackilohar.netlify.app"><img src="https://img.shields.io/badge/🌐_Live_Portfolio-FF5722?style=for-the-badge&logoColor=white" /></a>
-  <a href="https://github.com/lucky-panchal"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="https://cal.com/lucky-panchal-qckdio"><img src="https://img.shields.io/badge/📅_Book_Meeting-22C55E?style=for-the-badge&logo=calendar&logoColor=white" /></a>
-</p>
-
-<p align="center">
-  <a href="https://www.instagram.com/luckyp4nch4l/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/lacki-lohar-463a23321"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:luckykanti31122006@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://api.whatsapp.com/send?phone=7425875484&text=Hello%20Lacki%20Lohar"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
-</p>
+**Live:** [lackilohar.netlify.app](https://lackilohar.netlify.app) &nbsp;·&nbsp; **Contact:** [luckykanti31122006@gmail.com](mailto:luckykanti31122006@gmail.com) &nbsp;·&nbsp; **Schedule:** [cal.com/lucky-panchal-qckdio](https://cal.com/lucky-panchal-qckdio)
 
 ---
 
-### 🌟 A modern, interactive portfolio showcasing my coding journey as a passionate student developer
-### ✨ Built with React.js + Vite featuring stunning animations, responsive design, and real GitHub integration
-### 🌐 **NEW:** Complete bilingual support with instant English/Hindi translation switching
+## Overview
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=lucky-panchal&bg_color=0d1117&color=22c55e&line=22c55e&point=ffffff&area=true&hide_border=true&custom_title=My%20Coding%20Journey" width="100%" />
+This is my personal developer portfolio — designed from scratch with a focus on clean editorial aesthetics, purposeful motion, and a visitor-first experience. No UI frameworks. No dark mode toggle. No unnecessary complexity. Just well-structured React, hand-written CSS, and scroll-driven animations that feel intentional.
 
-</div>
-
-<div align="center">
-
-## 🎯 **Live Demo & Quick Stats**
-
-<a href="https://lackilohar.netlify.app">
-  <img src="https://img.shields.io/badge/🌐_Visit_Portfolio-22C55E?style=for-the-badge&logoColor=white" height="50" />
-</a>
-<a href="https://cal.com/lucky-panchal-qckdio">
-  <img src="https://img.shields.io/badge/📅_Schedule_Meeting-FF5722?style=for-the-badge&logoColor=white" height="50" />
-</a>
-
-<table>
-<tr>
-<td>
-
-**📊 GitHub Stats**
-<img src="https://github-readme-stats.vercel.app/api?username=lucky-panchal&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=22C55E&icon_color=22C55E" width="400" />
-
-</td>
-<td>
-
-**🔥 Streak Stats**
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=lucky-panchal&theme=radical&hide_border=true&background=0D1117" width="400" />
-
-</td>
-</tr>
-</table>
-
-**📈 Real Portfolio Metrics:**
-```javascript
-const portfolioStats = {
-  projects: {
-    completed: 5,
-    inProgress: 2,
-    technologies: ['React', 'JavaScript', 'CSS3', 'HTML5']
-  },
-  experience: {
-    learning: '1+ Year',
-    commits: '300+',
-    languages: ['English', 'हिंदी']
-  },
-  features: {
-    responsive: true,
-    bilingual: true,
-    darkMode: true,
-    animations: 'advanced'
-  }
-};
-
-console.log('🚀 Portfolio loaded successfully!');
-```
-
-</div>
+The design philosophy is simple: **clarity over complexity.** Every spacing decision, animation timing, and typographic choice was made with the person reading it in mind.
 
 ---
 
-## ✨ Features
+## Design Decisions
 
-### 🎨 **Interactive Design**
+### Visual System
+The entire interface runs on five color values — black, white, and three shades of gray. No gradients, no color accents competing for attention. Content hierarchy is established through size, weight, and spacing alone.
+
 ```css
-🌈 Animated Name Effects     → Gradient text with glow animations
-💫 Profile Image Overlay     → "Let's Code Together!" message  
-🚀 Compelling CTA Button     → "Let's Build Together" with pulse
-📱 Social Media Icons        → Brand-specific hover animations
-✨ Particle System          → Free-flowing background particles
-🎭 Theme Transitions         → Smooth dark/light mode switching
+--color-black   : #0a0a0a;   /* headings, borders, buttons  */
+--color-white   : #ffffff;   /* backgrounds                 */
+--color-gray-200: #e5e5e5;   /* dividers, card borders      */
+--color-gray-400: #a3a3a3;   /* labels, metadata            */
+--color-gray-600: #525252;   /* body text, descriptions     */
 ```
 
-### 📊 **GitHub Integration**
+### Typography
+Large display headings with bold + italic alternating lines on every section. The contrast between `font-weight: 800` and `font-weight: 300 italic` creates visual rhythm without needing color.
 
-<div align="center">
+### Layout
+Full-width container at `max-width: 1440px` with `4rem` horizontal padding. Sections breathe at `5rem 0`. Nothing feels cramped or over-centered.
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=lucky-panchal&bg_color=0d1117&color=22c55e&line=22c55e&point=ffffff&area=true&hide_border=true" />
+### Navigation
+- **Desktop** — fixed top navbar with text links, right-aligned CTA button
+- **Mobile** — floating bottom bar, icon-only, pill-shaped, always accessible
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lucky-panchal&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=22C55E" />
+---
 
-</div>
+## Animation System
 
-- 📈 **Live GitHub Stats** - Real-time statistics from GitHub API
-- 🔥 **Contribution Graph** - Animated contribution activity with glow effects
-- 🏆 **Achievement Trophies** - GitHub achievements display
-- 💻 **Tech Stack Showcase** - Interactive technology badges
+Every animation is scroll-driven and has a specific purpose. Nothing moves just to look clever.
 
-### 🌟 **Advanced Animations**
-- **Particle System** - Free-flowing background particles
-- **Section Transitions** - Fire glow lines between sections (desktop only)
-- **Hover Effects** - Smooth transforms and color transitions
-- **Loading Animations** - Staggered card appearances
-- **Theme Transitions** - Smooth dark/light mode switching
+| Animation | Trigger | What it communicates |
+|-----------|---------|----------------------|
+| Page cover wipe | On load | Arrival — the page reveals itself |
+| Text clip reveal | Scroll into view | Importance — headings slide up from behind a mask |
+| Inview fade-up | Scroll into view | Sequence — elements appear with staggered delays |
+| Section line grow | Scroll into view | Progress — dividers animate 0% → 100% width |
+| Image parallax | Scroll position | Depth — images shift at 8% of scroll rate |
+| Cursor ring scale | Hover on interactive | Feedback — ring expands 32px → 56px, dot hides |
+| Link underline | Hover | Affordance — underline grows left to right |
+| Lenis smooth scroll | Always | Feel — momentum-based inertia throughout |
 
-### 📱 **Responsive Design**
-- **Mobile-First Approach** - Optimized for all screen sizes
-- **Adaptive Layouts** - Content reorganizes for different viewports
-- **Touch-Friendly** - Mobile-optimized interactions
-- **Performance Optimized** - Lazy loading and efficient animations
+---
 
-### 🎯 **User Experience**
-- **Availability Badge** - Real-time project availability status
-- **Stats Preview** - Quick overview of experience and projects
-- **Smooth Navigation** - Seamless scrolling between sections
-- **Dark/Light Theme** - Toggle between themes with persistence
+## Sections
 
-### 🌐 **Bilingual Support (NEW!)**
-- **Complete Hindi Translation** - Full portfolio available in Hindi (हिंदी)
-- **Instant Language Switching** - Real-time content translation without page reload
-- **Mobile-Optimized Toggle** - Language selector integrated with social icons on mobile
-- **Consistent Layout** - Same design and animations across both languages
-- **Cultural Localization** - Proper Hindi typography and text formatting
+| # | Section | Description |
+|---|---------|-------------|
+| — | **Home** | Hero with name, role, profile image, social links, and two CTAs |
+| 01 | **Work** | Project cards with category filter tabs and hover overlay with links |
+| 02 | **Skills** | Frontend and Backend & Tools — all skills listed with proficiency levels |
+| 03 | **Experience** | Accordion cards — B.Tech, AICTE internship, DefenceTech hackathon win |
+| 04 | **Qualification** | Education timeline — Higher Secondary to B.Tech |
+| 05 | **About** | Stats, bio, personal traits, and CV download |
+| 06 | **Testimonials** | Auto-advancing carousel with manual dot navigation |
+| 07 | **Connect** | Social platform cards — Instagram, LinkedIn, GitHub |
+| 08 | **Contact** | Contact info panel alongside an EmailJS-powered form |
 
-<div align="center">
+---
 
-## 🛠️ Tech Stack & Dependencies
+## Tech Stack
 
-<img src="https://skillicons.dev/icons?i=react,js,html,css,vite,git,github,vscode,netlify" />
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 |
+| Build tool | Vite 5 |
+| Styling | CSS3 — hand-written, no UI framework |
+| Animations | GSAP, Framer Motion, CSS keyframes |
+| Smooth scroll | Lenis |
+| Contact form | EmailJS |
+| Deployment | Netlify |
 
-</div>
+### Dependencies
 
-### **🚀 Core Technologies**
-- **React 18.3.1** - Modern component-based UI
-- **Vite 5.4.16** - Lightning-fast build tool
-- **JavaScript ES6+** - Modern syntax & features
-- **CSS3** - Advanced styling & animations
-
-### **📦 Key Dependencies**
 ```json
 {
-  "@emailjs/browser": "^4.4.1",     // Contact form integration
-  "framer-motion": "^12.4.10",      // Advanced animations
-  "react-icons": "^5.4.0",          // Icon library
-  "swiper": "^11.1.9"               // Touch sliders
+  "react": "^18.3.1",
+  "@emailjs/browser": "^4.4.1",
+  "framer-motion": "^12.4.10",
+  "gsap": "^3.x",
+  "lenis": "^1.x",
+  "react-icons": "^5.4.0"
 }
 ```
 
-### **🌍 Internationalization**
-- **Custom Translation System** - Built-in i18n without external libraries
-- **React Context API** - Global language state management
-- **Local Storage Persistence** - Remembers user's language preference
-- **Dynamic Content Loading** - Instant translation switching
-- **Mobile-First Language Toggle** - Integrated with social media icons
+---
 
-### **🎨 Features & Integrations**
-- **EmailJS** - Direct email sending from contact form
-- **Cal.com** - Meeting scheduling integration
-- **GitHub API** - Live statistics and contribution data
-- **Responsive Design** - Mobile-first approach
-- **Theme Toggle** - Dark/Light mode with persistence
-- **Custom Animations** - CSS keyframes & transforms
-- **Bilingual Support** - English/Hindi translation system
-- **Language Persistence** - Remembers user's language choice
+## Project Structure
 
-<div align="center">
-
-## 📊 GitHub Stats
-
-<img src="https://github-profile-trophy.vercel.app/?username=lucky-panchal&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=2&column=3" />
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=lucky-panchal&theme=radical&hide_border=true&background=0D1117" />
-
-</div>
+```
+Portfolio/
+├── components/
+│   ├── about/              # Stats, bio, traits, CV download
+│   ├── contact/            # EmailJS form + contact info panel
+│   ├── experience/         # Accordion cards with images and certificates
+│   ├── footer/             # Dark minimal footer
+│   ├── header/             # Top navbar + mobile bottom bar
+│   ├── home/               # Hero section
+│   ├── qualification/      # Education timeline
+│   ├── scrollup/           # Back to top button
+│   ├── skills/             # Skills grid with level badges
+│   ├── social/             # Social platform cards
+│   ├── testimonials/       # Auto-advancing testimonial carousel
+│   └── work/               # Project cards with category filter
+│
+└── src/
+    ├── assets/             # Images, PDFs, certificates
+    ├── components/
+    │   ├── cursor/         # Custom cursor — dot + ring
+    │   ├── scroll3d/       # Scroll animation wrapper
+    │   └── ScrollReveal/   # Reveal animation wrapper
+    ├── hooks/
+    │   ├── useAdvancedObserver.jsx    # IntersectionObserver logic
+    │   ├── useSmoothScroll.jsx        # Lenis smooth scroll setup
+    │   └── useVisibilityAnimations.jsx
+    ├── App.jsx             # Root — observer, parallax, cursor setup
+    ├── App.css             # Design tokens + global styles
+    ├── main.jsx            # Entry point
+    └── index.css           # Base reset
+```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn package manager
-- Git
+**Prerequisites:** Node.js v14+, npm
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/lucky-panchal/PortFolio.git
-   cd PortFolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-4. **Open in browser**
-   ```
-   http://localhost:5173
-   ```
-
-### Build for Production
 ```bash
+# Clone
+git clone https://github.com/lucky-panchal/PortFolio.git
+cd PortFolio
+
+# Install
+npm install
+
+# Development
+npm run dev
+# → http://localhost:5173
+
+# Production build
 npm run build
-# or
-yarn build
 ```
-
-<div align="center">
-
-## 📁 Complete Project Structure
-
-</div>
-
-```
-🏗️ Portfolio/
-├── 📂 .github/workflows/          # GitHub Actions & CI/CD
-│   └── codeql.yml
-├── 📂 components/                 # React Components (Main)
-│   ├── 📂 about/                 # About Me Section
-│   │   ├── About.jsx
-│   │   ├── Info.jsx
-│   │   └── about.css
-│   ├── 📂 contact/               # Contact Form & Info
-│   │   ├── Contact.jsx           # Email: luckykanti31122006@gmail.com
-│   │   └── contact.css           # WhatsApp: +91 7425875484
-│   ├── 📂 experience/            # Work Experience
-│   │   ├── Experience.jsx
-│   │   └── experience.css
-│   ├── 📂 footer/                # Footer Component
-│   │   ├── Footer.jsx
-│   │   └── footer.css
-│   ├── 📂 githubstats/           # Live GitHub Integration
-│   │   ├── GitHubStats.jsx       # Real-time stats from @lucky-panchal
-│   │   └── githubstats.css       # Animated contribution graph
-│   ├── 📂 header/                # Navigation Header
-│   │   ├── Header.jsx            # Glassmorphism design
-│   │   └── Header.css
-│   ├── 📂 home/                  # Landing Section
-│   │   ├── Home.jsx              # Main hero section
-│   │   ├── Data.jsx              # Personal info & CTA
-│   │   ├── Social.jsx            # Instagram, GitHub, LinkedIn
-│   │   ├── ScrollDown.jsx        # Scroll indicator
-│   │   └── home.css              # Advanced animations
-│   ├── 📂 qualification/         # Education & Certifications
-│   │   ├── Qualification.jsx
-│   │   └── qualification.css
-│   ├── 📂 scrollup/              # Scroll to top button
-│   │   ├── ScrollUp.jsx
-│   │   └── scrollup.css
-│   ├── 📂 sectiontransition/     # Animated section dividers
-│   │   ├── SectionTransition.jsx # Fire glow effects
-│   │   └── sectiontransition.css
-│   ├── 📂 skills/                # Technical Skills
-│   │   ├── Skills.jsx            # React, JS, CSS, HTML
-│   │   ├── Frontend.jsx          # Frontend technologies
-│   │   ├── Coursework.jsx        # Academic projects
-│   │   └── skills.css
-│   ├── 📂 testimonials/          # Client Reviews
-│   │   ├── Testimonials.jsx
-│   │   ├── Data.jsx
-│   │   └── testimonial.css
-│   ├── 📂 ThemeToggle/           # Dark/Light Mode
-│   │   ├── ThemeToggle.jsx       # Theme persistence
-│   │   └── ThemeToggle.css
-│   └── 📂 work/                  # Portfolio Projects
-│       ├── Work.jsx              # Project showcase
-│       ├── Works.jsx             # Project grid
-│       ├── WorksItems.jsx        # Individual project cards
-│       └── work.css
-├── 📂 src/                       # Vite Source Directory
-│   ├── 📂 assets/               # Static Assets
-│   │   ├── profile-pic.png       # Main profile image
-│   │   ├── about-pic.jpg         # About section image
-│   │   ├── CV.pdf                # Resume/CV file
-│   │   ├── Certificate1.pdf      # Certifications
-│   │   ├── Work3.png - Work6.jpg # Project screenshots
-│   │   ├── Testimonial1-3.jpg    # Client photos
-│   │   └── *.svg                 # Icon assets
-│   ├── 📂 components/           # Additional Components
-│   │   ├── 📂 cursor/           # Custom cursor effects
-│   │   ├── 📂 scroll3d/         # 3D scroll animations
-│   │   └── 📂 ScrollReveal/     # Reveal animations
-│   ├── App.jsx                  # Main App component
-│   ├── main.jsx                 # Vite entry point
-│   ├── App.css                  # Global styles
-│   ├── index.css                # Base styles
-│   └── scrollbar-fix.css        # Custom scrollbar
-├── 📂 Images/                   # Additional images
-│   └── LK.png                   # Logo/brand image
-├── ⚙️ Configuration Files
-│   ├── package.json             # Dependencies & scripts
-│   ├── vite.config.js           # Vite configuration
-│   ├── eslint.config.js         # Code linting rules
-│   ├── netlify.toml             # Deployment config
-│   ├── .env                     # Environment variables
-│   ├── .env.example             # Env template
-│   └── .gitignore               # Git ignore rules
-└── 📖 README.md                 # This documentation
-
-📊 Total: 50+ files, 15+ components, 1000+ lines of code
-```
-
-<div align="center">
-
-### 🎯 **Key Features by Section**
-
-| 🏠 **Home** | 📊 **GitHub** | 💼 **Work** | 📞 **Contact** | 🌐 **Bilingual** |
-|-------------|---------------|-------------|----------------|------------------|
-| Animated name effects | Live contribution graph | Project showcase | Email integration | English/Hindi toggle |
-| Interactive CTA button | Real-time statistics | Technology stack | WhatsApp direct link | Instant translation |
-| Social media links | Achievement trophies | Responsive gallery | Contact form | Mobile-optimized |
-| Particle animations | Language breakdown | Live demos | Meeting scheduler | Cultural localization |
-
-</div>
-
-## 🎨 Key Components
-
-### **Header Navigation**
-- Glassmorphism design with backdrop blur
-- Responsive hamburger menu for mobile
-- Smooth hover animations
-- Active section highlighting
-
-### **Home Section**
-- Animated name with gradient text
-- Interactive profile image
-- Compelling call-to-action button
-- Social media integration
-- Statistics preview
-
-### **GitHub Stats**
-- Live contribution graph
-- Top programming languages
-- Achievement trophies
-- Coding metrics
-- Technology showcase
-
-## 🌟 Animations & Effects
-
-<div align="center">
-
-### ✨ **Visual Showcase**
-
-```
-🎭 CSS Animations        🎨 Interactive Elements     🚀 Performance        🌐 Bilingual
-├─ Keyframe transitions  ├─ Hover transformations    ├─ 60fps animations    ├─ Instant switching
-├─ Cubic-bezier easing   ├─ Click feedback          ├─ Lazy loading        ├─ Context persistence
-├─ Staggered delays      ├─ Scroll triggers         ├─ Optimized assets    ├─ Mobile integration
-└─ Transform & filters   └─ Theme transitions       └─ Bundle optimization └─ Cultural adaptation
-```
-
-<div align="center">
-
-### 💻 **Code Architecture | कोड आर्किटेक्चर**
-
-```jsx
-// Bilingual Translation Hook
-const useTranslation = () => {
-  const [language, setLanguage] = useState('en');
-  const t = (key) => translations[language][key];
-  
-  return { t, language, setLanguage };
-};
-
-// Component Usage
-function Header() {
-  const { t } = useTranslation();
-  return <h1>{t('home')} | {t('about')}</h1>;
-}
-
-// Output: "Home | About" or "होम | परिचय"
-```
-
-</div>
-
-</div>
-
-### **CSS Animations**
-- `@keyframes` for smooth transitions
-- `transform` and `filter` properties
-- Cubic-bezier easing functions
-- Staggered animation delays
-
-### **Interactive Elements**
-- Hover state transformations
-- Click feedback animations
-- Scroll-triggered animations
-- Theme transition effects
-
-## 📊 Performance
-
-### **Optimization Techniques**
-- Lazy loading for images
-- Efficient CSS animations
-- Minimal JavaScript bundle
-- Optimized asset delivery
-
-### **Metrics**
-- Fast loading times
-- Smooth 60fps animations
-- Mobile-optimized performance
-- SEO-friendly structure
-
-## 🎯 Future Enhancements
-
-- [x] **Bilingual Support** - Complete English/Hindi translation system ✅
-- [x] **Mobile Language Toggle** - Integrated with social icons ✅
-- [x] **Cultural Localization** - Proper Hindi typography ✅
-- [ ] Blog section integration
-- [ ] Project showcase with live demos
-- [ ] Contact form with email integration
-- [ ] Advanced particle system
-- [ ] 3D elements and interactions
-- [ ] Progressive Web App (PWA) features
-- [ ] Additional language support (Spanish, French)
-- [ ] Voice-over narration in multiple languages
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Contact
-
-**Lacki Lohar**
-- 🌐 Portfolio: [lackilohar.netlify.app](https://lackilohar.netlify.app)
-- 💼 LinkedIn: [lacki-lohar-463a23321](https://linkedin.com/in/lacki-lohar-463a23321)
-- 🐱 Instagram: [@luckyp4nch4l](https://www.instagram.com/luckyp4nch4l)
-
-
-## 🙏 Acknowledgments
-
-- GitHub for providing excellent APIs
-- React.js community for amazing resources
-- Design inspiration from modern portfolio trends
-- Open source community for tools and libraries
-
-<div align="center">
 
 ---
 
-### 🌟 **Show Your Support**
+## Contact
 
-<a href="https://github.com/lucky-panchal/PortFolio/stargazers">
-  <img src="https://img.shields.io/badge/⭐_Star_This_Repo-FFD700?style=for-the-badge&logoColor=black" height="40" />
-</a>
-<a href="https://github.com/lucky-panchal/PortFolio/fork">
-  <img src="https://img.shields.io/badge/🍴_Fork_Project-22C55E?style=for-the-badge&logoColor=white" height="40" />
-</a>
-<a href="https://cal.com/lucky-panchal-qckdio">
-  <img src="https://img.shields.io/badge/📅_Book_Meeting-FF5722?style=for-the-badge&logoColor=white" height="40" />
-</a>
+| | |
+|---|---|
+| Portfolio | [lackilohar.netlify.app](https://lackilohar.netlify.app) |
+| LinkedIn | [lacki-lohar-463a23321](https://linkedin.com/in/lacki-lohar-463a23321) |
+| Instagram | [@luckyp4nch4l](https://www.instagram.com/luckyp4nch4l) |
+| Email | luckykanti31122006@gmail.com |
+| WhatsApp | [+91 7425875484](https://api.whatsapp.com/send?phone=7425875484) |
+| Schedule | [cal.com/lucky-panchal-qckdio](https://cal.com/lucky-panchal-qckdio) |
 
-### 🌟 **Connect With Me**
+---
 
-<a href="https://github.com/lucky-panchal">
-  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-</a>
-<a href="https://linkedin.com/in/lacki-lohar-463a23321">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-<a href="https://www.instagram.com/luckyp4nch4l/">
-  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-</a>
-<a href="mailto:luckykanti31122006@gmail.com">
-  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-</a>
-<a href="https://api.whatsapp.com/send?phone=7425875484&text=Hello%20Lacki%20Lohar">
-  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-</a>
-
-### 📞 **Direct Contact**
-```
-📧 Email: luckykanti31122006@gmail.com
-📱 WhatsApp: +91 7425875484
-🌐 Portfolio: https://lackilohar.netlify.app
-📅 Schedule: cal.com/lucky-panchal-qckdio
-```
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=1000&color=22C55E&center=true&vCenter=true&width=600&lines=Thanks+for+visiting+my+portfolio!;%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%87+%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F%E0%A4%AB%E0%A5%8B%E0%A4%B2%E0%A4%BF%E0%A4%AF%E0%A5%8B+%E0%A4%AE%E0%A5%87%E0%A4%82+%E0%A4%86%E0%A4%AA%E0%A4%95%E0%A4%BE+%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%97%E0%A4%A4+%E0%A4%B9%E0%A5%88!;Let's+build+something+amazing+together!;%E0%A4%86%E0%A4%87%E0%A4%8F+%E0%A4%AE%E0%A4%BF%E0%A4%B2%E0%A4%95%E0%A4%B0+%E0%A4%95%E0%A5%81%E0%A4%9B+%E0%A4%85%E0%A4%A6%E0%A5%8D%E0%A4%AD%E0%A5%81%E0%A4%A4+%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%A4%E0%A5%87+%E0%A4%B9%E0%A5%88%E0%A4%82!;Always+open+to+collaborate+%26+learn;Student+developer+with+big+dreams!;Ready+to+take+on+new+challenges!;Bilingual+coding+enthusiast!" alt="Typing SVG" />
-
-### 🎯 **Current Status | वर्तमान स्थिति**
-```javascript
-const currentStatus = {
-    🎓 education: "Computer Science Student | कंप्यूटर साइंस छात्र",
-    📚 learning: "Continuously Learning | निरंतर सीखना",
-    💼 seeking: "Open for Internships | इंटर्नशिप के लिए उपलब्ध",
-    🚀 building: "Building Cool Projects | शानदार प्रोजेक्ट्स बना रहा हूं",
-    🤝 collaboration: "Available for Collaboration | सहयोग के लिए तैयार",
-    💡 exploring: "Always Exploring New Tech | नई तकनीक खोजना",
-    🌐 specialty: "Bilingual Web Development | द्विभाषी वेब डेवलपमेंट"
-};
-
-console.log("Ready to code in any language! 🚀");
-```
-
-**Built with ❤️ by [Lacki Lohar](https://github.com/lucky-panchal)**
-
-<img src="https://komarev.com/ghpvc/?username=lucky-panchal&color=22c55e&style=for-the-badge" />
-
-</div>
+*Built by Lacki Lohar — React + Vite · Deployed on Netlify*
