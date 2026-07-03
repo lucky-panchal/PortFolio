@@ -4,6 +4,8 @@ import Certificate from '../../src/assets/Certificate1.pdf';
 import HackImg1 from '../../src/assets/IMG20260403235704.jpg';
 import HackImg2 from '../../src/assets/rai_university_ahmedabad_14050121_172507316.jpg.jpeg';
 import HackCert from '../../src/assets/IMG-20260414-WA0014.jpg';
+import WorkshopCert from '../../src/assets/workshop.jpg';
+import NptelCert from '../../src/assets/nptel.jpg';
 
 const experiences = [
   {
@@ -48,6 +50,34 @@ const experiences = [
     images: [HackImg1, HackImg2],
     hackCert: HackCert,
     certificateSoon: false,
+  },
+  {
+    id: 4,
+    role: 'Workshop Participant',
+    company: 'Adani Group — Industrial Workshop',
+    period: 'March 2026',
+    icon: 'uil uil-award',
+    details: [
+      'Attended hands-on industrial workshop organized by Adani Group',
+      'Gained practical exposure to real-world engineering and tech operations',
+      'Collaborated with peers on industry-level problem-solving sessions',
+    ],
+    certImg: WorkshopCert,
+    certDownload: 'Adani_Workshop_Certificate.jpg',
+  },
+  {
+    id: 5,
+    role: 'Course Certificate',
+    company: 'NPTEL — Online Certification',
+    period: 'May 2026',
+    icon: 'uil uil-book-open',
+    details: [
+      'Completed NPTEL certified online course',
+      'Strengthened core computer science and engineering concepts',
+      'Earned nationally recognized certification from IIT/IISc faculty',
+    ],
+    certImg: NptelCert,
+    certDownload: 'NPTEL_Certificate.jpg',
   },
 ];
 
@@ -119,6 +149,17 @@ const Experience = () => {
                     <a href={exp.certificate} download className="btn btn--outline exp__cert-btn">
                       Download Certificate ↓
                     </a>
+                  )}
+                  {exp.certImg && (
+                    <div className="exp__cert-section">
+                      <span className="exp__cert-label">Certificate</span>
+                      <div className="exp__cert-img-wrap">
+                        <img src={exp.certImg} alt="Certificate" className="exp__cert-img" />
+                      </div>
+                      <a href={exp.certImg} download={exp.certDownload} className="btn btn--outline exp__cert-btn">
+                        Download Certificate ↓
+                      </a>
+                    </div>
                   )}
                   {exp.certificateSoon && (
                     <span className="exp__cert-soon">Certificate — Coming Soon</span>
