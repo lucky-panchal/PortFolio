@@ -1,6 +1,7 @@
 import Image1 from "../../src/assets/Testimonial1.jpg";
 import Image2 from "../../src/assets/Testimonial2.jpg";
 import Image3 from "../../src/assets/Testimonial3.jpg";
+import Image4 from "../../src/assets/testimonial4.jpg";
 export const Data = [
     {   
 
@@ -38,6 +39,18 @@ export const Data = [
       description: {
         en: "He is hardworking and capable of learning things quickly. He consistently demonstrates a proactive attitude and a strong willingness to take on new challenges. His ability to adapt to new technologies and concepts makes him a valuable asset to any team. He also shows great attention to detail and maintains a high level of commitment to completing tasks efficiently and effectively.",
         hi: "वे मेहनती हैं और चीजों को जल्दी सीखने में सक्षम हैं। वे लगातार एक सक्रिय दृष्टिकोण और नई चुनौतियों को लेने की मजबूत इच्छा का प्रदर्शन करते हैं। नई तकनीकों और अवधारणाओं के अनुकूल होने की उनकी क्षमता उन्हें किसी भी टीम के लिए एक मूल्यवान संपत्ति बनाती है। वे विस्तार पर बहुत ध्यान देते हैं और कार्यों को कुशलता से पूरा करने के लिए उच्च स्तर की प्रतिबद्धता बनाए रखते हैं।"
+      }
+    },
+    {
+      id: 4,
+      image: Image4,
+      title: {
+        en: "Lokendra Singh Mahecha",
+        hi: "लोकेंद्र सिंह महेचा"
+      },
+      description: {
+        en: "Lacki is one of the most genuine and supportive friends you could ever have. He brings a unique positive energy wherever he goes, and his loyalty and helpful nature make him someone you can always rely on in any situation. His commitment to the people around him and his warm personality make him a truly special person.",
+        hi: "लक्की सबसे सच्चे और सहयोगी दोस्तों में से एक हैं। वे जहाँ भी जाते हैं, एक अनोखी सकारात्मक ऊर्जा लाते हैं, और उनकी वफादारी और मददगार स्वभाव उन्हें एक ऐसा इंसान बनाता है जिस पर आप हमेशा भरोसा कर सकते हैं। अपने दोस्तों के प्रति उनका समर्पण उन्हें वास्तव में एक विशेष व्यक्ति बनाता है।"
       }
     }
 ];
