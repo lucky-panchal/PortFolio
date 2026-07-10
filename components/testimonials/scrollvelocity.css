@@ -1,0 +1,166 @@
+/* ── Scroll-Based-Velocity Testimonials ── */
+.vel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  position: relative;
+}
+
+/* soft edge fade masks */
+.vel-container::before,
+.vel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.vel-container::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 90%, transparent 100%);
+}
+.vel-container::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 90%, transparent 100%);
+}
+
+/* marquee track */
+.vel-marquee__track {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* The inner strip is a flex row — items are block-level cards, NOT nowrap text */
+.vel-marquee__inner {
+  display: flex;
+  align-items: stretch;
+  will-change: transform;
+  /* NOTE: we do NOT set white-space: nowrap here — cards wrap their own text */
+}
+
+/* Each segment holds all the cards once; we duplicate ×4 in JS */
+.vel-marquee__segment {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  gap: 1.25rem;
+  padding-right: 1.25rem; /* gap between last card and next segment */
+}
+
+/* ── Quote card ── */
+.vel-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-shrink: 0;
+  width: 320px;             /* fixed width — text wraps inside */
+  padding: 1.4rem 1.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+  cursor: default;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle accent stripe on the top-left edge */
+.vel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #22c55e;
+  border-radius: 16px 0 0 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.vel-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
+  border-color: #d4d4d4;
+  transform: translateY(-2px);
+}
+
+.vel-card:hover::before {
+  opacity: 1;
+}
+
+/* Large decorative quote mark */
+.vel-card__quote-mark {
+  font-size: 3rem;
+  line-height: 0.8;
+  color: #22c55e;
+  font-family: Georgia, serif;
+  font-style: normal;
+  margin-bottom: -0.25rem;
+  opacity: 0.6;
+}
+
+/* Full testimonial text — wraps naturally */
+.vel-card__text {
+  font-size: 0.875rem;
+  color: #404040;
+  font-style: italic;
+  line-height: 1.75;
+  flex: 1;
+  /* no overflow hidden, no ellipsis — full text shown */
+  white-space: normal;
+}
+
+/* Author row at the bottom */
+.vel-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: auto;
+}
+
+.vel-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(10%);
+  border: 2px solid #f0f0f0;
+}
+
+.vel-card__name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: 0.01em;
+}
+
+.vel-card__role {
+  font-size: 0.7rem;
+  color: #22c55e;
+  font-weight: 500;
+  margin-top: 0.05rem;
+}
+
+@media (max-width: 576px) {
+  .vel-card {
+    width: 260px;
+    padding: 1.1rem 1.15rem;
+  }
+  .vel-card__text {
+    font-size: 0.8rem;
+  }
+  .vel-container::before,
+  .vel-container::after {
+    width: 4rem;
+  }
+}
