@@ -1,48 +1,40 @@
-.cursor-dot {
+/* ── MagicUI Smooth Cursor ── */
+
+/* Hide the default system cursor everywhere */
+*, *::before, *::after { cursor: none !important; }
+
+/* ── Shared base ── */
+.cursor-dot-magic,
+.cursor-ring-magic {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform, width, height;
+}
+
+/* ── Inner dot (instant) ── */
+.cursor-dot-magic {
   width: 6px;
   height: 6px;
   background: #0a0a0a;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-.cursor-dot--hover {
-  transform: scale(0);
-  opacity: 0;
+/* ── Outer ring (spring-lagged) ── */
+.cursor-ring-magic {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(10, 10, 10, 0.45);
+  background: transparent;
 }
 
-.cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid #0a0a0a;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.4;
-  transition: width 0.3s cubic-bezier(0.16,1,0.3,1),
-              height 0.3s cubic-bezier(0.16,1,0.3,1),
-              opacity 0.3s ease,
-              background 0.3s ease;
-}
-
-.cursor-ring--hover {
-  width: 56px;
-  height: 56px;
-  opacity: 0.15;
-  background: #0a0a0a;
-  margin-left: -12px;
-  margin-top: -12px;
-}
-
+/* ── Hide on touch / small screens ── */
 @media screen and (max-width: 768px) {
-  .cursor-dot,
-  .cursor-ring { display: none; }
+  .cursor-dot-magic,
+  .cursor-ring-magic {
+    display: none;
+  }
+  *, *::before, *::after { cursor: auto !important; }
 }
