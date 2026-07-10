@@ -1,63 +1,116 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useSpring, useMotionValue } from 'framer-motion';
 import './CustomCursor.css';
 
+/* ─── MagicUI Smooth Cursor ─────────────────────────────────────────── */
+const SPRING_CONFIG = { damping: 28, stiffness: 280, mass: 0.4 };
+
 const CustomCursor = () => {
+  const cursorX = useMotionValue(-200);
+  const cursorY = useMotionValue(-200);
+
+  // spring-smoothed positions for the outer ring
+  const springX = useSpring(cursorX, SPRING_CONFIG);
+  const springY = useSpring(cursorY, SPRING_CONFIG);
+
+  const [variant, setVariant] = useState('default'); // 'default' | 'hover' | 'click'
+  const rafRef = useRef(null);
+
   useEffect(() => {
-    const dot = document.querySelector('.cursor-dot');
-    const ring = document.querySelector('.cursor-ring');
-    if (!dot || !ring) return;
-
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-    let isHovering = false;
-
+    /* ── raw mouse tracking ── */
     const onMove = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.left = `${mouseX - 3}px`;
-      dot.style.top = `${mouseY - 3}px`;
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
 
-    const onEnter = () => {
-      isHovering = true;
-      ring.classList.add('cursor-ring--hover');
-      dot.classList.add('cursor-dot--hover');
-    };
-
-    const onLeave = () => {
-      isHovering = false;
-      ring.classList.remove('cursor-ring--hover');
-      dot.classList.remove('cursor-dot--hover');
-    };
-
-    const animate = () => {
-      ringX += (mouseX - ringX) * 0.1;
-      ringY += (mouseY - ringY) * 0.1;
-      ring.style.left = `${ringX - 16}px`;
-      ring.style.top = `${ringY - 16}px`;
-      requestAnimationFrame(animate);
-    };
+    const onDown = () => setVariant('click');
+    const onUp   = () => setVariant('default');
 
     window.addEventListener('mousemove', onMove);
-    animate();
+    window.addEventListener('mousedown', onDown);
+    window.addEventListener('mouseup',   onUp);
 
-    // attach hover to all interactive elements after mount
-    const attach = () => {
-      document.querySelectorAll('a, button, .work__card, .social__card, .exp__item-header, .testi__btn, .nav__link, .nav__cta').forEach(el => {
+    /* ── hover targets ── */
+    const onEnter = () => setVariant('hover');
+    const onLeave = () => setVariant('default');
+
+    const attachHover = () => {
+      document.querySelectorAll(
+        'a, button, .work__card, .social__card, .exp__item-header, .nav__link, .nav__cta, .vel-card'
+      ).forEach(el => {
         el.addEventListener('mouseenter', onEnter);
         el.addEventListener('mouseleave', onLeave);
       });
     };
-    // slight delay to ensure DOM is ready
-    setTimeout(attach, 500);
+    setTimeout(attachHover, 600);
 
-    return () => window.removeEventListener('mousemove', onMove);
-  }, []);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mousedown', onDown);
+      window.removeEventListener('mouseup',   onUp);
+    };
+  }, [cursorX, cursorY]);
+
+  /* ── variant styles ── */
+  const outerVariants = {
+    default: {
+      width: 36,
+      height: 36,
+      backgroundColor: 'transparent',
+      border: '1.5px solid rgba(10,10,10,0.45)',
+      mixBlendMode: 'normal',
+    },
+    hover: {
+      width: 64,
+      height: 64,
+      backgroundColor: 'rgba(34,197,94,0.12)',
+      border: '1.5px solid rgba(34,197,94,0.55)',
+      mixBlendMode: 'normal',
+    },
+    click: {
+      width: 28,
+      height: 28,
+      backgroundColor: 'rgba(34,197,94,0.25)',
+      border: '1.5px solid rgba(34,197,94,0.8)',
+      mixBlendMode: 'normal',
+    },
+  };
+
+  const dotVariants = {
+    default: { width: 6,  height: 6,  backgroundColor: '#0a0a0a', opacity: 1   },
+    hover:   { width: 8,  height: 8,  backgroundColor: '#22c55e', opacity: 1   },
+    click:   { width: 12, height: 12, backgroundColor: '#22c55e', opacity: 0.8 },
+  };
 
   return (
     <>
-      <div className="cursor-dot"></div>
-      <div className="cursor-ring"></div>
+      {/* Outer ring — spring-smoothed, lags behind */}
+      <motion.div
+        className="cursor-ring-magic"
+        style={{
+          x: springX,
+          y: springY,
+          translateX: '-50%',
+          translateY: '-50%',
+        }}
+        variants={outerVariants}
+        animate={variant}
+        transition={{ type: 'spring', damping: 22, stiffness: 260, mass: 0.5 }}
+      />
+
+      {/* Inner dot — instant tracking */}
+      <motion.div
+        className="cursor-dot-magic"
+        style={{
+          x: cursorX,
+          y: cursorY,
+          translateX: '-50%',
+          translateY: '-50%',
+        }}
+        variants={dotVariants}
+        animate={variant}
+        transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+      />
     </>
   );
 };
