@@ -250,3 +250,21 @@
     height: 290px;
   }
 }
+
+/* Morphing Text styles */
+.morphing-text-wrapper {
+  display: block;
+  filter: url(#gooey-morph-desktop) blur(0px);
+}
+.morphing-text-container {
+  display: block;
+  min-height: 1.15em;
+  line-height: 1.35; /* high line height prevents vertical gooey merging when wrapped */
+}
+
+@media screen and (max-width: 768px) {
+  .morphing-text-wrapper {
+    filter: url(#gooey-morph-mobile) blur(0px);
+  }
+}
+
