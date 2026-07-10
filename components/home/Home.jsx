@@ -1,11 +1,18 @@
 import React from 'react';
 import './home.css';
 import ProfilePic from '../../src/assets/profile-pic.png';
+import { MorphingText } from './MorphingText';
+import { useTranslation } from '../../src/hooks/useTranslation.jsx';
 
 const Home = () => {
+  const { language } = useTranslation();
   const scrollTo = (id) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const morphingTexts = language === 'hi'
+    ? ["लक्की लौहार", "मेरा लॉजिक आपके कोडबेस से अधिक साफ है।"]
+    : ["Lacki Lohar", "My logic is cleaner than your codebase."];
 
   return (
     <section className="home section" id="home">
@@ -25,9 +32,9 @@ const Home = () => {
         <div className="home__hero">
           <div className="home__hero-text inview">
             <h1 className="home__title">
-            <span className="reveal-text inview"><span>Lacki Lohar</span></span>
-            <span className="reveal-text inview"><span className="home__title-alt">Software Developer</span></span>
-          </h1>
+              <MorphingText texts={morphingTexts} />
+              <span className="reveal-text inview"><span className="home__title-alt">Software Developer</span></span>
+            </h1>
             <p className="home__description">
               I'm a creative developer based in Ahmedabad, passionate and dedicated to building modern web experiences.
             </p>
