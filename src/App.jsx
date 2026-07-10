@@ -14,9 +14,12 @@ import About from '../components/about/About';
 import Testimonials from '../components/testimonials/Testimonials';
 import Social from '../components/social/Social';
 import Contact from '../components/contact/Contact';
+import ThankYou from '../components/thankyou/ThankYou';
 import Footer from '../components/footer/Footer';
 import ScrollUp from '../components/scrollup/ScrollUp';
 import CustomCursor from './components/cursor/CustomCursor';
+
+import { ProgressiveBlur } from './components/ui/progressive-blur';
 
 function App() {
   useEffect(() => {
@@ -62,22 +65,8 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // cursor scale on hover
-  useEffect(() => {
-    const ring = document.querySelector('.cursor-ring');
-    if (!ring) return;
-    const onEnter = () => ring.style.transform += ' scale(2.5)';
-    const onLeave = () => ring.style.transform = ring.style.transform.replace(' scale(2.5)', '');
-    const targets = document.querySelectorAll('a, button, .work__card, .social__card, .exp__item-header');
-    targets.forEach(el => {
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-    });
-    return () => targets.forEach(el => {
-      el.removeEventListener('mouseenter', onEnter);
-      el.removeEventListener('mouseleave', onLeave);
-    });
-  }, []);
+  // cursor hover is now handled entirely by CustomCursor (framer-motion)
+
 
   useSmoothScroll();
 
@@ -87,6 +76,7 @@ function App() {
       <div className="page-cover" id="page-cover"></div>
       <CustomCursor />
       <Header />
+      <ProgressiveBlur direction="bottom" height="100px" zIndex={99} />
       <main className="main">
         <Home />
         <Work />
@@ -97,6 +87,7 @@ function App() {
         <Testimonials />
         <Social />
         <Contact />
+        <ThankYou />
       </main>
       <Footer />
       <ScrollUp />
